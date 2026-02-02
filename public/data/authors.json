@@ -1,0 +1,58 @@
+{
+    "categories": [
+        {
+            "category": "world",
+            "author": {
+                "id": 1,
+                "name": "Alexander Thompson",
+                "gender": "Male",
+                "profileImage": "/images/alexander_thompson.webp",
+                "country": "USA",
+                "bio": "Alexander Thompson is an international correspondent specializing in geopolitics, diplomacy, and global conflicts. With experience reporting from various continents, he offers insightful analysis on foreign policy and emerging world events.",
+                "websiteLink": "https://alexanderthompsonjournal.com",
+                "social": {
+                    "twitter": "https://twitter.com/alexthompsonworld",
+                    "quora": "https://www.quora.com/profile/Alexander-Thompson-278",
+                    "reddit": "https://www.reddit.com/user/Alex_Thompson_World/",
+                    "medium": "https://medium.com/@alexthompsonworld"
+                }
+            }
+        },
+        {
+            "category": "politics",
+            "author": {
+                "id": 2,
+                "name": "Victoria Kline",
+                "gender": "Female",
+                "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+                "country": "USA",
+                "bio": "Victoria Kline is a seasoned political analyst covering U.S. elections, legislative developments, and policy debates. Her work focuses on the intricacies of government operations and political campaigns.",
+                "websiteLink": "https://victoriaklinepolitics.com",
+                "social": {
+                    "twitter": "https://twitter.com/vicklinepolitics",
+                    "quora": "https://www.quora.com/profile/Victoria-Kline-45",
+                    "reddit": "https://www.reddit.com/user/Victoria_Kline/",
+                    "medium": "https://medium.com/@vicklinepolitics"
+                }
+            }
+        },
+        {
+            "category": "business",
+            "author": {
+                "id": 3,
+                "name": "Robert Lang",
+                "gender": "Male",
+                "profileImage": "/images/robert_lang.webp",
+                "country": "USA",
+                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
+                "websiteLink": "https://robertlangbusiness.com",
+                "social": {
+                    "twitter": "https://twitter.com/robertlangbiz",
+                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
+                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
+                    "medium": "https://medium.com/@robertlangbiz"
+                }
+            }
+        }
+    ]
+}
