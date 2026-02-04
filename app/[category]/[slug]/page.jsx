@@ -1048,7 +1048,7 @@ export default async function ArticlePage({ params }) {
             <div className="relative">
               {/* Gray Background */}
               <div 
-                className="absolute left-0 right-0 bg-[#eaeaea]/40 pointer-events-none h-200 lg:h-130 top:90 lg:top-90"
+                className="absolute left-0 right-0 bg-[#eaeaea]/40 pointer-events-none h-90 lg:h-130 top:90 lg:top-90"
                 style={{
                   transform: 'translateY(-50%)',
                   bottom: 0,
