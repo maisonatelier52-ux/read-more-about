@@ -288,7 +288,6 @@
 // }
 
 // export default Header
-
 "use client";
 import React from 'react'
 import { useState, useEffect } from "react";
@@ -297,24 +296,27 @@ import { FaSearch } from "react-icons/fa";
 import { LuUserRound } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import CategoryData from '../public/data/articles.json'
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [currentDate, setCurrentDate] = useState({ day: '', date: '' });
+  const [navItems, setNavItems] = useState([]);
+  const pathname = usePathname();
 
-  const navItems = [
-    "Music",
-    "Celebrity",
-    "Politics",
-    "Finance",
-    "Travel",
-    "Food",
-    "Marketing",
-    "Tech",
-    "Make-up",
-  ];
+  // Extract unique categories from articles.json and add Home at the beginning
+  useEffect(() => {
+    const categories = Object.keys(CategoryData);
+    // Capitalize first letter of each category
+    const formattedCategories = categories.map(cat => 
+      cat.charAt(0).toUpperCase() + cat.slice(1)
+    );
+    // Add "Home" at the beginning
+    setNavItems(['Home', ...formattedCategories]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -349,6 +351,22 @@ function Header() {
     updateDate();
   }, []);
 
+  // Helper function to check if link is active
+  const isActiveLink = (item) => {
+    if (item === 'Home') {
+      return pathname === '/';
+    }
+    return pathname === `/${item.toLowerCase()}`;
+  };
+
+  // Helper function to get the href for each item
+  const getHref = (item) => {
+    if (item === 'Home') {
+      return '/';
+    }
+    return `/${item.toLowerCase()}`;
+  };
+
   return (
     <>
       {/* MAIN HEADER - Hidden on scroll for desktop, always sticky on mobile */}
@@ -380,7 +398,7 @@ function Header() {
             </div>
           </div>
 
-          {/* CENTER LOGO - Changed from h1 to div to avoid multiple h1s */}
+          {/* CENTER LOGO */}
           <div className="flex items-center">
             <Link href='/' title='NewsWeek PRO - Home page'>
             <div className="relative text-4xl sm:text-5xl lg:text-8xl font-bold text-red-600 font-serif">
@@ -423,10 +441,10 @@ function Header() {
         <nav className="hidden lg:block border-t border-gray-200">
           <ul className="flex justify-center gap-8 py-4">
             {navItems.map((item) => (
-              <Link key={item} href={`/${item.toLowerCase()}`} title={`${item} - Latest news and articles`}>
+              <Link key={item} href={getHref(item)} title={`${item} - Latest news and articles`}>
               <li
                 className={`text-sm font-semibold cursor-pointer ${
-                  item === "Celebrity"
+                  isActiveLink(item)
                     ? "text-red-600"
                     : "text-black hover:text-red-600"
                 }`}
@@ -439,13 +457,13 @@ function Header() {
         </nav>
       </header>
 
-      {/* SCROLLED HEADER - Only shows on desktop when scrolled - Changed from h1 to div */}
+      {/* SCROLLED HEADER - Only shows on desktop when scrolled */}
       <header className={`hidden lg:block shadow-lg bg-white fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
       }`}>
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 border-b border-gray-200">
           
-          {/* LEFT - Logo (smaller) - Changed from h1 to div */}
+          {/* LEFT - Logo (smaller) */}
           <div className="flex items-center">
             <Link href='/' title='NewsWeek PRO - Home page'>
             <div className="relative text-3xl font-bold text-red-600 font-serif">
@@ -459,18 +477,16 @@ function Header() {
             </div>
             </Link>
           </div>
-         
-         
 
           {/* RIGHT - Actions */}
           <div className="flex items-center gap-4">
              <nav className="flex-1 mx-8">
             <ul className="flex justify-center gap-6">
               {navItems.map((item) => (
-                <Link key={item} href={`/${item.toLowerCase()}`} title={`${item} - Latest news and articles`}>
+                <Link key={item} href={getHref(item)} title={`${item} - Latest news and articles`}>
                 <li
                   className={`text-xs font-semibold cursor-pointer ${
-                    item === "Celebrity"
+                    isActiveLink(item)
                       ? "text-red-600"
                       : "text-black hover:text-red-600"
                   }`}
@@ -527,6 +543,7 @@ function Header() {
                     About
                   </a>
                   <a
+                  
                     href="#"
                     title="Contact NewsWeek PRO"
                     className="block text-md font-medium text-gray-800 hover:text-red-600 transition"
@@ -534,6 +551,7 @@ function Header() {
                     Contact us
                   </a>
                   <a
+                  
                     href="#"
                     title="NewsWeek PRO Subscription Plans"
                     className="block text-md font-medium text-gray-800 hover:text-red-600 transition"
@@ -541,6 +559,7 @@ function Header() {
                     Subscription Plans
                   </a>
                   <a
+                  
                     href="#"
                     title="My NewsWeek PRO account"
                     className="block text-md font-medium text-gray-800 hover:text-red-600 transition"
@@ -573,9 +592,13 @@ function Header() {
 
             <ul className="space-y-4 text-lg font-semibold">
               {navItems.map((item) => (
-                <Link key={item} href={`/${item.toLowerCase()}`} title={`${item} - Latest news and articles`}>
+                <Link key={item} href={getHref(item)} title={`${item} - Latest news and articles`}>
                 <li
-                  className="cursor-pointer hover:text-red-500"
+                  className={`cursor-pointer ${
+                    isActiveLink(item)
+                      ? "text-red-500"
+                      : "hover:text-red-500"
+                  }`}
                 >
                   {item}
                 </li>

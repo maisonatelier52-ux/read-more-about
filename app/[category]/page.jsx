@@ -4,19 +4,13 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import CategoryArticlelist from '@/components/categorycomponents/CategoryArticlelist'
+import CategoryArtices from '../../public/data/articles.json'
 
 function Page() {
-  const categories = [
-    { name: 'CELEBRITY', href: '/celebrity' },
-    { name: 'FINANCE', href: '/finance' },
-    { name: 'FOOD', href: '/food' },
-    { name: 'MAKE-UP', href: '/makeup' },
-    { name: 'MARKETING', href: '/marketing' },
-  ]
+  
 
   // Featured articles with complete data structure
-  const articles = [
-    {
+  const articles = {
       id: 1,
       slug: "politics-marocco-stock-market-turbulence",
       title: "The Politics Behind Marocco's Stock Market Turbulence Last Year",
@@ -44,95 +38,7 @@ function Page() {
           text: "The political landscape of Morocco has significantly influenced its stock market performance over the past year..."
         }
       ]
-    },
-    {
-      id: 2,
-      slug: "expanding-peaceful-political-climate",
-      title: "Expanding Peaceful Political Climate Gears up for this Election",
-      category: "POLITICS",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      imageAlt: "Political climate",
-      excerpt: "As elections approach, the political atmosphere shows signs of constructive dialogue and cooperation.",
-      type: "normal",
-      date: "18/01/2026",
-      author: {
-        name: "Sarah Mitchell",
-        image: "https://i.pravatar.cc/150?img=17",
-        website: "https://example.com/sarah-mitchell",
-        bio: "Political correspondent covering domestic and international affairs.",
-        social: {
-          facebook: "#",
-          instagram: "#",
-          twitter: "#",
-          youtube: "#"
-        }
-      },
-      content: [
-        {
-          type: "paragraph",
-          text: "The upcoming election season is marked by unprecedented levels of civil discourse..."
-        }
-      ]
-    },
-    {
-      id: 3,
-      slug: "things-you-didnt-know-american-politicians",
-      title: "Things You Didn't Know About the American Past Politicians",
-      category: "POLITICS",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      imageAlt: "American political history",
-      excerpt: "Fascinating facts and untold stories about the politicians who shaped American history.",
-      type: "normal",
-      date: "20/01/2026",
-      author: {
-        name: "James Wilson",
-        image: "https://i.pravatar.cc/150?img=18",
-        website: "https://example.com/james-wilson",
-        bio: "History professor and author specializing in American political history.",
-        social: {
-          facebook: "#",
-          instagram: "#",
-          twitter: "#",
-          youtube: "#"
-        }
-      },
-      content: [
-        {
-          type: "paragraph",
-          text: "American political history is filled with remarkable stories that rarely make it into textbooks..."
-        }
-      ]
-    },
-    {
-      id: 4,
-      slug: "harvard-student-candidates-results",
-      title: "New Harvard Student Candidates Presented Minutes Before Results",
-      category: "POLITICS",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      imageAlt: "Harvard election",
-      excerpt: "Last-minute candidate announcements shake up Harvard's student government elections.",
-      type: "exclusive",
-      date: "22/01/2026",
-      author: {
-        name: "Emily Chen",
-        image: "https://i.pravatar.cc/150?img=19",
-        website: "https://example.com/emily-chen",
-        bio: "Education reporter covering campus politics and student movements.",
-        social: {
-          facebook: "#",
-          instagram: "#",
-          twitter: "#",
-          youtube: "#"
-        }
-      },
-      content: [
-        {
-          type: "paragraph",
-          text: "In an unexpected turn of events, several new candidates emerged just minutes before the election results were announced..."
-        }
-      ]
-    },
-  ]
+    }
 
   // List articles with complete data structure
   const listArticles = [
@@ -657,68 +563,72 @@ function Page() {
       <div className="bg-[#eaeaea]/55 pb-48">
         <div className="container mx-auto px-4 pt-12">
           {/* Main heading */}
-          <h1 className="text-5xl font-bold text-black text-center mb-8 font-serif">
+          <h1 className="text-5xl font-bold text-black text-center mb-16 font-serif">
             Politics
           </h1>
-
-          {/* Category links */}
-          <div className="flex justify-center gap-8 mb-16">
-            {categories.map((category, index) => (
-              <Link
-                key={category.name}
-                href={category.href}
-                className={`text-black text-xs lg:text-md font-semibold hover:text-red-500 transition-colors 
-                            ${index > 2 ? 'hidden md:block' : ''}`}
-              >
-                {category.name}
-              </Link>
-            ))}
-          </div>
+    
+          
         </div>
       </div>
 
       {/* Articles row - positioned to overlap the blue background */}
       <div className="container mx-auto px-4 -mt-55 lg:px-7">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {articles.map((article, index) => (
-            <div
-              key={article.id}
-              className="group cursor-pointer"
-            >
-              {/* Image container with overlay */}
-              <div className="relative h-86 overflow-hidden shadow-lg">
-                <Image
-                  src={article.image}
-                  alt={article.imageAlt}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-                {/* Content overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  {/* Category badge */}
-                  <div className="flex gap-2 mb-3">
-                    <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 uppercase">
-                      {article.category}
+        {/* Featured Article - Full Width */}
+        <div className="mb-12">
+          <div className="group cursor-pointer">
+            <div className="relative h-[350px] lg:h-[450px] overflow-hidden shadow-2xl rounded-lg">
+              <Image
+                src={articles.image}
+                alt={articles.imageAlt}
+                fill
+                className="object-cover transition-transform duration-700"
+              />
+              
+              {/* Gradient overlay - stronger for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+              
+              {/* Content overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 max-w-4xl">
+                {/* Category and Type badges */}
+                <div className="flex gap-3 mb-4">
+                  <span className="bg-red-600 text-white text-xs lg:text-sm font-bold px-2 lg:px-4 py-2 uppercase tracking-wide">
+                    {articles.category}
+                  </span>
+                  {articles.type !== "normal" && (
+                    <span className="bg-white text-black text-sm font-bold px-4 py-2 uppercase tracking-wide">
+                      {articles.type}
                     </span>
-                  </div>
+                  )}
+                </div>
 
-                  {/* Title */}
-                  <h3 className="text-white font-bold text-lg leading-tight hover:text-red-500">
-                    {article.type !== "normal" && (
-                      <span className="inline-block bg-red-600 px-2 py-[2px] text-[10px] font-bold text-white uppercase mr-2">
-                        {article.type}
-                      </span>
-                    )}
-                    {article.title}
-                  </h3>
+                {/* Title */}
+                <h2 className="text-white font-bold text-xl lg:text-5xl leading-tight mb-4 group-hover:text-red-400 transition-colors duration-300">
+                  {articles.title}
+                </h2>
+
+                {/* Excerpt */}
+                <p className="text-gray-200 text-xs lg:text-lg leading-relaxed mb-6 max-w-3xl">
+                  {articles.excerpt}
+                </p>
+
+                {/* Author and Date */}
+                <div className="flex items-center gap-4 text-sm text-gray-300">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={articles.author.image}
+                      alt={articles.author.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full"
+                    />
+                    <span className="font-semibold">{articles.author.name}</span>
+                  </div>
+                  <span>-</span>
+                  <span>{articles.date}</span>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
