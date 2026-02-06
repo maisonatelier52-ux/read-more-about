@@ -89,6 +89,25 @@
                     "medium": "https://medium.com/@robertlangbiz"
                 }
             }
+        },
+        {
+            "category": "sports",
+            "author": {
+                "id": 6,
+                "name": "aslam hood",
+                "gender": "Male",
+                "profileImage": "/images/robert_lang.webp",
+                "country": "USA",
+                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
+                "websiteLink": "https://robertlangbusiness.com",
+                "social": {
+                    "twitter": "https://twitter.com/robertlangbiz",
+                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
+                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
+                    "medium": "https://medium.com/@robertlangbiz"
+                }
+            }
         }
+        
     ]
 }
