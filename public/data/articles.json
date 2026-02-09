@@ -2915,11 +2915,6 @@
           "text": "The top-ranked Americans showed off their skill and depth by easily beating their opponents. The game showed that they had a lot more experience than the other team. There was some political star power at the event because U.S. Vice President JD Vance was there."
         },
         {
-          "type": "image",
-          "src": "/images/news/us-womens-hockey-opens-milano-cortina-second-image.webp",
-          "alt": "U.S. women’s ice hockey players celebrate along the boards after scoring against Czechia at the Milano Cortina 2026 Winter Olympics"
-        },
-        {
           "type": "paragraph",
           "text": "The first face-off made it clear that the U.S. team meant business. Captain Hilary Knight, who has been to five Olympics and is a true icon in women's hockey, set a good example both on and off the ice. She scored a goal in the second session, which added to her amazing Olympic legacy. It wasn't just the veterans who did well; young players like Joy Dunne also stepped up and scored the game-winning goal early in the second period. Hayley Scamurra was the best player, scoring two goals to help win the game. Alex Carpenter, the alternate captain, scored the first goal of the night to get things going."
         },
@@ -2931,14 +2926,15 @@
           "type": "paragraph",
           "text": "The numbers show that the U.S. was in charge because they took 42 shots on goal and the Czechs only took 14. The Americans controlled the puck, set the pace, and wore down their opponents, as shown by the difference in shots. The Czech Republic, which is ranked fourth in the world and was only at their second Olympics, fought hard but couldn't match the defending world champions' firepower or defense."
         },
-        {
-          "type": "image",
-          "src": "/images/news/hilary-knight-scores-goal-milano-cortina-2026.webp",
-          "alt": "Hilary Knight of Team USA scores a goal against Czechia during the Milano Cortina 2026 women's ice hockey match"
-        },
+       
         {
           "type": "paragraph",
           "text": "Let's talk about what happened in the game. The U.S. went after Czech goalie Klara Peslarova hard in the first period, taking 14 shots. For most of the time, she stayed strong, but in the 16th minute, Carpenter redirected a shot from the point by Megan Keller to break the ice. The crowd, which was mostly made up of American fans who had come to Milan to see the show, cheered loudly. That goal seemed to let everything out and set the mood for what was to come."
+        },
+         {
+          "type": "image",
+          "src": "/images/news/us-womens-hockey-opens-milano-cortina-second-image.webp",
+          "alt": "U.S. women’s ice hockey players celebrate along the boards after scoring against Czechia at the Milano Cortina 2026 Winter Olympics"
         },
         {
           "type": "paragraph",
@@ -2955,11 +2951,6 @@
         {
           "type": "paragraph",
           "text": "This win isn't just a win; it's a sign that the team wants to win the Olympics again. But they've also had their hearts broken, like when they lost to Canada in 2022 and got silver. Canada, the defending champions, is still the biggest rival, and people all over the world are already looking forward to their game on Tuesday. The Americans will play Finland on Saturday in another Group A game before that. Finland has a tough style and a good goalie, so they could be a tougher opponent. But if the U.S. keeps playing like they did today, they will be hard to beat."
-        },
-        {
-          "type": "image",
-          "src": "/images/news/team-usa-womens-hockey-group-milano-cortina-2026.webp",
-          "alt": "Team USA women's ice hockey squad poses on the ice at Milano Cortina 2026 Olympics venue"
         },
         {
           "type": "paragraph",
@@ -3150,6 +3141,221 @@
         {
           "type": "paragraph",
           "text": "Starting Friday, they're not just chasing medals—they're making a case for figure skating's next era. If dynasties define Olympics, America's building one on diversity, depth, and dreams. This could be the team that skates the sport into the spotlight for good."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "seahawks-claim-revenge-super-bowl-lx-win-over-patriots-29-13",
+      "metaTitle": "Seahawks Revenge: 29-13 Super Bowl LX Win Over Patriots",
+      "metaDescription": "Seattle Seahawks exact revenge on New England Patriots in Super Bowl LX rematch, winning 29-13 behind dominant defense and Kenneth Walker III MVP performance for second franchise title after 11 years.",
+      "title": "Seahawks Exact Sweet Revenge: Dominant 29-13 Win Over Patriots in Super Bowl LX",
+      "category": "sports",
+      "image": "/images/news/seahawks-claim-revenge-super-bowl-lx-win-first-image.webp",
+      "imageAlt": "Seattle Seahawks defenders sack New England Patriots quarterback as he attempts a pass during Super Bowl LX",
+      "excerpt": "In a long-awaited rematch of the infamous 2015 Super Bowl, the Seattle Seahawks crushed the New England Patriots 29-13 to claim their second Lombardi Trophy, avenging that heartbreaking loss after more than a decade of waiting.",
+      "newsType": "news",
+      "type": "normal",
+      "date": "09/02/2026",
+      "keywords": ["Super Bowl LX", "Seattle Seahawks", "New England Patriots", "Super Bowl 2026", "Kenneth Walker III", "Sam Darnold", "Drake Maye", "revenge game", "Levi's Stadium", "NFL champions"],
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Redemption on the Biggest Stage"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Seattle Seahawks' big win over the New England Patriots in this year's Super Bowl was a great example of revenge sports. The Patriots lost the championship game in 2015, but they won it back with a miracle at the last minute. That painful setback had happened 11 years ago. For more than ten years, Seahawks fans, players, and coaches have been living with that scar, going over the what-ifs and missed chances again and again. But this Sunday in Santa Clara, they finally got their revenge by beating the Pats in a game that was both hard and fun. What was the final score? A convincing 29-13 win that felt a lot worse than the score shows. This wasn't just a win; it was a statement, a way for a team that had been haunted by past Super Bowls to move on."
+        },
+        {
+          "type": "image",
+          "src": "/images/news/seahawks-claim-revenge-super-bowl-lx-win-second-image.webp",
+          "alt": "Seattle Seahawks head coach embraces quarterback Sam Darnold on the field as photographers capture the celebration after their Super Bowl LX victory"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Setting the Scene at Levi's Stadium"
+        },
+        {
+          "type": "paragraph",
+          "text": "Let's make sure the scene is right. The atmosphere in Levi's Stadium was electric. Seahawks fans showed off their West Coast style, while Patriots fans showed off their calm confidence after winning so many rings. But it was clear from the first kick that this rematch wouldn't be a high-scoring shootout like some of the past Super Bowls. No, this was old-school football, with defenses controlling the game, quarterbacks under pressure, and running backs working hard to get yards like it was the 1980s. The Seahawks had put together a team that was ready for this moment because they had a stable head coach. Everyone was talking about their strong defense in the playoffs, and their offense wasn't great but it was effective and punishing."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kenneth Walker III Steals the Show"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kenneth Walker III was without a doubt the star of the show. The running back, who has been a surprise since joining the league, led the team with 135 yards on 27 carries. When defenders have to work that hard, even the best ones get tired. By halftime, the Patriots' front seven looked tired. Walker didn't just run fast; he blasted through holes, tricked defenders, and pushed through tackles. He was the MVP because he was the one who kept Seattle going when the passing game started to slow down. It's strange how football works: Walker wasn't even the main focus of the preseason hype, but he was unstoppable in the biggest game. His longest runs came at key moments, changing the field position and keeping the Patriots' offense off the field."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Sam Darnold's Redemption Complete"
+        },
+        {
+          "type": "paragraph",
+          "text": "Then there's Sam Darnold, the quarterback who has changed the story about himself. The Jets picked him high in the 2018 draft, but after years of inconsistent play and bad luck with bad teams, he was called a flop. But his time in Minnesota and now Seattle has shown what happens when you have a lot of talent, good coaching, and a strong system. Darnold threw for 202 yards and a touchdown. Those aren't great numbers, but they were more than enough in a game where every completion felt like a win. This was the end of his story of redemption. In his first Super Bowl start, he showed his critics wrong by staying calm under pressure. He started off slow, completing only three of his first seven passes, but as the game went on, he got more comfortable and made key throws that sealed the deal."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Young Drake Maye Faces the Storm"
+        },
+        {
+          "type": "paragraph",
+          "text": "He was the second-youngest quarterback to start a Super Bowl, after Ben Roethlisberger. He was 23 years old and 162 days old. Maye had a great regular season, with big passes and important drives that made the highlight reel. But the playoffs showed some problems, like five turnovers in three games against strong defenses. Are you worried? He might have, but he didn't show it right away. He made quick completions on his first drive and ran for 11 yards after being sacked. But the Seahawks' pass rush, which was led by relentless edges and interior disruptors, made things very hard for him. They kept pushing him out, sacking him a few times, and making him throw the ball quickly. At the end of the game, New England had kicked the ball eight times. This shows how bad their offense was."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A Defensive Battle from the Start"
+        },
+        {
+          "type": "paragraph",
+          "text": "At first, the game was slow. The Patriots won the coin toss and decided to kick off to Seattle. The Hawks moved down the field, with Cooper Kupp's 23-yard catch leading the way. Do you know who he is? After all these years, the MVP from four years ago is still making plays. But the drive ended at the Pats' 14, and Jason Myers kicked a field goal to put the team up 3-0. What happened in New England? A quick three-and-out because the Seattle D-line is tough. Darnold's second possession didn't go much better; he had to punt after missing some throws."
+        },
+        {
+          "type": "paragraph",
+          "text": "The first quarter was a battle between the defenses. The two teams only gained 99 yards of offense, which isn't enough for most games to get a few first downs. There weren't any touchdowns or big plays, just a lot of fighting at the line of scrimmage. The coverage was too strong for the receivers to get away from, and both QBs were stuck in quicksand. Hardcore fans love this kind of quarter, but casual fans don't mind it."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Momentum Shifts in the Second Quarter"
+        },
+        {
+          "type": "paragraph",
+          "text": "The second round was better. Walker had had enough and stopped two runs of 30 and 29 yards that changed the course of the game. The Pats changed their plans and stopped him from getting any more yards, but Seattle still got into field-goal range for another Myers kick, which made the score 6-0. The Seahawks' defense kept doing a good job. Rylie Mills, a rookie defensive end, broke through the offensive line and sacked Maye, ending the drive. Michael Dickson's punt kept the Patriots stuck at their own 2-yard line, which made the crowd go wild. The special teams even got in on the action. Before halftime, Myers made one more field goal, bringing the total for the half to only nine points. This was a big deal for fans of defense because the last three Super Bowls averaged 25 points in the first half. Walker ran for 94 yards by himself, which was more than the whole New England offense. The Patriots blitzed like crazy, which threw Darnold off, and Seattle went for rookie tackle Will Campbell, who got sacked three times and looked like he was in over his head."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Fourth Quarter Explosion Seals It"
+        },
+        {
+          "type": "paragraph",
+          "text": "During halftime, Bad Bunny played a concert, but nothing could make up for the lack of explosions on the field. The Patriots' offense stalled again when they came out, so they had to punt again. The score was 12-0 after Myers made his fourth field goal. Then, New England's bad luck struck: Maye fumbled the ball, and Byron Murphy II picked it up, ending the third quarter on a bad note."
+        },
+        {
+          "type": "paragraph",
+          "text": "At the start of the fourth, Seattle took advantage. Darnold threw a 16-yard touchdown pass to tight end AJ Barner, the first of the game. After the extra point, the score was 19-0. Was it really 19-0? No, the score was 19-0 before the Patriots got their first field goal. That got the Patriots going. Maye finally had some protection and threw a 24-yard touchdown pass to Luck Hollins, a strange veteran who dressed up as Hannibal Lecter, and then a 35-yard touchdown bomb. When the score was 19-7, New England suddenly had a chance."
+        },
+        {
+          "type": "paragraph",
+          "text": "But the momentum can change quickly. Julian Love caught Maye's next throw, which ended the comeback. Myers kicked his fifth field goal, which is a Super Bowl record, to make the score 22-7. Uchenna Nwosu picked off another Maye pass and ran it back 45 yards for a touchdown, making the score 29-7. Maye's touchdown pass to Rhamondre Stevenson late in the game made the score 29-13, but it was too late to make a difference."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Looking Ahead for Both Teams"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Patriots will be fine in the future, even though this hurts them. They will be able to compete again because of Maye's arm, a strong defense, coach Mike Vrabel's toughness, and offensive coordinator Josh McDaniels' experience. A seventh ring would have put them on the same level as the Steelers. The AFC is a mess right now. The Bills are unstable and the Chiefs are rebuilding. This is a great chance for New England."
+        },
+        {
+          "type": "paragraph",
+          "text": "Seattle? This takes away the pain of 2015. Redemption is great after eleven years of waiting. Walker won the MVP, Darnold won the game, and the defense ruled the field. This is how to keep winning. Fans can now go out and celebrate a second title in the modern age. There are a lot of stories in football, but this one is a classic: hard work pays off."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "lindsey-vonn-breaks-leg-crash-olympic-downhill-cortina-2026",
+      "metaTitle": "Lindsey Vonn Breaks Leg in Dramatic Olympic Crash",
+      "metaDescription": "Lindsey Vonn's incredible comeback ends in heartbreak as she crashes just 13 seconds into the women's downhill at 2026 Winter Olympics in Cortina, suffering a broken left leg requiring surgery. Teammate Breezy Johnson wins gold.",
+      "title": "Heartbreak in Cortina: Lindsey Vonn's Olympic Comeback Ends in Brutal Crash and Broken Leg",
+      "category": "sports",
+      "image": "/images/news/lindsey-vonn-breaks-leg-crash-olympic-first-image.webp",
+      "imageAlt": "Lindsey Vonn loses control and crashes after hitting a gate during the women’s downhill at the 2026 Winter Olympics in Cortina d’Ampezzo",
+      "excerpt": "On a cold Sunday in the Italian Alps, Lindsey Vonn's defiant return to Olympic competition ended after just 13 seconds with a terrifying crash that left her with a broken leg and airlifted off the mountain.",
+      "newsType": "news",
+      "type": "normal",
+      "date": "09/02/2026",
+      "keywords": ["Lindsey Vonn", "2026 Winter Olympics", "Cortina d'Ampezzo", "downhill crash", "broken leg", "Breezy Johnson", "Olympic skiing", "comeback", "injury", "Milan Cortina 2026"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "It was supposed to be a great comeback for one of the best skiers ever on a cold Sunday morning in the beautiful Cortina d'Ampezzo peaks in the Italian Alps. But it didn't happen that way. Lindsey Vonn, a famous American downhill skier who is almost 41 years old, wanted to win another Olympic medal, even though her body had been through more repairs than most athletes could imagine. But her brave attempt at the women's downhill race at the 2026 Winter Olympics went wrong just a few seconds after it began."
+        },
+         {
+          "type": "image",
+          "src": "/images/news/lindsey-vonn-breaks-leg-crash-olympic-thrid-image.webp",
+          "alt": "Lindsey Vonn tumbles after clipping a gate in her Olympic downhill run."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Crash in Seconds"
+        },
+        {
+          "type": "paragraph",
+          "text": "Things moved so quickly. Vonn, who is known for being quick and competitive, hit a gate with her right shoulder almost right away. That one small mistake made her lose control, and her body twisted violently as she fell down the cold slope. She was lying on her back with her skis tangled up under her, and the sound of her screams filled the air as paramedics rushed to help her. People who were watching from far below the finish line stopped talking completely. Seeing one of the sport's greats struggle ruined the mood. A helicopter came to get her off the mountain for the second time in just over a week. This time, it felt like the end of a career that had its ups and downs and never-ending energy."
+        },
+        {
+          "type": "paragraph",
+          "text": "Vonn's first stop was a small clinic in Cortina. They then took her to a bigger hospital in Treviso, which is about two hours south. The doctors there confirmed the worst: her left leg was broken and needed surgery right away to make it stable. The hospital said that a group of doctors from the US and Italy were taking care of her. The U.S. Ski Team told fans that she was stable and getting the best care possible, but it would take a long time for her to get better. Anouk Patty, who is in charge of sports at U.S. Ski and Snowboard, said it clearly: \"She'll make it, but this isn't easy.\" Skiing is hard. People jump off of mountains very quickly, and sometimes they hurt themselves very badly."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Teammate Shines Amid Sorrow"
+        },
+        {
+          "type": "paragraph",
+          "text": "The race went on that day, and Vonn's teammate Breezy Johnson stole the show by winning the downhill. At the age of 30, Johnson became the second American woman to win the title. In 2010, Vonn was the first person to go to Vancouver. In her last match, she beat Emma Aicher from Germany and Sofia Goggia from Italy. The U.S. team was happy and sad at the same time. Johnson, who missed the 2022 Beijing Games because she fell in Cortina, talked about her mentor's fall with a lot of passion because she knows how bad injuries can be. \"I can't even pretend to know how she feels right now,\" she said. \"Everyone has dealt with physical things, but what about emotional things? That's what makes you weak.It's terrible to watch your dreams slip away like this."
+        },
+        {
+          "type": "image",
+          "src": "/images/news/lindsey-vonn-breaks-leg-crash-olympic-second-image.webp",
+          "alt": "Rescue helicopter airlifts Lindsey Vonn from the mountain following her crash in the Olympic downhill race."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Emotional Scenes at the Venue"
+        },
+        {
+          "type": "paragraph",
+          "text": "People who were there were sad. Vonn's family, including her father Alan Kildow, was in the stands. He bent his head when he understood what was going on. Vonn was the best on the Olympia della Tofana course. She won 12 World Cup races, which is a record, so people called her the \"Queen of Cortina.\" Snoop Dogg and other famous people who were having fun at the Olympics were also shocked. Another well-known American skier, Mikaela Shiffrin, used a simple broken-heart emoji on her social media to show how sorry everyone was."
+        },
+        {
+          "type": "paragraph",
+          "text": "Johan Eliasch, who is in charge of the International Ski and Snowboard Federation, said that this is a sad but common thing that happens in ski racing. He thought, \"Lindsey has been a beacon for our sport.\" \"This event has gotten everyone's attention at the Games, showing off the excitement and the dangers that we all love and fear.\" It was clear that Vonn had the least chance of winning at the Olympics. She stopped playing in 2019 because she got hurt a lot, which would have made it hard for less skilled players to compete. Everyone was shocked when she came back last season. Vonn had a partial titanium knee replacement in her right knee when she was 22, which is when most skiers are coaching or commenting. She also had problems with her left knee that never went away. But she got better and better, and before the Games started, she was the best downhill skier in the World Cup."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Injury History and Determination"
+        },
+        {
+          "type": "paragraph",
+          "text": "She didn't have an easy time getting to Cortina. She had a terrible accident in Switzerland while working out just nine days before. It hurt her meniscus, bruised a bone, and tore her ACL. A lot of people would have given up, but not Vonn. She didn't give up, and when the weather was nice over the weekend, she ran twice with her hurt knee. \"This could be my biggest comeback yet,\" she told reporters before the event, her voice full of determination. \"Without a doubt, the most dramatic one.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Vonn has had both good and bad times in her career. In 1984, she was born in Saint Paul, Minnesota. When she was 16, she played in her first World Cup. She won the World Cup four times, and by 2008, she had won everything. She became well-known in the US after winning a gold medal in downhill skiing at the 2010 Olympics, but she was always getting hurt. She hurt her right knee so badly in a terrible crash at the 2013 World Championships that it took a lot of surgery to fix. She came back and won more races, but her injuries got worse. She hurt her ligaments, broke her bones, and got concussions. She passed out while getting ready for the 2006 Turin Olympics, but she still competed a few days later and came in eighth in super-G, even though she was in pain."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A Lasting Legacy"
+        },
+        {
+          "type": "paragraph",
+          "text": "She thought Cortina was magical in a special way. It was a place where she could achieve her personal goals and feel at home on the hard ground, in addition to the wins. People who liked her and other racers liked her for more than just how fast she was. On the way down, she might go faster than 80 mph. They also thought she was tough. Kirsty Coventry, the head of the International Olympic Committee, said in a message, \"You're an inspiration, Lindsey, and always an Olympic champion.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "People in Cortina and other places heard about what happened while they were in the fan zones. \"It's a big blow,\" said Megan Gunyou, an American who was watching. It was very inspiring to hear her talk about how she got back up after falling during the Olympics. I really feel bad for her. \"It was scary to see,\" said Canadian fan Dan Wilton.\"You want her to die like a hero.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "People in the skiing world are interested in what Vonn's legacy will be as she gets better. She won 82 World Cups, which was the most for a woman until Shiffrin beat her. She doesn't just get medals, though. She was a trailblazer who made skiing more popular for women, fought for the safety of competitors, and showed that you can keep going even if you're hurt or old. This event could end Lindsey Vonn's career or give her another chance to come back, but she has already made a big difference in the sport."
         }
       ]
     }
