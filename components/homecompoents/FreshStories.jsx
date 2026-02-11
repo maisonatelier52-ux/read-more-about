@@ -42,42 +42,7 @@ export default function FreshStories() {
       category: "MARKETING",
       date: "September 29, 2021",
        type: "Normal"
-    },
-    {
-      id: 6,
-      title: "The Ultimate Guide to Content Marketing Success",
-      category: "MARKETING",
-      date: "September 28, 2021",
-       type: "Normal"
-    },
-    {
-      id: 7,
-      title: "How to Build a Brand in the Digital Age",
-      category: "BUSINESS",
-      date: "September 28, 2021",
-       type: "Normal"
-    },
-    {
-      id: 8,
-      title: "Email Marketing Best Practices for 2021",
-      category: "MARKETING",
-      date: "September 27, 2021",
-       type: "Normal"
-    },
-    {
-      id: 9,
-      title: "The Rise of Influencer Marketing",
-      category: "MARKETING",
-      date: "September 27, 2021",
-       type: "Normal"
-    },
-    {
-      id: 10,
-      title: "SEO Strategies That Actually Work",
-      category: "TECH",
-      date: "September 26, 2021",
-       type: "Normal"
-    },
+    }
     
   ];
 
@@ -206,7 +171,7 @@ export default function FreshStories() {
             </div>
 
             {/* Pagination Arrows */}
-            <div className="flex items-center gap-3 mt-6">
+            {/* <div className="flex items-center gap-3 mt-6">
               <button
                 onClick={handlePrevPage}
                 disabled={currentPage === 0}
@@ -223,7 +188,7 @@ export default function FreshStories() {
               >
                 <FaChevronRight size={12} />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
