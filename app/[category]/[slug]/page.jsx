@@ -616,7 +616,9 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterestP, FaWhatsap
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
 
-const SITE_URL = "https://www.read-more-about.com";
+// const SITE_URL = "https://www.read-more-about.com";
+
+const SITE_URL ="https://read-more-about.vercel.app";
 
 // Helper function to parse date string (DD/MM/YYYY) to Date object
 const parseDate = (dateStr) => {
