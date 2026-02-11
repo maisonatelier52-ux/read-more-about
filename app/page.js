@@ -11,6 +11,7 @@ import PoliticsSection from "@/components/homecompoents/PoliticsSection";
 import RecentPostsSection from "@/components/homecompoents/RecentpostsSection";
 import SliderSection from "@/components/homecompoents/SliderSection";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import articlesData from '../public/data/articles.json'
 
 export default function Home() {
 
