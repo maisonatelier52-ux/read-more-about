@@ -123,47 +123,8 @@ export default function RecentPostsSection() {
       date: "September 25, 2021",
       image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
       type:"Normal"
-    },
-    {
-      id: 15,
-      title: "How Nancy Reagan Gave Glamour and Class to the White House",
-      category: "MARKETING",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
-    {
-      id: 16,
-      title: "Now is the Time to Think About Your Small-Business Success",
-      category: "MARKETING",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
-    {
-      id: 17,
-      title: "The Best Marketing Strategies for Small Businesses",
-      category: "MARKETING",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
-    {
-      id: 18,
-      title: "Digital Marketing Trends to Watch in 2024",
-      category: "MARKETING",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
+    }
+    
   ];
 
   const ITEMS_PER_PAGE = 5;
@@ -369,7 +330,7 @@ export default function RecentPostsSection() {
                 ))}
               </div>
                {/* Navigation Arrows */}
-              <div className="flex justify-start gap-2 mb-4">
+              {/* <div className="flex justify-start gap-2 mb-4">
                 <button
                   onClick={handlePrev}
                   disabled={sidebarIndex === 0}
@@ -384,7 +345,7 @@ export default function RecentPostsSection() {
                 >
                   <FaChevronRight className="text-xs" />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
