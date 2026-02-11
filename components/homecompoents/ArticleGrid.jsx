@@ -59,32 +59,7 @@ export default function ArticleGrid() {
       category: "POLITICS",
       image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
     },
-    {
-      id: 5,
-      title: "The Hottest Wearable Tech and Smart Gadgets of 2021 Will Blow Your Mind",
-      category: "TECH",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      badge: "EXCLUSIVE",
-    },
-    {
-      id: 6,
-      title: "New Technology Will Help Keep Your Smart Home from Becoming Obsolete",
-      category: "TECH",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-    },
-    {
-      id: 7,
-      title: "Apple Computers Climb the List of the Top Gadgets in Forbes Magazine",
-      category: "TECH",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-    },
-    {
-      id: 8,
-      title: "New Soundboard from Bose Review: Pricing is Not Always the Only Criteria",
-      category: "TECH",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      badge: "Exclusive",
-    },
+    
   ];
 
   return (

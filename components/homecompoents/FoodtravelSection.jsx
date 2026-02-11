@@ -78,36 +78,7 @@ export default function FoodTravelSection() {
     }
   ];
 
-  const smallArticles2 = [
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
-      title: "The Cliffs of Moher Reach 1 Million Visitors Every Year Since 2014",
-      type:"Exclusive",
-      isExclusive: true
-    },
-    {
-      id: 10,
-      image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=300&h=200&fit=crop",
-      title: "The 25 Best Cities You Can Find in Italy to Satisfy the Love for Pizza",
-      type:"Exclusive",
-      isExclusive: true
-    },
-    {
-      id: 11,
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop",
-      title: "Now Is the Time to Think About Your Small-Business Success",
-      type:"Normal",
-      isExclusive: false
-    },
-    {
-      id: 12,
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&h=200&fit=crop",
-      title: "Program Will Lend $10M to Detroit Minority Businesses",
-      type:"Normal",
-      isExclusive: false
-    }
-  ];
+ 
 
   return (
     <section className="max-w-7xl mx-auto px-5 lg:px-7 py-5 font-serif">
@@ -195,34 +166,7 @@ export default function FoodTravelSection() {
         ))}
       </div>
 
-      {/* Row 4: Small Cards (4 columns) - Image Left, Title Right */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {smallArticles2.map((article) => (
-          <div key={article.id} className="group cursor-pointer">
-            <div className="flex gap-3 items-start">
-              {/* Image Left */}
-              <div className="flex-shrink-0 w-24 h-24 overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                
-              </div>
-              
-              {/* Title Right */}
-              <h3 className="text-sm font-bold leading-snug group-hover:text-red-600 transition-colors flex-1">
-                {article.isExclusive && (
-                        <span className="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-1 mr-2 uppercase">
-                          EXCLUSIVE
-                        </span>
-                      )}
-                {article.title}
-              </h3>
-            </div>
-          </div>
-        ))}
-      </div>
+      
     </section>
   );
 }

@@ -71,7 +71,7 @@ export default function Home() {
 <CelebritySection/>
 <FoodTravelSection/>
 <AdBannerSection/>
-<FeaturedContentSection/>
+{/* <FeaturedContentSection/> */}
 <RecentPostsSection/>
 
 

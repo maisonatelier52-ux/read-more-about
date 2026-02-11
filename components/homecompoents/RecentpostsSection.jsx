@@ -79,37 +79,7 @@ export default function RecentPostsSection() {
       date: "September 25, 2021",
       image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
       type:"Normal"
-    },
-    {
-      id: 8,
-      title: "Entrepreneurial Advertising: The Future Of Marketing",
-      category: "FASHION",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
-    {
-      id: 9,
-      title: "Mobile Marketing is Said to Be the Future of E-Commerce",
-      category: "FASHION",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
-    {
-      id: 10,
-      title: "How Nancy Reagan Gave Glamour and Class to the White House",
-      category: "FASHION",
-      author: "Dan Buell",
-      authorImage: "https://demo.tagdiv.com/newspaper_week_pro/wp-content/uploads/2021/10/avatar_user_1_1633446236-192x192.jpg",
-      date: "September 25, 2021",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
-      type:"Normal"
-    },
+    }
   ];
 
   const sidebarFeatured = {
@@ -332,39 +302,7 @@ export default function RecentPostsSection() {
             ))}
           </div>
 
-          {/* Row 4: 3 Columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gridPosts.slice(6, 9).map((post) => (
-              <div key={post.id} className="group">
-                <div className="relative aspect-[4/3] overflow-hidden mb-3">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h4 className="text-base font-semibold mb-2 hover:text-red-600 cursor-pointer transition-colors line-clamp-2">
-                     {post.type !== "Normal" && (
-                        <span className="inline-block bg-red-600 px-2 py-[2px] text-[10px] font-bold text-white uppercase mr-2">
-                          {post.type}
-                        </span>
-                      )}
-                  {post.title}
-                  {post.title}
-                </h4>
-                <div className="flex items-center gap-2 text-xs text-gray-600">
-                  <img
-                    src={post.authorImage}
-                    alt={post.author}
-                    className="w-5 h-5 rounded-full object-cover"
-                  />
-                  <span className="font-medium">{post.author}</span>
-                  <span>-</span>
-                  <span>{post.date}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+       
         </div>
 
         {/* RIGHT COLUMN - 25% (Sticky) */}

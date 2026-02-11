@@ -78,29 +78,7 @@ export default function PoliticsSection() {
     }
   ];
 
-  const row5Articles = [
-    {
-      id: 1,
-      title: "Sanders Gets Respectful Welcome at Conservative College",
-      date: "September 29, 2021",
-      type:"Normal",
-      isExclusive: false
-    },
-    {
-      id: 2,
-      title: "Now Is the Time to Think About Your Small-Business Success",
-      date: "September 28, 2021",
-      type:"Normal",
-      isExclusive: false
-    },
-    {
-      id: 3,
-      title: "Program Will Lend $10M to Detroit Minority Businesses",
-      date: "September 28, 2021",
-      type:"Normal",
-      isExclusive: false
-    }
-  ];
+  
 
   // Ad Component - reusable for both mobile and desktop
   const AdBlock = () => (
@@ -203,21 +181,7 @@ export default function PoliticsSection() {
           </div>
 
           {/* ROW 5 - Text Articles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 lg:mb-0">
-            {row5Articles.map((article) => (
-              <div key={article.id}>
-                <h3 className="font-bold text-base mb-2 leading-tight hover:text-red-600 cursor-pointer transition">
-                  {article.isExclusive && (
-                    <span className="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-1 mr-2 uppercase">
-                      EXCLUSIVE
-                    </span>
-                  )}
-                  {article.title}
-                </h3>
-                <p className="text-sm text-gray-600">{article.date}</p>
-              </div>
-            ))}
-          </div>
+        
 
           {/* AD BLOCK - Mobile/Tablet Only (shown below content) */}
           <div className="block lg:hidden">

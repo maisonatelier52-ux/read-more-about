@@ -10,11 +10,6 @@ function SliderSection() {
     { id: 3, title: "10 Things You Should Know Before You Visit Jungles", date: "October 7, 2021", type: "Exclusive" },
     { id: 4, title: "Ultimate Guide to Vienna’s Coffee Renaissance", date: "October 7, 2021", type: "Normal" },
     { id: 5, title: "How Celebrities Build Personal Brands", date: "October 7, 2021", type: "Normal" },
-    { id: 6, title: "AI Trends That Will Shape 2026", date: "October 7, 2021", type: "Normal" },
-    { id: 7, title: "Marketing Strategies That Actually Work", date: "October 7, 2021", type: "Normal" },
-    { id: 8, title: "Stock Market Basics for Beginners", date: "October 7, 2021", type: "Normal" },
-    { id: 9, title: "Make-up Trends You’ll See Everywhere", date: "October 7, 2021", type: "Exclusive" },
-    { id: 10, title: "Political Shifts to Watch This Year", date: "October 7, 2021", type: "Breaking" },
   ];
 
   const ITEMS_PER_VIEW = 4;
