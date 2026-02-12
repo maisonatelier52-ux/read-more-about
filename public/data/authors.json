@@ -4,17 +4,17 @@
             "category": "world",
             "author": {
                 "id": 1,
-                "name": "Alexander Thompson",
-                "gender": "Male",
-                "profileImage": "/images/alexander_thompson.webp",
+                "name": "Sarah Mitchell",
+                "gender": "Female",
+                "profileImage": "/images/authors/sarah_mitchell.webp",
                 "country": "USA",
-                "bio": "Alexander Thompson is an international correspondent specializing in geopolitics, diplomacy, and global conflicts. With experience reporting from various continents, he offers insightful analysis on foreign policy and emerging world events.",
-                "websiteLink": "https://alexanderthompsonjournal.com",
+                "bio": "Sarah Mitchell is an award-winning international correspondent with over 15 years of experience covering global affairs, diplomatic relations, and international conflicts. Based in Washington D.C., she has reported from over 40 countries and provides expert analysis on foreign policy and geopolitical developments.",
+                "websiteLink": "https://sarahmitchellworld.com",
                 "social": {
-                    "twitter": "https://twitter.com/alexthompsonworld",
-                    "quora": "https://www.quora.com/profile/Alexander-Thompson-278",
-                    "reddit": "https://www.reddit.com/user/Alex_Thompson_World/",
-                    "medium": "https://medium.com/@alexthompsonworld"
+                    "twitter": "https://twitter.com/sarahmitchellworld",
+                    "quora": "https://www.quora.com/profile/Sarah-Mitchell-Global",
+                    "reddit": "https://www.reddit.com/user/SarahMitchell_World/",
+                    "medium": "https://medium.com/@sarahmitchellworld"
                 }
             }
         },
@@ -22,17 +22,17 @@
             "category": "politics",
             "author": {
                 "id": 2,
-                "name": "Victoria Kline",
-                "gender": "Female",
-                "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+                "name": "Marcus Johnson",
+                "gender": "Male",
+                "profileImage": "/images/authors/marcus_johnson.webp",
                 "country": "USA",
-                "bio": "Victoria Kline is a seasoned political analyst covering U.S. elections, legislative developments, and policy debates. Her work focuses on the intricacies of government operations and political campaigns.",
-                "websiteLink": "https://victoriaklinepolitics.com",
+                "bio": "Marcus Johnson is a political analyst and investigative journalist specializing in U.S. politics, Congressional affairs, and electoral campaigns. With a background in political science from Georgetown University, he offers in-depth coverage of Washington's power dynamics and policy debates.",
+                "websiteLink": "https://marcusjohnsonpolitics.com",
                 "social": {
-                    "twitter": "https://twitter.com/vicklinepolitics",
-                    "quora": "https://www.quora.com/profile/Victoria-Kline-45",
-                    "reddit": "https://www.reddit.com/user/Victoria_Kline/",
-                    "medium": "https://medium.com/@vicklinepolitics"
+                    "twitter": "https://twitter.com/marcusjpolitics",
+                    "quora": "https://www.quora.com/profile/Marcus-Johnson-Politics",
+                    "reddit": "https://www.reddit.com/user/Marcus_Johnson_DC/",
+                    "medium": "https://medium.com/@marcusjpolitics"
                 }
             }
         },
@@ -40,35 +40,35 @@
             "category": "business",
             "author": {
                 "id": 3,
-                "name": "Robert Lang",
-                "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "name": "Jennifer Chen",
+                "gender": "Female",
+                "profileImage": "/images/authors/jennifer_chen.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "Jennifer Chen is a senior business correspondent covering Wall Street, corporate America, and economic trends. A former financial analyst, she brings insider expertise to stories about markets, mergers, startups, and the intersection of business and technology.",
+                "websiteLink": "https://jenniferchenbusiness.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/jenchenbusiness",
+                    "quora": "https://www.quora.com/profile/Jennifer-Chen-Business",
+                    "reddit": "https://www.reddit.com/user/JenChen_Business/",
+                    "medium": "https://medium.com/@jenchenbusiness"
                 }
             }
         },
-         {
+        {
             "category": "travel",
             "author": {
                 "id": 4,
-                "name": "Robin Lang",
+                "name": "David Rodriguez",
                 "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "profileImage": "/images/authors/david_rodriguez.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "David Rodriguez is a travel journalist and photographer who has explored all 50 states and over 60 countries. He specializes in adventure travel, cultural experiences, and sustainable tourism, offering readers insider tips and compelling destination stories.",
+                "websiteLink": "https://davidrodrigueztravel.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/davidrtravel",
+                    "quora": "https://www.quora.com/profile/David-Rodriguez-Travel",
+                    "reddit": "https://www.reddit.com/user/DavidR_Travels/",
+                    "medium": "https://medium.com/@davidrtravel"
                 }
             }
         },
@@ -76,17 +76,17 @@
             "category": "technology",
             "author": {
                 "id": 5,
-                "name": "adharsh hood",
-                "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "name": "Emily Patterson",
+                "gender": "Female",
+                "profileImage": "/images/authors/emily_patterson.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "Emily Patterson is a technology reporter covering Silicon Valley, artificial intelligence, cybersecurity, and digital innovation. With a computer science background from MIT, she translates complex tech developments into accessible stories for mainstream audiences.",
+                "websiteLink": "https://emilypattersontech.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/emilyp_tech",
+                    "quora": "https://www.quora.com/profile/Emily-Patterson-Tech",
+                    "reddit": "https://www.reddit.com/user/EmilyP_Technology/",
+                    "medium": "https://medium.com/@emilyp_tech"
                 }
             }
         },
@@ -94,56 +94,55 @@
             "category": "sports",
             "author": {
                 "id": 6,
-                "name": "aslam hood",
+                "name": "Brandon Williams",
                 "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "profileImage": "/images/authors/brandon_williams.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "Brandon Williams is a sports journalist with extensive experience covering NFL, NBA, MLB, and college athletics. Known for his in-depth player profiles and game analysis, he brings both statistical insight and compelling storytelling to sports coverage.",
+                "websiteLink": "https://brandonwilliamssports.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/brandonw_sports",
+                    "quora": "https://www.quora.com/profile/Brandon-Williams-Sports",
+                    "reddit": "https://www.reddit.com/user/BrandonW_Sports/",
+                    "medium": "https://medium.com/@brandonw_sports"
                 }
             }
         },
         {
             "category": "crime",
             "author": {
-                "id": 6,
-                "name": "jack smith",
-                "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "id": 7,
+                "name": "Rachel Harper",
+                "gender": "Female",
+                "profileImage": "/images/authors/rachel_harper.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "Rachel Harper is an investigative crime reporter specializing in criminal justice, law enforcement, and public safety issues. With a law degree and journalism experience, she provides detailed coverage of major cases, trials, and criminal justice reform.",
+                "websiteLink": "https://rachelharpercrime.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/rachelh_crime",
+                    "quora": "https://www.quora.com/profile/Rachel-Harper-Crime",
+                    "reddit": "https://www.reddit.com/user/RachelH_Crime/",
+                    "medium": "https://medium.com/@rachelh_crime"
                 }
             }
         },
-         {
+        {
             "category": "investigation",
             "author": {
-                "id": 6,
-                "name": "kelvin",
+                "id": 8,
+                "name": "Thomas Anderson",
                 "gender": "Male",
-                "profileImage": "/images/robert_lang.webp",
+                "profileImage": "/images/authors/thomas_anderson.webp",
                 "country": "USA",
-                "bio": "Robert Lang is a business strategist with expertise in market trends, corporate mergers, and economic forecasting. He provides commentary on industry disruptions and investment opportunities.",
-                "websiteLink": "https://robertlangbusiness.com",
+                "bio": "Thomas Anderson is an investigative journalist known for uncovering corruption, corporate wrongdoing, and government accountability issues. A Pulitzer Prize finalist, he has broken major stories on fraud, environmental violations, and systemic abuse across various sectors.",
+                "websiteLink": "https://thomasandersoninvestigates.com",
                 "social": {
-                    "twitter": "https://twitter.com/robertlangbiz",
-                    "quora": "https://www.quora.com/profile/Robert-Lang-112",
-                    "reddit": "https://www.reddit.com/user/Robert_Lang_Biz/",
-                    "medium": "https://medium.com/@robertlangbiz"
+                    "twitter": "https://twitter.com/tanderson_investigate",
+                    "quora": "https://www.quora.com/profile/Thomas-Anderson-Investigates",
+                    "reddit": "https://www.reddit.com/user/TAnderson_Investigates/",
+                    "medium": "https://medium.com/@tanderson_investigate"
                 }
             }
         }
-        
     ]
 }
