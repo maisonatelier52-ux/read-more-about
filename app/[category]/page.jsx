@@ -373,7 +373,7 @@ export default async function Page({ params }) {
         {/* Featured Article - Full Width */}
         {latestArticle && (
           <div className="mb-12">
-            <Link href={`/${category}/${latestArticle.slug}`}>
+            <Link href={`/${category}/${latestArticle.slug}`} title={latestArticle.title}>
               <div className="group cursor-pointer">
                 <div className="relative h-[350px] lg:h-[450px] overflow-hidden shadow-2xl rounded-lg">
                   <Image

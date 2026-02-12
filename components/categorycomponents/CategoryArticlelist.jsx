@@ -420,7 +420,7 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
             {/* Article List */}
             <div className="space-y-6">
               {currentArticles.map((article) => (
-                <Link key={article.id} href={`/${category}/${article.slug}`}>
+                <Link key={article.id} href={`/${category}/${article.slug}`} title={article.title}>
                   <div className="flex gap-6 group cursor-pointer flex-col md:flex-row mb-6">
                     {/* Image Column */}
                     <div className="w-full md:w-1/2 flex-shrink-0">
@@ -539,7 +539,7 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
             <div className="sticky top-4">
               {/* Popular Article - Single Article Display */}
               {popularArticle && (
-                <Link href={`/${popularArticle.category}/${popularArticle.slug}`}>
+                <Link href={`/${popularArticle.category}/${popularArticle.slug}`} title={popularArticle.title}>
                   <div className="relative mb-6 group cursor-pointer">
                     <span className="bg-red-600 text-white text-md font-bold px-3 py-2 uppercase absolute -top-6 left-4 z-10 font-serif">
                       Popular
@@ -575,7 +575,7 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
                 <div>
                   <div className="space-y-0">
                     {sidebarPost.map((post, index) => (
-                      <Link key={post.slug} href={`/${post.category}/${post.slug}`}>
+                      <Link key={post.slug} href={`/${post.category}/${post.slug}`} title={post.title}>
                         <div>
                           <div className="py-4 group cursor-pointer">
                             <h4 className="text-sm font-semibold mb-2 group-hover:text-red-600 transition-colors line-clamp-2">
