@@ -31,6 +31,7 @@ export default function FoodTravelSection({ articles }) {
           <Link 
             href="/sports" 
             className="flex items-center gap-2 text-red-600 hover:text-red-700 font-semibold text-sm uppercase transition-colors"
+            title="Sports page"
           >
             VIEW ALL
             <FaArrowRight className="text-xs" />

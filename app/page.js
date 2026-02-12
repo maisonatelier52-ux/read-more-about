@@ -11,6 +11,80 @@
 // import articlesData from '../public/data/articles.json';
 // import authorsData from '../public/data/authors.json';
 
+// const SITE_URL = "https://read-more-about.vercel.app";
+// const SITE_NAME = "Read More About";
+
+// // Metadata for SEO
+// export const metadata = {
+//   title: "Read More About — Breaking News, Politics, Business & World Headlines",
+//   description:
+//     "Stay informed with Read More About's comprehensive coverage of breaking news, politics, business, sports, and world events. Get the latest headlines, in-depth analysis, and expert commentary from trusted journalists.",
+//   keywords: [
+//     "breaking news",
+//     "latest news",
+//     "world news",
+//     "politics",
+//     "business news",
+//     "sports news",
+//     "news headlines",
+//     "current events",
+//     "news magazine",
+//     "journalism"
+//   ],
+//   authors: [{ name: "Read More About Editorial Team" }],
+//   creator: "Read More About",
+//   publisher: "Read More About",
+//   alternates: {
+//     canonical: SITE_URL,
+//     languages: {
+//       "en": SITE_URL,
+//       "en-US": SITE_URL,
+//     },
+//   },
+//   openGraph: {
+//     title: "Read More About — Breaking News, Politics, Business & World Headlines",
+//     description:
+//       "Stay informed with comprehensive coverage of breaking news, politics, business, sports, and world events. Expert journalism you can trust.",
+//     url: SITE_URL,
+//     siteName: SITE_NAME,
+//     type: "website",
+//     locale: "en_US",
+//     images: [
+//       {
+//         url: `${SITE_URL}/og-image.jpg`,
+//         width: 1200,
+//         height: 630,
+//         alt: "Read More About - Breaking News and Latest Headlines",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Read More About — Breaking News, Politics, Business & World Headlines",
+//     description:
+//       "Stay informed with comprehensive coverage of breaking news, politics, business, sports, and world events.",
+//     images: [`${SITE_URL}/og-image.jpg`],
+//     creator: "@readmoreabout",
+//     site: "@readmoreabout",
+//   },
+//   robots: {
+//     index: true,
+//     follow: true,
+//     googleBot: {
+//       index: true,
+//       follow: true,
+//       'max-video-preview': -1,
+//       'max-image-preview': 'large',
+//       'max-snippet': -1,
+//     },
+//   },
+//   verification: {
+//     google: 'your-google-verification-code',
+//     // yandex: 'your-yandex-verification-code',
+//     // bing: 'your-bing-verification-code',
+//   },
+// };
+
 // // Helper function to parse date in DD/MM/YYYY format
 // function parseDate(dateStr) {
 //   const [day, month, year] = dateStr.split('/');
@@ -137,7 +211,8 @@
 //       grid1: recentGrid1,
 //       grid2: recentGrid2,
 //       sidebar: recentSidebar
-//     }
+//     },
+//     allArticles: sortedArticles
 //   };
 // }
 
@@ -145,71 +220,238 @@
 //   // Process data on the server
 //   const processedData = processArticlesData();
 
-//   return (
-//     <div className="min-h-screen bg-white">
-//       {/* SLIDER + OVERLAY SECTION */}
-//       <div className="relative">
-//         {/* Slider */}
-//         <SliderSection articles={processedData.slider} />
+//   // Get latest articles for JSON-LD
+//   const latestArticles = processedData.allArticles.slice(0, 10);
 
-//         {/* Overlay FreshStories */}
-//         <div className="absolute left-0 right-0 lg:top-[140px] top-30 z-20">
-//           <FreshStories 
-//             latestArticle={processedData.freshStories.latest}
-//             next2Articles={processedData.freshStories.next2}
-//             leftColumnArticles={processedData.freshStories.leftColumn}
-//             popularArticles={processedData.freshStories.popular}
-//           />
+//   // JSON-LD structured data for the homepage
+//   const websiteJsonLd = {
+//     "@context": "https://schema.org",
+//     "@type": "WebSite",
+//     "name": SITE_NAME,
+//     "alternateName": "Read More About News",
+//     "url": SITE_URL,
+//     "description": "Breaking news, politics, business, sports, and world events coverage",
+//     "publisher": {
+//       "@type": "NewsMediaOrganization",
+//       "name": SITE_NAME,
+//       "url": SITE_URL,
+//       "logo": {
+//         "@type": "ImageObject",
+//         "url": `${SITE_URL}/logo.png`,
+//         "width": 600,
+//         "height": 60
+//       },
+//       "sameAs": [
+//         "https://www.facebook.com/readmoreabout",
+//         "https://www.twitter.com/readmoreabout",
+//         "https://www.instagram.com/readmoreabout"
+//       ]
+//     },
+//     "potentialAction": {
+//       "@type": "SearchAction",
+//       "target": {
+//         "@type": "EntryPoint",
+//         "urlTemplate": `${SITE_URL}/search?q={search_term_string}`
+//       },
+//       "query-input": "required name=search_term_string"
+//     }
+//   };
+
+//   const organizationJsonLd = {
+//     "@context": "https://schema.org",
+//     "@type": "NewsMediaOrganization",
+//     "name": SITE_NAME,
+//     "url": SITE_URL,
+//     "logo": {
+//       "@type": "ImageObject",
+//       "url": `${SITE_URL}/logo.png`
+//     },
+//     "description": "Comprehensive news coverage across politics, business, sports, and world events",
+//     "sameAs": [
+//       "https://www.facebook.com/readmoreabout",
+//       "https://www.twitter.com/readmoreabout",
+//       "https://www.instagram.com/readmoreabout"
+//     ],
+//     "contactPoint": {
+//       "@type": "ContactPoint",
+//       "contactType": "Customer Service",
+//       "email": "contact@read-more-about.com"
+//     }
+//   };
+
+//   // CollectionPage JSON-LD for article listing
+//   const collectionPageJsonLd = {
+//     "@context": "https://schema.org",
+//     "@type": "CollectionPage",
+//     "name": "Latest News Articles",
+//     "description": "Browse the latest breaking news, politics, business, and world event coverage",
+//     "url": SITE_URL,
+//     "mainEntity": {
+//       "@type": "ItemList",
+//       "itemListElement": latestArticles.map((article, index) => ({
+//         "@type": "ListItem",
+//         "position": index + 1,
+//         "url": `${SITE_URL}/${article.category}/${article.slug}`,
+//         "name": article.title
+//       }))
+//     }
+//   };
+
+//   // BreadcrumbList JSON-LD
+//   const breadcrumbJsonLd = {
+//     "@context": "https://schema.org",
+//     "@type": "BreadcrumbList",
+//     "itemListElement": [
+//       {
+//         "@type": "ListItem",
+//         "position": 1,
+//         "name": "Home",
+//         "item": SITE_URL
+//       }
+//     ]
+//   };
+
+//   return (
+//     <>
+//       {/* JSON-LD Structured Data */}
+//       <script
+//         type="application/ld+json"
+//         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+//       />
+//       <script
+//         type="application/ld+json"
+//         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+//       />
+//       <script
+//         type="application/ld+json"
+//         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
+//       />
+//       <script
+//         type="application/ld+json"
+//         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+//       />
+
+//       <div className="min-h-screen bg-white">
+//         {/* SEO-friendly hidden content for search engines */}
+//         <section className="sr-only">
+//           <h1>Read More About — Breaking News, Politics, Business & World Headlines</h1>
+//           <p>
+//             Welcome to Read More About, your trusted source for breaking news, in-depth political analysis, 
+//             business insights, sports coverage, and world events. Our team of expert journalists delivers 
+//             comprehensive news coverage across all major categories including politics, business, technology, 
+//             health, sports, and international affairs. Stay informed with the latest headlines, investigative 
+//             reports, and expert commentary on the stories that matter most.
+//           </p>
+//           <h2>Latest Breaking News and Current Events</h2>
+//           <p>
+//             Our breaking news section brings you real-time updates on developing stories from around the world. 
+//             From political developments to economic shifts, natural disasters to technological breakthroughs, 
+//             we cover it all with accuracy and speed.
+//           </p>
+//           <h2>Politics and Government Coverage</h2>
+//           <p>
+//             Get comprehensive political news and analysis covering elections, policy debates, international 
+//             relations, and government affairs. Our political reporters provide balanced coverage and expert 
+//             insights into the political landscape.
+//           </p>
+//           <h2>Business and Financial News</h2>
+//           <p>
+//             Stay ahead with our business news covering markets, economy, finance, technology, and corporate 
+//             developments. From stock market updates to industry trends, we deliver the information business 
+//             professionals need.
+//           </p>
+//           <h2>Sports News and Updates</h2>
+//           <p>
+//             Follow your favorite teams and athletes with our comprehensive sports coverage including scores, 
+//             highlights, analysis, and breaking sports news from around the world.
+//           </p>
+//         </section>
+
+//         {/* SLIDER + OVERLAY SECTION */}
+//         <div className="relative">
+//           {/* Slider */}
+//           <SliderSection articles={processedData.slider} />
+
+//           {/* Overlay FreshStories */}
+//           <div className="absolute left-0 right-0 lg:top-[140px] top-30 z-20">
+//             <FreshStories 
+//               latestArticle={processedData.freshStories.latest}
+//               next2Articles={processedData.freshStories.next2}
+//               leftColumnArticles={processedData.freshStories.leftColumn}
+//               popularArticles={processedData.freshStories.popular}
+//             />
+//           </div>
+
+//           {/* Spacer to push next content down */}
+//           <div className="h-[2450px] lg:h-[630px]" />
 //         </div>
 
-//         {/* Spacer to push next content down */}
-//         <div className="h-[2450px] lg:h-[630px]" />
-//       </div>
+//         {/* JOIN / SOCIAL BAR */}
+//         <div className="px-5 lg:px-7">
+//           <div className="w-full border-t-2 border-b-2 border-gray-200 px-5 mb-10">
+//             <div className="max-w-7xl mx-auto px-4 py-3">
+//               <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-serif">
+//                 {/* Column 1 */}
+//                 <div className="text-xs font-semibold">
+//                   JOIN OUR SOCIAL MEDIA
+//                 </div>
 
-//       {/* JOIN / SOCIAL BAR */}
-//       <div className="px-5 lg:px-7">
-//         <div className="w-full border-t-2 border-b-2 border-gray-200 px-5 mb-10">
-//           <div className="max-w-7xl mx-auto px-4 py-3">
-//             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-serif">
-//               {/* Column 1 */}
-//               <div className="text-xs font-semibold">
-//                 JOIN OUR SOCIAL MEDIA
-//               </div>
+//                 {/* Column 2 */}
+//                 <div className="text-center text-lg font-bold">
+//                   For even more exclusive content!
+//                 </div>
 
-//               {/* Column 2 */}
-//               <div className="text-center text-lg font-bold">
-//                 For even more exclusive content!
-//               </div>
-
-//               {/* Column 3 */}
-//               <div className="flex items-center gap-4 text-red-500">
-//                 <a href="#" className="hover:text-black transition">
-//                   <FaFacebookF />
-//                 </a>
-//                 <a href="#" className="hover:text-black transition">
-//                   <FaInstagram />
-//                 </a>
-//                 <a href="#" className="hover:text-black transition">
-//                   <FaXTwitter />
-//                 </a>
+//                 {/* Column 3 */}
+//                 <div className="flex items-center gap-4 text-red-500">
+//                   <a 
+//                     href="https://www.facebook.com/readmoreabout" 
+//                     className="hover:text-black transition"
+//                     aria-label="Follow us on Facebook"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     title="read more about facebook account"
+//                   >
+//                     <FaFacebookF />
+//                   </a>
+//                   <a 
+//                     href="https://www.instagram.com/readmoreabout" 
+//                     className="hover:text-black transition"
+//                     aria-label="Follow us on Instagram"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     title="read more about instagram account"
+//                   >
+//                     <FaInstagram />
+//                   </a>
+//                   <a 
+//                     href="https://www.twitter.com/readmoreabout" 
+//                     className="hover:text-black transition"
+//                     aria-label="Follow us on Twitter"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     title="read more about twitter account"
+//                   >
+//                     <FaXTwitter />
+//                   </a>
+//                 </div>
 //               </div>
 //             </div>
 //           </div>
 //         </div>
-//       </div>
 
-//       <ArticleGrid articles={processedData.articleGrid} />
-//       <PoliticsSection articles={processedData.politics} />   
-//       <CelebritySection articles={processedData.celebrity} />
-//       <FoodTravelSection articles={processedData.foodTravel} />
-//       <AdBannerSection />
-//       <RecentPostsSection 
-//         featuredPost={processedData.recent.featured}
-//         grid1Posts={processedData.recent.grid1}
-//         grid2Posts={processedData.recent.grid2}
-//         sidebarPosts={processedData.recent.sidebar}
-//       />
-//     </div>
+//         <ArticleGrid articles={processedData.articleGrid} />
+//         <PoliticsSection articles={processedData.politics} />   
+//         <CelebritySection articles={processedData.celebrity} />
+//         <FoodTravelSection articles={processedData.foodTravel} />
+//         <AdBannerSection />
+//         <RecentPostsSection 
+//           featuredPost={processedData.recent.featured}
+//           grid1Posts={processedData.recent.grid1}
+//           grid2Posts={processedData.recent.grid2}
+//           sidebarPosts={processedData.recent.sidebar}
+//         />
+//       </div>
+//     </>
 //   );
 // }
 
@@ -233,7 +475,7 @@ const SITE_NAME = "Read More About";
 export const metadata = {
   title: "Read More About — Breaking News, Politics, Business & World Headlines",
   description:
-    "Stay informed with Read More About's comprehensive coverage of breaking news, politics, business, sports, and world events. Get the latest headlines, in-depth analysis, and expert commentary from trusted journalists.",
+    "Discover breaking news, politics, business, sports & world events. Expert journalism and in-depth analysis you can trust. Updated daily.",
   keywords: [
     "breaking news",
     "latest news",
@@ -259,7 +501,7 @@ export const metadata = {
   openGraph: {
     title: "Read More About — Breaking News, Politics, Business & World Headlines",
     description:
-      "Stay informed with comprehensive coverage of breaking news, politics, business, sports, and world events. Expert journalism you can trust.",
+      "Discover breaking news, politics, business, sports & world events. Expert journalism and in-depth analysis you can trust.",
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website",
@@ -277,7 +519,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Read More About — Breaking News, Politics, Business & World Headlines",
     description:
-      "Stay informed with comprehensive coverage of breaking news, politics, business, sports, and world events.",
+      "Discover breaking news, politics, business, sports & world events. Expert journalism you can trust.",
     images: [`${SITE_URL}/og-image.jpg`],
     creator: "@readmoreabout",
     site: "@readmoreabout",
@@ -624,6 +866,7 @@ export default function Home() {
                     aria-label="Follow us on Facebook"
                     target="_blank"
                     rel="noopener noreferrer"
+                     title="read more about facebook account"
                   >
                     <FaFacebookF />
                   </a>
@@ -633,6 +876,7 @@ export default function Home() {
                     aria-label="Follow us on Instagram"
                     target="_blank"
                     rel="noopener noreferrer"
+                     title="read more about instagram account"
                   >
                     <FaInstagram />
                   </a>
@@ -642,6 +886,7 @@ export default function Home() {
                     aria-label="Follow us on Twitter"
                     target="_blank"
                     rel="noopener noreferrer"
+                     title="read more about twitter account"
                   >
                     <FaXTwitter />
                   </a>
