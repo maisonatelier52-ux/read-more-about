@@ -5,9 +5,9 @@ const SITE_URL = "https://read-more-about.vercel.app";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "About Read More About — Independent Digital News Platform",
+  title: "About Read More About — Independent News Platform",
   description:
-    "Learn about Read More About, an independent digital news platform delivering factual reporting across politics, business, sports, technology, health and world news. Committed to truth and journalistic excellence.",
+    "Discover Read More About: independent news delivering factual reporting on politics, business, sports & world events. Trusted journalism since 2024.",
   keywords: [
     "about read more about",
     "independent journalism",
@@ -22,9 +22,9 @@ export const metadata = {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
-    title: "About Read More About — Independent Digital News Platform",
+    title: "About Read More About — Independent News Platform",
     description:
-      "Discover the mission and vision behind Read More About — an independent digital news platform committed to truth, accuracy, and excellence in journalism.",
+      "Discover Read More About: independent news delivering factual reporting on politics, business, sports & world events. Trusted journalism.",
     url: `${SITE_URL}/about`,
     type: "website",
     siteName: SITE_NAME,
@@ -39,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Read More About — Independent Digital News Platform",
+    title: "About Read More About — Independent News Platform",
     description:
-      "Learn about our mission to deliver factual, unbiased news coverage and thoughtful analysis. Committed to journalistic excellence since 2024.",
+      "Discover Read More About: independent news delivering factual reporting. Trusted journalism since 2024.",
     images: [`${SITE_URL}/og-image.jpg`],
     creator: "@readmoreabout",
     site: "@readmoreabout",
@@ -177,13 +177,20 @@ export default function About() {
       <div className="min-h-screen bg-zinc-50">
         {/* SEO Content for Search Engines */}
         <section className="sr-only">
-          <h1>About Read More About — Independent Digital News Platform</h1>
+          <h1>About Read More About — Independent News Platform</h1>
           <p>
             Read More About is an independent digital news platform founded in 2024, committed to 
             delivering high-quality journalism across politics, business, sports, technology, health, 
             and world events. Our mission is to provide accurate, unbiased news coverage and thoughtful 
             analysis to readers worldwide. We believe in the power of ethical journalism, fact-checking, 
             and independent reporting to serve the public interest and strengthen informed discourse.
+          </p>
+          <h2>About Our Independent News Platform</h2>
+          <p>
+            Discover how Read More About delivers independent news and factual reporting. Our digital 
+            platform brings you breaking news, in-depth analysis, and expert commentary across all major 
+            categories. Learn about our editorial values, mission, and commitment to journalistic excellence 
+            that sets us apart as a trusted news source.
           </p>
         </section>
 
