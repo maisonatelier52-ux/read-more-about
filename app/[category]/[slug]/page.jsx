@@ -881,22 +881,12 @@ export default async function ArticlePage({ params }) {
 
       case 'image':
         return (
-          // <div key={index} className="relative w-full h-[270px] md:h-[500px] mb-6">
-          //   <Image
-          //     src={item.src}
-          //     alt={item.alt}
-          //     fill
-          //     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px"
-          //     className="object-cover rounded-lg"
-          //     loading="lazy"
-          //   />
-          // </div>
-          <div className="relative w-full h-[270px] md:h-[500px] mb-6">
+          <div key={index} className="relative w-full h-[270px] md:h-[500px] mb-6">
             <Image
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, (max-width: 1280px) 65vw, 800px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px"
               className="object-cover rounded-lg"
               loading="lazy"
             />
@@ -915,7 +905,8 @@ export default async function ArticlePage({ params }) {
         rel="preload"
         as="image"
         href={article.image}
-        imageSrcSet={`${article.image}?w=400 400w, ${article.image}?w=800 800w, ${article.image}?w=1200 1200w`}
+        imageSrcSet={`${article.image} 1200w, ${article.image} 800w, ${article.image} 400w`}
+        imageSizes="100vw"
         fetchPriority="high"
       />
 
@@ -966,8 +957,7 @@ export default async function ArticlePage({ params }) {
               src={article.image}
               alt={article.imageAlt}
               fill
-              // sizes="100vw"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
+              sizes="100vw"
               className="object-cover"
               priority
               fetchPriority="high"
