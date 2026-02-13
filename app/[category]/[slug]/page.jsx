@@ -74,7 +74,7 @@ export async function generateMetadata({ params }) {
       siteName: "NewsWireNinja",
       images: [
         {
-          url: article.image,
+          url: `${SITE_URL}${article.image}`,
           width: 1200,
           height: 630,
           alt: article.imageAlt || article.title,
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: article.metaTitle,
       description: article.metaDescription,
-      images: [article.image],
+      images: [`${SITE_URL}${article.image}`],
     },
   };
 }
