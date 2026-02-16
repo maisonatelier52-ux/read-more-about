@@ -1657,7 +1657,7 @@ export default async function ArticlePage({ params }) {
               <ol className="flex items-center gap-2 text-sm flex-wrap">
                 {/* Home */}
                 <li>
-                  <Link href="/" className="hover:text-red-600">
+                  <Link href="/" title="Home page" className="hover:text-red-600">
                     Home
                   </Link>
                 </li>
@@ -1669,6 +1669,7 @@ export default async function ArticlePage({ params }) {
                   <Link
                     href={`/${category}`}
                     className="hover:text-red-600 capitalize"
+                    title={`${category} page`}
                   >
                     {category}
                   </Link>

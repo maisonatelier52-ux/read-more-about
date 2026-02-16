@@ -317,7 +317,7 @@ export default async function Page({ params }) {
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex items-center gap-2 text-sm">
                   <li>
-                    <Link href="/">Home</Link>
+                    <Link href="/" title='Home page'>Home</Link>
                   </li>
                   <li>/</li>
                   <li className="text-gray-600 capitalize">
