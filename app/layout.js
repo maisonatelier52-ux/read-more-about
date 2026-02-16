@@ -16,8 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://read-more-about.vercel.app'),
   title: {
-    default: "Read More About — Breaking News & World Headlines",
-    template: "%s | Read More About" // This allows pages to just set title
+    default: "Read More About — Breaking News & World Headlines"
   },
   description: "Discover breaking news, politics, business, sports & world events. Expert journalism you can trust.",
   icons: {
