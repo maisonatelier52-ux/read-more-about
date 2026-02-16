@@ -1652,6 +1652,38 @@ export default async function ArticlePage({ params }) {
 
         {/* Hero Section - OPTIMIZED FOR LCP */}
         <div className='px-4 lg:px-7'>
+          <div className="px-4 lg:px-7 mt-6">
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex items-center gap-2 text-sm flex-wrap">
+                {/* Home */}
+                <li>
+                  <Link href="/" className="hover:text-red-600">
+                    Home
+                  </Link>
+                </li>
+
+                <li>/</li>
+
+                {/* Category */}
+                <li>
+                  <Link
+                    href={`/${category}`}
+                    className="hover:text-red-600 capitalize"
+                  >
+                    {category}
+                  </Link>
+                </li>
+
+                <li>/</li>
+
+                {/* Current Article */}
+                <li className="text-gray-600 line-clamp-1">
+                  {article.title}
+                </li>
+              </ol>
+            </nav>
+          </div>
+
           <div className="relative w-full h-[450px] md:h-[600px] lg:h-[700px] mt-10">
             <Image
               src={article.image}

@@ -313,6 +313,19 @@ export default async function Page({ params }) {
         <div className="bg-[#eaeaea]/55 pb-48">
           <div className="container mx-auto px-4 pt-12">
             {/* Main heading - Visible */}
+             {/* Breadcrumb */}
+              <nav aria-label="Breadcrumb" className="mb-6">
+                <ol className="flex items-center gap-2 text-sm">
+                  <li>
+                    <Link href="/">Home</Link>
+                  </li>
+                  <li>/</li>
+                  <li className="text-gray-600 capitalize">
+                    {formattedCategory}
+                  </li>
+                </ol>
+              </nav>
+
             <h2 className="text-5xl font-bold text-black text-center mb-16 font-serif">
               {formattedCategory}
             </h2>
