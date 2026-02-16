@@ -9,10 +9,21 @@
 // export default nextConfig;
 
 
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     formats: ['image/avif', 'image/webp'],     // ← add this
+//   },
+//   // other config options can go here
+// };
+
+// export default nextConfig;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    formats: ['image/avif', 'image/webp'],     // ← add this
+    formats: ['image/avif', 'image/webp'],
+    qualities: [75, 85], // Add this line to support both quality levels
   },
   // other config options can go here
 };
