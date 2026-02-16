@@ -209,6 +209,7 @@ export default async function ArticlePage({ params }) {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px"
               className="object-cover rounded-lg"
+              quality={74}
               loading="lazy"
             />
           </div>
@@ -226,8 +227,8 @@ export default async function ArticlePage({ params }) {
         rel="preload"
         as="image"
         href={article.image}
-        imageSrcSet={`${article.image} 1200w, ${article.image} 800w, ${article.image} 400w`}
-        imageSizes="100vw"
+        // imageSrcSet={`${article.image} 1200w, ${article.image} 800w, ${article.image} 400w`}
+        // imageSizes="100vw"
         fetchPriority="high"
       />
 
@@ -307,11 +308,11 @@ export default async function ArticlePage({ params }) {
               src={article.image}
               alt={article.imageAlt}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1536px) 92vw, 1400px"
               className="object-cover"
               priority
               fetchPriority="high"
-              quality={85}
+              quality={78}
               placeholder="blur"
               blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA="
             />
