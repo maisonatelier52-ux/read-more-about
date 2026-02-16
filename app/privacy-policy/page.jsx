@@ -108,13 +108,14 @@ export default function PrivacyPolicy() {
       <div className="min-h-screen bg-white">
         {/* SEO Content */}
         <div className="sr-only">
-          <h1>Privacy Policy for Read More About - Breaking News and World Headlines</h1>
+          <h2>Privacy Policy for Read More About - Breaking News and World Headlines</h2>
           <p>
             Read More About is committed to protecting your privacy on our breaking news platform. 
             This privacy policy explains how we collect, use, and protect your information when you 
             read our world headlines, breaking news stories, and access our independent news coverage.
           </p>
         </div>
+        
 
         {/* Header */}
         <div className="bg-zinc-900 text-white border-b-4 border-red-600">

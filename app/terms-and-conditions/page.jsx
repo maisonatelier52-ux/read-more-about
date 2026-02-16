@@ -108,7 +108,7 @@ export default function TermsAndConditions() {
       <div className="min-h-screen bg-white">
         {/* SEO Content */}
         <div className="sr-only">
-          <h1>Terms and Conditions for Read More About - Breaking News and World Headlines</h1>
+          <h2>Terms and Conditions for Read More About - Breaking News and World Headlines</h2>
           <p>
             Welcome to Read More About, your source for breaking news and world headlines. These terms and 
             conditions outline the rules for using our independent news website and accessing our breaking news 
