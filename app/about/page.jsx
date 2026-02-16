@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 
@@ -64,7 +65,7 @@ export default function About() {
       "@type": "NewsMediaOrganization",
       "name": SITE_NAME,
       "url": SITE_URL,
-      "description": "Independent digital news platform delivering high-quality journalism across politics, business, sports, technology, health, and world events.",
+      "description": "Independent digital news platform delivering high-quality journalism across politics, business, sports, technology, crime, investigation, travel, and world events.",
       "foundingDate": "2024",
       "logo": {
         "@type": "ImageObject",
@@ -136,7 +137,7 @@ export default function About() {
       "@type": "ImageObject",
       "url": `${SITE_URL}/logo.png`,
     },
-    "description": "Independent digital news platform delivering comprehensive coverage of politics, business, sports, technology, health, and world events.",
+    "description": "Independent digital news platform delivering comprehensive coverage of politics, business, sports, technology, crime, investigation, travel, and world events.",
     "foundingDate": "2024",
     "sameAs": [
       "https://www.facebook.com/readmoreabout",
@@ -180,10 +181,11 @@ export default function About() {
           <h1>About Read More About — Independent News Platform</h1>
           <p>
             Read More About is an independent digital news platform founded in 2024, committed to 
-            delivering high-quality journalism across politics, business, sports, technology, health, 
-            and world events. Our mission is to provide accurate, unbiased news coverage and thoughtful 
-            analysis to readers worldwide. We believe in the power of ethical journalism, fact-checking, 
-            and independent reporting to serve the public interest and strengthen informed discourse.
+            delivering high-quality journalism across politics, business, sports, technology, crime, 
+            investigation, travel, and world events. Our mission is to provide accurate, unbiased news 
+            coverage and thoughtful analysis to readers worldwide. We believe in the power of ethical 
+            journalism, fact-checking, and independent reporting to serve the public interest and strengthen 
+            informed discourse.
           </p>
           <h2>About Our Independent News Platform</h2>
           <p>
@@ -286,7 +288,7 @@ export default function About() {
                 Throughout our journey, we've remained dedicated to our core principles: delivering news that matters, 
                 investigating stories that need telling, and giving voice to communities that deserve to be heard. 
                 Our newsroom operates around the clock, bringing you breaking news, in-depth analysis, and compelling 
-                storytelling across politics, business, sports, technology, health, and world events.
+                storytelling across politics, business, sports, technology, crime, investigation, travel, and world events.
               </p>
               <p className="text-zinc-700 leading-relaxed">
                 Today, we continue to evolve and adapt to meet the changing needs of our audience while staying true 
@@ -316,27 +318,39 @@ export default function About() {
               </p>
             </div>
             <div className="p-6 bg-white border border-zinc-200 rounded-lg">
-              <h4 className="text-xl font-bold text-zinc-900 mb-3">Sports</h4>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Complete sports coverage with scores, highlights, analysis, and updates from all major sports worldwide.
-              </p>
-            </div>
-            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
               <h4 className="text-xl font-bold text-zinc-900 mb-3">Technology</h4>
               <p className="text-zinc-600 text-sm leading-relaxed">
                 Tech industry news, innovation, startups, digital trends, AI, cybersecurity, and technological breakthroughs.
               </p>
             </div>
             <div className="p-6 bg-white border border-zinc-200 rounded-lg">
-              <h4 className="text-xl font-bold text-zinc-900 mb-3">Health</h4>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Medical research, public health updates, wellness trends, healthcare systems, and scientific discoveries.
-              </p>
-            </div>
-            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
               <h4 className="text-xl font-bold text-zinc-900 mb-3">World News</h4>
               <p className="text-zinc-600 text-sm leading-relaxed">
                 Global news coverage featuring international affairs, diplomacy, conflicts, and major events worldwide.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
+              <h4 className="text-xl font-bold text-zinc-900 mb-3">Crime</h4>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                Breaking crime news, investigations, legal proceedings, and law enforcement updates from across the nation.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
+              <h4 className="text-xl font-bold text-zinc-900 mb-3">Investigation</h4>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                In-depth investigative journalism uncovering important stories and holding power accountable.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
+              <h4 className="text-xl font-bold text-zinc-900 mb-3">Sports</h4>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                Complete sports coverage with scores, highlights, analysis, and updates from all major sports worldwide.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-zinc-200 rounded-lg">
+              <h4 className="text-xl font-bold text-zinc-900 mb-3">Travel</h4>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                Travel news, destination guides, aviation updates, tourism trends, and travel industry developments.
               </p>
             </div>
           </div>

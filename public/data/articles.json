@@ -2180,14 +2180,14 @@
     "technology": [
     {
       "id": 1,
-      "slug": "anthropic-claude-cowork-ai-plugins-stock-market-crash",
+      "slug": "anthropic-ai-plugins-trigger-software-stock-selloff",
       "metaTitle": "Anthropic AI Plugins Trigger Software Stock Selloff",
-      "metaDescription": "Anthropic's new Claude Cowork plugins for legal, sales, and data tasks spark massive drops in stocks like Thomson Reuters (18%), RELX (14%), and Wolters Kluwer amid fears of AI disrupting professional services and software industries.",
-      "title": "Anthropic's AI Upgrades Spark Massive Selloff in Software and Data Stocks",
+      "metaDescription": "Anthropic AI plugins triggered a major selloff in software and data stocks as investors fear disruption across legal, analytics, and professional services.",
+      "title": "Anthropic AI Plugins Trigger Software Stock Selloff",
       "category": "technology",
       "image": "/images/news/anthropic-claude-cowork-ai-plugins-first-image.webp",
       "imageAlt": "Anthropic logo displayed on a smartphone screen over a computer keyboard",
-      "excerpt": "Wall Street and European markets tumbled this week as Anthropic's Claude Cowork plugins raised fears that AI could replace jobs in legal, data analysis, and professional services, hitting companies like Thomson Reuters hard.",
+      "excerpt": "Anthropic AI plugins triggered a massive stock selloff, sending software and data stocks sharply lower as investors reacted to fears of AI disruption across professional services.",
       "newsType": "news",
       "type": "normal",
       "date": "05/02/2026",

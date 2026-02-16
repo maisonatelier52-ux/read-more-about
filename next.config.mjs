@@ -23,7 +23,7 @@
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    qualities: [75, 78, 85], // Add this line to support both quality levels
+    qualities: [74, 75, 78, 85], // Add this line to support both quality levels
   },
   // other config options can go here
 };
