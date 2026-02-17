@@ -366,6 +366,7 @@ export default async function ArticlePage({ params }) {
               {article.content.map((item, index) => renderContent(item, index))}
               
               {/* Previous/Next Article Navigation */}
+             {/* Previous/Next Article Navigation */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12 p-6 rounded-lg">
                 {/* Previous Article */}
                 <div className="bg-[#eaeaea]/50 p-5">
@@ -375,9 +376,9 @@ export default async function ArticlePage({ params }) {
                       href={`/${category}/${prevPost.slug}`}
                       title={`Read previous article: ${prevPost.title}`}
                     >
-                      <h3 className="text-gray-800 font-bold text-sm hover:text-red-600 cursor-pointer">
+                      <p className="text-gray-800 font-bold text-sm hover:text-red-600 cursor-pointer">
                         {prevPost.title}
-                      </h3>
+                      </p>
                     </Link>
                   ) : (
                     <p className="text-gray-500 text-sm">No previous article</p>
@@ -392,9 +393,9 @@ export default async function ArticlePage({ params }) {
                       href={`/${category}/${nextPost.slug}`}
                       title={`Read next article: ${nextPost.title}`}
                     >
-                      <h3 className="text-gray-800 font-bold text-sm hover:text-red-600 cursor-pointer">
+                      <p className="text-gray-800 font-bold text-sm hover:text-red-600 cursor-pointer">
                         {nextPost.title}
-                      </h3>
+                      </p>
                     </Link>
                   ) : (
                     <p className="text-gray-500 text-sm">No next article</p>
