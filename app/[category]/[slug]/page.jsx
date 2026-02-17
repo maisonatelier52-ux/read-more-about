@@ -7,6 +7,7 @@ import authorsPageData from "../../../public/data/authors.json";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterestP, FaWhatsapp } from 'react-icons/fa';
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
+import SubscribeBox from "@/components/articlepagecomponents/SubscribeBox";
 
 const SITE_URL = "https://read-more-about.vercel.app";
 
@@ -555,7 +556,7 @@ export default async function ArticlePage({ params }) {
                 </div>
 
                 {/* Subscription Field */}
-                <div>
+                {/* <div>
                   <h2 className="text-xl font-bold mb-4">Subscribe</h2>
                   <input
                     type="email"
@@ -571,7 +572,8 @@ export default async function ArticlePage({ params }) {
                       <span>I've read and accept the Privacy Policy.</span>
                     </label>
                   </div>
-                </div>
+                </div> */}
+                <SubscribeBox/>
 
                 {/* Advertisement Image */}
                 <div className="mt-6 text-white text-center">
