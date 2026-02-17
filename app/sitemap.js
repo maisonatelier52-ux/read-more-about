@@ -7,6 +7,11 @@ const SITE_URL = "https://read-more-about.vercel.app";
 export default function sitemap() {
   const now = new Date();
 
+  const parseDate = (dateStr) => {
+  const [day, month, year] = dateStr.split("/");
+  return new Date(year, month - 1, day);
+};
+
   /* ---------------- STATIC PAGES ---------------- */
   const staticPages = [
     {
@@ -51,10 +56,10 @@ export default function sitemap() {
     ([category, articles]) =>
       articles.map(article => ({
         url: `${SITE_URL}/${category}/${article.slug}`,
-        lastModified: article.date
-          ? new Date(Date.parse(article.date))
-          : now,
-        changeFrequency: "weekly",
+       lastModified: article.date
+        ? parseDate(article.date)
+        : now,
+        changeFrequency: "daily",
         priority: 0.9,
       }))
   );
