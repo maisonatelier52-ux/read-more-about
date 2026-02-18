@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SITE_URL = "https://read-more-about.vercel.app";
+const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
         width: 1200,
         height: 630,
         alt: "Privacy Policy - Read More About News",
@@ -41,7 +41,7 @@ export const metadata = {
     title: "Privacy Policy — Read More About News",
     description:
       "Understand how Read More About collects, uses, and safeguards user information across our breaking news platform.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/images/read-more-about-logo.webp`],
     creator: "@readmoreabout",
     site: "@readmoreabout",
   },
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
               "url": SITE_URL,
               "logo": {
                 "@type": "ImageObject",
-                "url": `${SITE_URL}/logo.png`
+                "url": `${SITE_URL}/images/read-more-about-logo.webp`
               }
             },
             "dateModified": "2026-02-16",

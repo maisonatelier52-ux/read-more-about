@@ -473,7 +473,7 @@ const RecentPostsSection = dynamic(() => import('@/components/homecompoents/Rece
 // Keep FreshStories eager since it's above the fold
 import FreshStories from "@/components/homecompoents/FreshStories";
 
-const SITE_URL = "https://read-more-about.vercel.app";
+const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 // Metadata for SEO
@@ -513,7 +513,7 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
         width: 1200,
         height: 630,
         alt: "Read More About - Breaking News and Latest Headlines",
@@ -525,7 +525,7 @@ export const metadata = {
     title: "Read More About — Breaking News, Politics, Business & World Headlines",
     description:
       "Discover breaking news, politics, business, sports & world events. Expert journalism you can trust.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/images/read-more-about-logo.webp`],
     creator: "@readmoreabout",
     site: "@readmoreabout",
   },
@@ -539,9 +539,6 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 
@@ -711,7 +708,7 @@ export default function Home() {
         "url": SITE_URL,
         "logo": {
           "@type": "ImageObject",
-          "url": `${SITE_URL}/logo.png`,
+          "url": `${SITE_URL}/images/read-more-about-logo.webp`,
           "width": 600,
           "height": 60
         },

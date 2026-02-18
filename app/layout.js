@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://read-more-about.vercel.app'),
+  metadataBase: new URL('https://www.read-more-about.com'),
   title: {
     default: "Read More About — Breaking News & World Headlines"
   },

@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -6,8 +5,24 @@ import CategoryArticlelist from '@/components/categorycomponents/CategoryArticle
 import CategoryArticles from '../../../public/data/articles.json'
 import authorsData from '../../../public/data/authors.json'
 import { notFound } from 'next/navigation'
+import { slugify } from "@/utils/slugify";
 
-const SITE_URL = "https://read-more-about.vercel.app";
+export async function generateStaticParams() {
+  const params = [];
+
+  authorsData.categories.forEach((item) => {
+    if (item.author?.name) {
+      params.push({
+        slug: slugify(item.author.name),
+      });
+    }
+  });
+
+  return params;
+}
+
+
+const SITE_URL = "https://www.read-more-about.com";
 
 // Helper function to parse date string (DD/MM/YYYY) to Date object
 const parseDate = (dateStr) => {
@@ -133,10 +148,11 @@ export default async function Page({ params }) {
   const popularArticle = latestFromOtherCategories[0] || null
   const sidebarPosts = latestFromOtherCategories.slice(1, 5)
 
-  // JSON-LD: Person Schema
+  // ─── JSON-LD: Person Schema ───────────────────────────────────────────────
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${SITE_URL}/author/${slug}#person`,
     "name": author.name,
     "url": `${SITE_URL}/author/${slug}`,
     "image": `${SITE_URL}${author.profileImage}`,
@@ -160,10 +176,12 @@ export default async function Page({ params }) {
     }
   }
 
-  // JSON-LD: BreadcrumbList
+  // ─── JSON-LD: BreadcrumbList ──────────────────────────────────────────────
+  // IMPORTANT: "@id" here must match the reference used in ProfilePage below.
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}/author/${slug}#breadcrumb`,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -180,16 +198,16 @@ export default async function Page({ params }) {
     ],
   }
 
-  // JSON-LD: ProfilePage
+  // ─── JSON-LD: ProfilePage ─────────────────────────────────────────────────
+  // References Person and BreadcrumbList by @id — Google will resolve them
+  // from the other two <script> blocks on the same page.
   const profilePageJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    "@id": `${SITE_URL}/author/${slug}#profile`,
+    "url": `${SITE_URL}/author/${slug}`,
     "mainEntity": {
-      "@type": "Person",
-      "name": author.name,
-      "url": `${SITE_URL}/author/${slug}`,
-      "image": `${SITE_URL}${author.profileImage}`,
-      "description": author.bio,
+      "@id": `${SITE_URL}/author/${slug}#person`
     },
     "breadcrumb": {
       "@id": `${SITE_URL}/author/${slug}#breadcrumb`
@@ -198,7 +216,7 @@ export default async function Page({ params }) {
 
   return (
     <>
-      {/* JSON-LD Scripts */}
+      {/* ── JSON-LD Scripts ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -212,24 +230,16 @@ export default async function Page({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
       />
 
-      <div className="relative mb-30" itemScope itemType="https://schema.org/Person">
-        {/* Hidden microdata for SEO */}
-        <meta itemProp="name" content={author.name} />
-        <meta itemProp="description" content={author.bio} />
-        <meta itemProp="image" content={`${SITE_URL}${author.profileImage}`} />
-        <meta itemProp="url" content={`${SITE_URL}/author/${slug}`} />
-        <meta itemProp="jobTitle" content={`${authorCategory.charAt(0).toUpperCase() + authorCategory.slice(1)} Journalist`} />
-        
-        <div itemProp="worksFor" itemScope itemType="https://schema.org/Organization" style={{display: 'none'}}>
-          <meta itemProp="name" content="Read More About" />
-          <meta itemProp="url" content={SITE_URL} />
-        </div>
-
-        {author.country && (
-          <div itemProp="nationality" itemScope itemType="https://schema.org/Country" style={{display: 'none'}}>
-            <meta itemProp="name" content={author.country} />
-          </div>
-        )}
+      {/*
+        IMPORTANT: The outer <div> no longer carries itemScope / itemType="Person".
+        We removed all microdata (itemScope, itemProp, itemType) from the HTML because:
+          1. We already have a complete JSON-LD Person block above.
+          2. Having BOTH JSON-LD and microdata causes Google to detect duplicate
+             (and sometimes incomplete) structured-data entities — which is what
+             was generating the "Missing field itemListElement" breadcrumb error.
+        JSON-LD is the Google-recommended approach. Microdata is redundant here.
+      */}
+      <div className="relative mb-30">
 
         {/* Author Profile Section with Background */}
         <div className="relative">
@@ -242,12 +252,10 @@ export default async function Page({ params }) {
                 {/* Left Column - Author Image */}
                 <div className="lg:w-[30%] relative">
                   <div className="relative h-96 lg:h-full">
-                    {/* 
-                      FIX: Added sizes prop so Next.js serves correctly sized image on mobile.
-                      This is the biggest LCP improvement — without sizes, Next.js serves
-                      a full-width image even when the element only takes 30% of viewport.
-                      priority stays on so the browser fetches this as early as possible.
-                      quality={85} gives good visual fidelity without unnecessary weight.
+                    {/*
+                      sizes prop ensures Next.js serves a correctly-sized image on mobile.
+                      priority keeps this as an early fetch (it is the LCP element).
+                      quality={85} gives good fidelity without unnecessary payload.
                     */}
                     <Image
                       src={author.profileImage}
@@ -255,7 +263,6 @@ export default async function Page({ params }) {
                       fill
                       sizes="(max-width: 768px) 100vw, 30vw"
                       className="object-cover"
-                      itemProp="image"
                       priority
                       quality={85}
                     />
@@ -270,7 +277,6 @@ export default async function Page({ params }) {
                           aria-label={`Follow ${author.name} on Twitter`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          itemProp="sameAs"
                         >
                           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -285,7 +291,6 @@ export default async function Page({ params }) {
                           className="bg-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
-                          itemProp="sameAs"
                         >
                           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
@@ -300,7 +305,6 @@ export default async function Page({ params }) {
                           className="bg-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
-                          itemProp="sameAs"
                         >
                           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12.738 18.701c-.831 0-1.635-.195-2.384-.582.24-.432.488-.939.69-1.463.232-.584.369-1.16.423-1.744.13.028.263.048.398.048 1.143 0 2.067-.938 2.067-2.095 0-1.157-.924-2.095-2.067-2.095-1.143 0-2.067.938-2.067 2.095 0 .118.01.233.03.346-.304.844-.803 1.628-1.443 2.28-.636.648-1.363 1.148-2.123 1.464-.12-.4-.186-.822-.186-1.26 0-2.385 1.93-4.314 4.314-4.314s4.314 1.93 4.314 4.314c0 2.385-1.93 4.314-4.314 4.314-.162 0-.322-.01-.48-.028-.03.414-.132.812-.296 1.188.253.023.508.033.765.033 3.171 0 5.742-2.571 5.742-5.742S15.909 6.025 12.738 6.025c-3.171 0-5.742 2.571-5.742 5.742 0 1.438.529 2.752 1.404 3.762.36.415.772.785 1.228 1.095-.195.51-.454.987-.77 1.414C6.816 16.976 5.5 14.74 5.5 12.231 5.5 7.924 8.924 4.5 13.231 4.5s7.731 3.424 7.731 7.731-3.424 7.731-7.731 7.731c-.164 0-.327-.007-.489-.02z"/>
@@ -315,7 +319,6 @@ export default async function Page({ params }) {
                           className="bg-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
-                          itemProp="sameAs"
                         >
                           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
@@ -332,27 +335,26 @@ export default async function Page({ params }) {
                   {/* Row 1 - Name, Posts, Bio */}
                   <div className="mb-10">
                     <div className="flex items-center gap-4 mb-4">
-                      {/* H1 - Author name, always present */}
-                      <h1 className="text-4xl lg:text-5xl font-bold font-serif text-black" itemProp="name">
+                      <h1 className="text-4xl lg:text-5xl font-bold font-serif text-black">
                         {author.name}
                       </h1>
                       <span className="bg-red-600 text-white text-sm font-bold px-4 py-1 uppercase">
                         {listArticles.length} POSTS
                       </span>
                     </div>
-                    <p className="text-gray-700 text-base leading-relaxed mb-4" itemProp="description">
+                    <p className="text-gray-700 text-base leading-relaxed mb-4">
                       {author.bio}
                     </p>
                     <p className="text-sm text-gray-600">
                       <span className="font-semibold">Job Title:</span>{' '}
-                      <span itemProp="jobTitle">
+                      <span>
                         {authorCategory.charAt(0).toUpperCase() + authorCategory.slice(1)} Journalist at Read More About
                       </span>
                     </p>
                     {author.country && (
                       <p className="text-sm text-gray-600">
                         <span className="font-semibold">Country:</span>{' '}
-                        <span itemProp="nationality">{author.country}</span>
+                        <span>{author.country}</span>
                       </p>
                     )}
                     {author.websiteLink && (
@@ -364,7 +366,6 @@ export default async function Page({ params }) {
                           rel="noopener noreferrer"
                           className="text-red-600 hover:underline"
                           title={`Visit ${author.name}'s personal website`}
-                          itemProp="url"
                         >
                           {author.websiteLink}
                         </a>
@@ -372,11 +373,6 @@ export default async function Page({ params }) {
                     )}
                   </div>
 
-                  {/* 
-                    FIX: H2 now always renders regardless of whether exclusive articles exist.
-                    This fixes the "missing H2" SEO warning.
-                    Heading order is now correct: H1 (author name) → H2 (articles section) → H3 (exclusive subsection label + article titles)
-                  */}
                   <div>
                     <h2 className="text-2xl font-bold font-serif mb-6">
                       Articles by {author.name}
@@ -384,7 +380,6 @@ export default async function Page({ params }) {
 
                     {exclusiveArticles.length > 0 && (
                       <>
-                        {/* H3 - subsection under H2, correct heading order */}
                         <h3 className="text-lg font-semibold font-serif mb-4">
                           Exclusive articles by {author.name}:
                         </h3>
@@ -398,12 +393,6 @@ export default async function Page({ params }) {
                               <div className="group cursor-pointer">
                                 <div className="flex gap-3">
                                   <div className="flex-1 w-[75%]">
-                                    {/* 
-                                      FIX: Article card titles changed from unnamed elements to
-                                      plain styled divs — heading tags inside links inside a grid
-                                      under H3 would create an H4 skip issue. Using a styled div
-                                      keeps visual hierarchy without adding semantic heading levels.
-                                    */}
                                     <div className="text-sm font-bold text-black group-hover:text-red-600 transition-colors mb-2 leading-tight">
                                       <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 uppercase inline-block mr-2">
                                         EXCLUSIVE
@@ -416,11 +405,6 @@ export default async function Page({ params }) {
                                   </div>
 
                                   <div className="relative w-[25%] h-15 flex-shrink-0 overflow-hidden">
-                                    {/* 
-                                      FIX: Added sizes and loading="lazy" to non-hero images.
-                                      These are below the fold and should not compete with
-                                      the author profile image (LCP element) for bandwidth.
-                                    */}
                                     <Image
                                       src={article.image}
                                       alt={article.imageAlt || article.title}

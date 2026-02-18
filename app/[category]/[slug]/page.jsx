@@ -9,13 +9,31 @@ import Link from "next/link";
 import { slugify } from "@/utils/slugify";
 import SubscribeBox from "@/components/articlepagecomponents/SubscribeBox";
 
-const SITE_URL = "https://read-more-about.vercel.app";
+const SITE_URL = "https://www.read-more-about.com";
 
 // Helper function to parse date string (DD/MM/YYYY) to Date object
 const parseDate = (dateStr) => {
   const [day, month, year] = dateStr.split('/')
   return new Date(year, month - 1, day)
 }
+
+export async function generateStaticParams() {
+  const params = [];
+
+  Object.keys(categorypagedata).forEach((category) => {
+    const articles = categorypagedata[category] || [];
+
+    articles.forEach((article) => {
+      params.push({
+        category: category,
+        slug: article.slug,
+      });
+    });
+  });
+
+  return params;
+}
+
 
 // Helper function to format date
 const formatDate = (dateString) => {
@@ -142,7 +160,7 @@ export default async function ArticlePage({ params }) {
       name: "Read More About",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
       },
     },
     mainEntityOfPage: {
@@ -265,7 +283,7 @@ export default async function ArticlePage({ params }) {
         <div itemProp="publisher" itemScope itemType="https://schema.org/Organization" style={{display: 'none'}}>
           <meta itemProp="name" content="Read More About" />
           <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
-            <meta itemProp="url" content={`${SITE_URL}/logo.png`} />
+            <meta itemProp="url" content={`${SITE_URL}/images/read-more-about-logo.webp`} />
           </div>
         </div>
 

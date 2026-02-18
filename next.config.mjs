@@ -1,29 +1,11 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   images: {
-//     domains: ['images.unsplash.com','i.pravatar.cc','e1.pxfuel.com'], // Add this line to include the Unsplash domain
-//   },
-//   // other config options can go here
-// };
 
-// export default nextConfig;
-
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   images: {
-//     formats: ['image/avif', 'image/webp'],     // ← add this
-//   },
-//   // other config options can go here
-// };
-
-// export default nextConfig;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output:'export',
+  trailingSlash: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
-    qualities: [74, 75, 78, 85], // Add this line to support both quality levels
+    unoptimized: true,
   },
   // other config options can go here
 };

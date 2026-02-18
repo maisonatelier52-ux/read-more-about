@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const SITE_URL = "https://read-more-about.vercel.app";
+const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
@@ -31,7 +31,7 @@ export const metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
         width: 1200,
         height: 630,
         alt: "About Read More About - Independent News",
@@ -43,7 +43,7 @@ export const metadata = {
     title: "About Read More About — Independent News Platform",
     description:
       "Discover Read More About: independent news delivering factual reporting. Trusted journalism since 2024.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/images/read-more-about-logo.webp`],
     creator: "@readmoreabout",
     site: "@readmoreabout",
   },
@@ -69,7 +69,7 @@ export default function About() {
       "foundingDate": "2024",
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`,
+        "url": `${SITE_URL}/images/read-more-about-logo.webp`,
       },
       "sameAs": [
         "https://www.facebook.com/readmoreabout",
@@ -104,7 +104,7 @@ export default function About() {
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": `${SITE_URL}/og-image.jpg`,
+      "url": `${SITE_URL}/images/read-more-about-logo.webp`,
     },
   };
 
@@ -135,7 +135,7 @@ export default function About() {
     "url": SITE_URL,
     "logo": {
       "@type": "ImageObject",
-      "url": `${SITE_URL}/logo.png`,
+      "url": `${SITE_URL}/images/read-more-about-logo.webp`,
     },
     "description": "Independent digital news platform delivering comprehensive coverage of politics, business, sports, technology, crime, investigation, travel, and world events.",
     "foundingDate": "2024",

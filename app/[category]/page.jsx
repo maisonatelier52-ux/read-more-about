@@ -7,13 +7,25 @@ import CategoryArticles from '../../public/data/articles.json'
 import authorsData from '../../public/data/authors.json'
 import { notFound } from 'next/navigation'
 
-const SITE_URL = "https://read-more-about.vercel.app";
+const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 // Helper function to parse date string (DD/MM/YYYY) to Date object
 const parseDate = (dateStr) => {
   const [day, month, year] = dateStr.split('/')
   return new Date(year, month - 1, day)
+}
+
+export async function generateStaticParams() {
+  const params = [];
+
+  Object.keys(CategoryArticles).forEach((category) => {
+    params.push({
+      category: category,
+    });
+  });
+
+  return params;
 }
 
 // Function to get latest article from each category (excluding current category)
@@ -88,7 +100,7 @@ export async function generateMetadata({ params }) {
       locale: "en_US",
       images: [
         {
-          url: `${SITE_URL}/og-image.jpg`,
+          url: `${SITE_URL}/images/read-more-about-logo.webp`,
           width: 1200,
           height: 630,
           alt: `${formattedCategory} News - Read More About`,
@@ -99,7 +111,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: `${formattedCategory} — Breaking News & Expert Analysis`,
       description: description,
-      images: [`${SITE_URL}/og-image.jpg`],
+      images: [`${SITE_URL}/images/read-more-about-logo.webp`],
       creator: "@readmoreabout",
       site: "@readmoreabout",
     },
@@ -211,10 +223,10 @@ export default async function Page({ params }) {
             "url": SITE_URL,
             "logo": {
               "@type": "ImageObject",
-              "url": `${SITE_URL}/logo.png`,
+              "url": `${SITE_URL}/images/read-more-about-logo.webp`,
             },
           },
-          "image": article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}/og-image.jpg`,
+          "image": article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}/images/read-more-about-logo.webp`,
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": `${SITE_URL}/${categoryKey}/${article.slug}`,
@@ -228,7 +240,7 @@ export default async function Page({ params }) {
       "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`,
+        "url": `${SITE_URL}/images/read-more-about-logo.webp`,
       },
     },
   };
@@ -269,7 +281,7 @@ export default async function Page({ params }) {
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": `${SITE_URL}/og-image.jpg`,
+      "url": `${SITE_URL}/images/read-more-about-logo.webp`,
     },
   };
 
