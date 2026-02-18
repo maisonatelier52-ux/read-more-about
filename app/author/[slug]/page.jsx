@@ -1,8 +1,8 @@
 
+
 // import React from 'react'
 // import Link from 'next/link'
 // import Image from 'next/image'
-// import Script from 'next/script'
 // import CategoryArticlelist from '@/components/categorycomponents/CategoryArticlelist'
 // import CategoryArticles from '../../../public/data/articles.json'
 // import authorsData from '../../../public/data/authors.json'
@@ -220,29 +220,23 @@
 
 //   return (
 //     <>
-//       {/* JSON-LD Scripts */}
-//       <Script
-//         id="person-json-ld"
+//       {/* JSON-LD Scripts - FIXED: Using regular script tags instead of Script component */}
+//       <script
 //         type="application/ld+json"
-//         strategy="afterInteractive"
 //         dangerouslySetInnerHTML={{
-//           __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+//           __html: JSON.stringify(personJsonLd)
 //         }}
 //       />
-//       <Script
-//         id="breadcrumb-json-ld"
+//       <script
 //         type="application/ld+json"
-//         strategy="afterInteractive"
 //         dangerouslySetInnerHTML={{
-//           __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+//           __html: JSON.stringify(breadcrumbJsonLd)
 //         }}
 //       />
-//       <Script
-//         id="profile-page-json-ld"
+//       <script
 //         type="application/ld+json"
-//         strategy="afterInteractive"
 //         dangerouslySetInnerHTML={{
-//           __html: JSON.stringify(profilePageJsonLd).replace(/</g, "\\u003c"),
+//           __html: JSON.stringify(profilePageJsonLd)
 //         }}
 //       />
 
@@ -483,7 +477,6 @@ const getLatestFromDifferentCategories = (currentCategory, limit = 5) => {
   categories.forEach(category => {
     const articles = CategoryArticles[category]
     if (articles && articles.length > 0) {
-      // Sort by date and get the latest one
       const sorted = [...articles].sort((a, b) => parseDate(b.date) - parseDate(a.date))
       latestArticles.push({
         ...sorted[0],
@@ -492,7 +485,6 @@ const getLatestFromDifferentCategories = (currentCategory, limit = 5) => {
     }
   })
   
-  // Sort all latest articles by date and take the specified limit
   return latestArticles
     .sort((a, b) => parseDate(b.date) - parseDate(a.date))
     .slice(0, limit)
@@ -501,7 +493,6 @@ const getLatestFromDifferentCategories = (currentCategory, limit = 5) => {
 export async function generateMetadata({ params }) {
   const { slug } = await params
   
-  // Find author by name (converting slug to match author name format)
   const authorName = slug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -511,7 +502,6 @@ export async function generateMetadata({ params }) {
     item => item.author.name.toLowerCase() === authorName.toLowerCase()
   )
   
-  // If author doesn't exist, return 404 metadata
   if (!authorData) {
     return {
       title: 'Author Not Found — Read More About',
@@ -523,7 +513,6 @@ export async function generateMetadata({ params }) {
   const authorCategory = authorData.category
   const categoryArticlesData = CategoryArticles[authorCategory] || []
   const articleCount = categoryArticlesData.length
-  
   const imageUrl = `${SITE_URL}${author.profileImage}`
   
   return {
@@ -565,7 +554,6 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { slug } = await params
   
-  // Find author by name (converting slug to match author name format)
   const authorName = slug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -575,40 +563,25 @@ export default async function Page({ params }) {
     item => item.author.name.toLowerCase() === authorName.toLowerCase()
   )
   
-  // If author doesn't exist, show 404
   if (!authorData) {
     notFound()
   }
   
   const author = authorData.author
   const authorCategory = authorData.category
-  
-  // Get all articles from the author's category
   const categoryArticlesData = CategoryArticles[authorCategory] || []
   
-  // Sort articles by date (latest first)
   const sortedArticles = [...categoryArticlesData].sort(
     (a, b) => parseDate(b.date) - parseDate(a.date)
   )
   
-  // Get exclusive articles for the exclusive section
   const exclusiveArticles = sortedArticles
     .filter(article => article.type === 'exclusive')
-    .slice(0, 3) // Get top 3 exclusive articles
+    .slice(0, 3)
   
-  // Get articles for the list (all articles from this category)
   const listArticles = sortedArticles
-  
-  // Get popular articles from this category (top 3 by date)
-  const popularArticles = sortedArticles.slice(0, 3)
-  
-  // Get latest news from 5 different categories for sidebar
   const latestFromOtherCategories = getLatestFromDifferentCategories(authorCategory, 5)
-  
-  // First article for popular section
   const popularArticle = latestFromOtherCategories[0] || null
-  
-  // Remaining 4 articles for sidebar
   const sidebarPosts = latestFromOtherCategories.slice(1, 5)
 
   // JSON-LD: Person Schema
@@ -676,24 +649,18 @@ export default async function Page({ params }) {
 
   return (
     <>
-      {/* JSON-LD Scripts - FIXED: Using regular script tags instead of Script component */}
+      {/* JSON-LD Scripts */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personJsonLd)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbJsonLd)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(profilePageJsonLd)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
       />
 
       <div className="relative mb-30" itemScope itemType="https://schema.org/Person">
@@ -717,26 +684,34 @@ export default async function Page({ params }) {
 
         {/* Author Profile Section with Background */}
         <div className="relative">
-          {/* Background that covers 75% of card height */}
           <div className="bg-[#eaeaea]/55 pb-80"></div>
 
-          {/* Author Profile Card - overlapping the background */}
           <div className="container mx-auto px-4 lg:px-7 -mt-68">
             <div>
               <div className="flex flex-col lg:flex-row">
-                {/* Left Column - 35% width - Author Image */}
+
+                {/* Left Column - Author Image */}
                 <div className="lg:w-[30%] relative">
                   <div className="relative h-96 lg:h-full">
+                    {/* 
+                      FIX: Added sizes prop so Next.js serves correctly sized image on mobile.
+                      This is the biggest LCP improvement — without sizes, Next.js serves
+                      a full-width image even when the element only takes 30% of viewport.
+                      priority stays on so the browser fetches this as early as possible.
+                      quality={85} gives good visual fidelity without unnecessary weight.
+                    */}
                     <Image
                       src={author.profileImage}
                       alt={`${author.name} - ${authorCategory} journalist at Read More About`}
                       fill
+                      sizes="(max-width: 768px) 100vw, 30vw"
                       className="object-cover"
                       itemProp="image"
                       priority
+                      quality={85}
                     />
                     
-                    {/* Social Icons Overlay - Bottom Center */}
+                    {/* Social Icons Overlay */}
                     <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
                       {author.social?.twitter && (
                         <Link 
@@ -802,11 +777,13 @@ export default async function Page({ params }) {
                   </div>
                 </div>
 
-                {/* Right Column - 65% width */}
+                {/* Right Column */}
                 <div className="lg:w-[70%] p-8">
+
                   {/* Row 1 - Name, Posts, Bio */}
                   <div className="mb-10">
                     <div className="flex items-center gap-4 mb-4">
+                      {/* H1 - Author name, always present */}
                       <h1 className="text-4xl lg:text-5xl font-bold font-serif text-black" itemProp="name">
                         {author.name}
                       </h1>
@@ -846,46 +823,73 @@ export default async function Page({ params }) {
                     )}
                   </div>
 
-                  {/* Row 2 - Exclusive Articles */}
-                  {exclusiveArticles.length > 0 && (
-                    <div>
-                      <h2 className="text-2xl font-bold font-serif mb-6">Exclusive articles by {author.name}:</h2>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {exclusiveArticles.map((article) => (
-                          <Link 
-                            key={article.id} 
-                            href={`/${authorCategory}/${article.slug}`}
-                            title={`Read: ${article.title}`}
-                          >
-                            <div className="group cursor-pointer">
-                              <div className="flex gap-3">
-                                <div className="flex-1 w-[75%]">
-                                  <h3 className="text-sm font-bold text-black group-hover:text-red-600 transition-colors mb-2 leading-tight">
-                                    <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 uppercase inline-block mr-2">
-                                      EXCLUSIVE
-                                    </span>
-                                    {article.title.slice(0,50)}...
-                                  </h3>
-                                  <p className="text-xs text-red-600 font-semibold uppercase">
-                                    {authorCategory}
-                                  </p>
-                                </div>
+                  {/* 
+                    FIX: H2 now always renders regardless of whether exclusive articles exist.
+                    This fixes the "missing H2" SEO warning.
+                    Heading order is now correct: H1 (author name) → H2 (articles section) → H3 (exclusive subsection label + article titles)
+                  */}
+                  <div>
+                    <h2 className="text-2xl font-bold font-serif mb-6">
+                      Articles by {author.name}
+                    </h2>
 
-                                <div className="relative w-[25%] h-15 flex-shrink-0 overflow-hidden">
-                                  <Image
-                                    src={article.image}
-                                    alt={article.imageAlt || article.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                                  />
+                    {exclusiveArticles.length > 0 && (
+                      <>
+                        {/* H3 - subsection under H2, correct heading order */}
+                        <h3 className="text-lg font-semibold font-serif mb-4">
+                          Exclusive articles by {author.name}:
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {exclusiveArticles.map((article) => (
+                            <Link 
+                              key={article.id} 
+                              href={`/${authorCategory}/${article.slug}`}
+                              title={`Read: ${article.title}`}
+                            >
+                              <div className="group cursor-pointer">
+                                <div className="flex gap-3">
+                                  <div className="flex-1 w-[75%]">
+                                    {/* 
+                                      FIX: Article card titles changed from unnamed elements to
+                                      plain styled divs — heading tags inside links inside a grid
+                                      under H3 would create an H4 skip issue. Using a styled div
+                                      keeps visual hierarchy without adding semantic heading levels.
+                                    */}
+                                    <div className="text-sm font-bold text-black group-hover:text-red-600 transition-colors mb-2 leading-tight">
+                                      <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 uppercase inline-block mr-2">
+                                        EXCLUSIVE
+                                      </span>
+                                      {article.title.slice(0, 50)}...
+                                    </div>
+                                    <p className="text-xs text-red-600 font-semibold uppercase">
+                                      {authorCategory}
+                                    </p>
+                                  </div>
+
+                                  <div className="relative w-[25%] h-15 flex-shrink-0 overflow-hidden">
+                                    {/* 
+                                      FIX: Added sizes and loading="lazy" to non-hero images.
+                                      These are below the fold and should not compete with
+                                      the author profile image (LCP element) for bandwidth.
+                                    */}
+                                    <Image
+                                      src={article.image}
+                                      alt={article.imageAlt || article.title}
+                                      fill
+                                      sizes="(max-width: 768px) 25vw, 10vw"
+                                      loading="lazy"
+                                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                    />
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
                 </div>
               </div>
             </div>
