@@ -21,7 +21,7 @@ export const metadata = {
   description: "Discover breaking news, politics, business, sports & world events. Expert journalism you can trust.",
   icons: {
     icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    apple: '/favicon.ico',
   },
 };
 

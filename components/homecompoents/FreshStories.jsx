@@ -341,10 +341,10 @@ export default function FreshStories({
                       {latestArticle.type}
                     </span>
                   )}
-                  {latestArticle.title}
+                  {latestArticle.title.length > 50 ? `${latestArticle.title.slice(0,50)}...` : latestArticle.title}
                 </h2>
                 <p className="text-sm lg:text-md leading-relaxed opacity-90">
-                  {latestArticle.excerpt}
+                   {latestArticle.excerpt.length > 250 ? `${latestArticle.excerpt.slice(0,250)}...` : latestArticle.excerpt}
                 </p>
               </div>
             </div>
