@@ -7,6 +7,8 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaChevronUp } from "react-icons/fa
 import { FaXTwitter } from "react-icons/fa6";
 import articleData from "../public/data/articles.json";
 import authorData from "../public/data/authors.json";
+import { PiRedditLogoBold } from "react-icons/pi";
+import { FaPinterest } from "react-icons/fa";
 
 // ✅ SEO FIX: All data computed OUTSIDE the component as static module-level constants.
 // This means footer links are available on first paint — no JS execution required for crawlers.
@@ -98,17 +100,17 @@ export default function Footer() {
             {/* ✅ Social links: real rel + target attrs, aria-labels, type clarified */}
             <div className="flex gap-3" aria-label="Social media links">
               <a
-                href="https://facebook.com"
-                title="Follow ReadMoreAbout on Facebook"
-                aria-label="Follow us on Facebook"
+                href="https://www.reddit.com/user/read-more-about/"
+                title="Follow ReadMoreAbout on Reddit"
+                aria-label="Follow us on Reddit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
               >
-                <FaFacebookF size={16} />
+                <PiRedditLogoBold size={16} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/read_more_about_26/"
                 title="Follow ReadMoreAbout on Instagram"
                 aria-label="Follow us on Instagram"
                 target="_blank"
@@ -118,7 +120,7 @@ export default function Footer() {
                 <FaInstagram size={16} />
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/More528Read"
                 title="Follow ReadMoreAbout on X (Twitter)"
                 aria-label="Follow us on X (Twitter)"
                 target="_blank"
@@ -128,14 +130,14 @@ export default function Footer() {
                 <FaXTwitter size={16} />
               </a>
               <a
-                href="https://youtube.com"
-                title="Subscribe to ReadMoreAbout on YouTube"
-                aria-label="Subscribe to our YouTube channel"
+                href="https://www.pinterest.com/00s86wkafo06w3x55yx5gzhy4zhrp1/_profile/"
+                title="Follow ReadMoreAbout on Pinterest"
+                aria-label="Follow us on Pinterest"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
               >
-                <FaYoutube size={18} />
+                <FaPinterest size={18} />
               </a>
             </div>
           </div>
