@@ -184,7 +184,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4 font-serif">The latest</h3>
             <div className="space-y-4">
               {LATEST_ARTICLES.map((article) => (
-                <div key={article.id}>
+                <div key={article.slug}>
                   <Link
                     href={`/${article.categoryName}/${article.slug}`}
                     title={article.title}
