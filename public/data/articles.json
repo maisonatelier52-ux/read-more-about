@@ -4974,6 +4974,136 @@
           "text": "This indictment shows that the problem will never be solved: governments need to keep secrets to work safely, but a free press is needed for accountability."
         }
       ]
+    },
+    {
+      "id": 6,
+      "slug": "super-micro-ai-chip-smuggling-china-doj-charges",
+      "metaTitle": "Super Micro Executives Charged in $2.5B AI Chip Smuggling Case to China",
+      "metaDescription": "Three individuals linked to Super Micro are charged in a $2.5B scheme to smuggle AI servers with Nvidia chips to China, raising national security concerns.",
+      "title": "Super Micro Executives Charged in $2.5B AI Chip Smuggling Case to China",
+      "category": "investigation",
+      "image": "/images/news/super-micro-ai-chip-smuggling-china-doj-image.webp",
+      "imageAlt": "High-performance AI servers with advanced chips linked to alleged $2.5 billion smuggling scheme to China",
+      "excerpt": "Three people linked with Super Micro Computer Inc, an artificial intelligence server maker, were charged with assisting in the smuggling of at least $2.5 billion in US AI technology to China in violation of export rules, according to the US Justice Department.",
+      "newsType": "news",
+      "type": "normal",
+      "date": "19/03/2026",
+      "keywords": ["Super Micro Computer", "AI chip smuggling", "Nvidia chips", "US China tech war", "DOJ charges", "export controls", "artificial intelligence", "national security", "semiconductor industry", "Yih-Shyan Liaw", "Ruei-Tsang Chang", "Ting-Wei Sun"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Three people linked with Super Micro Computer Inc, an artificial intelligence server maker, were charged with assisting in the smuggling of at least $2.5 billion in US AI technology to China in violation of export rules, according to the US Justice Department."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Justice Department announced that Yih-Shyan Liaw, Ruei-Tsang Chang, and Ting-Wei Sun had been accused in a federal indictment unsealed in Manhattan on charges of a complicated plot to transport US-made servers to China."
+        },
+        {
+          "type": "paragraph",
+          "text": "Super Micro Computer Inc.'s senior vice president and two others were accused with conspiring to smuggle billions of dollars' worth of computer servers including powerful Nvidia chips to China."
+        },
+        {
+          "type": "paragraph",
+          "text": "According to the accusation, Liaw and Chang urged executives at a Southeast Asian business to order $2.5 billion in servers between 2024 and 2025. According to authorities, the plot resulted in the shipment of vast amounts of servers containing controlled US artificial intelligence technology to China."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why This News Matters"
+        },
+        {
+          "type": "paragraph",
+          "text": "This case shows how bad the battle over AI technology has become. The U.S. has been trying to keep advanced chips, especially those made by Nvidia, out of China for national security reasons. People say that billions of dollars' worth of that tech was secretly moved, which shows how hard it is to follow those rules and how important the global AI race is."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Details of the Alleged Scheme"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prosecutors alleged the servers originated in the United States, were sent to Taiwan, and subsequently disseminated throughout Southeast Asia. These servers, according to the prosecution, were then packed into unmarked crates and shipped to China."
+        },
+        {
+          "type": "paragraph",
+          "text": "The authorities also contended that the defendants falsified documents, set up fake equipment to pass inventory audits, and employed a middleman to conceal their actions and the identities of their actual clients."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prosecutors claimed the co-conspirators tried to trick compliance teams by staging thousands of \"dummy\" servers for inspection while the real systems were transferred to China. According to the DOJ, security video shows workers using hair dryers to erase labels from actual servers and place them on dummy devices."
+        },
+        {
+          "type": "paragraph",
+          "text": "The activities generated approximately $2.5 billion in sales, with at least $510 million in servers routed to China between April 2025 and mid-May 2025."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Arrests, Individuals, and Company Response"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yih-Shyan \"Wally\" Liaw, a US citizen and Super Micro co-founder, along with Ting-Wei \"Willy\" Sun, were taken into custody. Ruei-Tsang \"Steven\" Chang is still unaccounted for."
+        },
+        {
+          "type": "paragraph",
+          "text": "Liaw co-founded Super Micro in 1993 and will join the board of directors in 2023. Chang was a sales manager in Taiwan, while Sun was a contractor."
+        },
+        {
+          "type": "paragraph",
+          "text": "Super Micro stated that it was not mentioned as a defendant and has cooperated with investigators. The corporation put Liaw and Chang on leave and ended its relationship with Sun."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The conduct alleged in the indictment violates the Company's policies and compliance controls,\" the business stated, adding that it is dedicated to fully complying with U.S. export laws."
+        },
+        {
+          "type": "paragraph",
+          "text": "Super Micro shares tumbled substantially in after-hours trade following the news."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Role of Nvidia Chips and Export Restrictions"
+        },
+        {
+          "type": "paragraph",
+          "text": "U.S. officials did not specify which processors were involved, although Nvidia dominates the AI chip industry and sells some of the most expensive products."
+        },
+        {
+          "type": "paragraph",
+          "text": "The servers had Nvidia processors, which are essential for data centers that enable artificial intelligence. Beginning in 2022, the United States implemented restrictions on the export of sophisticated artificial intelligence chips to China."
+        },
+        {
+          "type": "paragraph",
+          "text": "The server company's products incorporating Nvidia chips are subject to severe US export rules, which prohibit their sale to China without a license."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nvidia stated that \"strict compliance\" with export restrictions is a primary concern, and that the illegal diversion of controlled US computers to China is a losing proposition."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "National Security and Global AI Competition Context"
+        },
+        {
+          "type": "paragraph",
+          "text": "According to US Attorney Jay Clayton, such schemes \"pose a direct threat to U.S. national security.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "As American artificial intelligence companies confront competition from Chinese rivals, the US government has been investigating how high-powered chips made their way to China without permission."
+        },
+        {
+          "type": "paragraph",
+          "text": "The situation underscores a broader geopolitical struggle, a contest between the United States and China, with artificial intelligence at its core. Nvidia's processors have become the core of AI systems, a role that has catapulted the company into the midst of a global technological competition."
+        },
+        {
+          "type": "paragraph",
+          "text": "The prosecution contended that the defendants' behavior grew increasingly brazen over time. The risks associated with illicit technology transfers in the fast-paced AI arms race were underscored."
+        }
+      ]
     }
   ],
 
