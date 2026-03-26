@@ -146,6 +146,12 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.read-more-about.com/politics/white-house-rejects-elon-musk-tsa-pay-offer/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- Business Articles -->
   <url>
