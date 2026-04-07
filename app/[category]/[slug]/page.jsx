@@ -450,17 +450,7 @@ export default async function ArticlePage({ params }) {
                       {authorData.name}
                     </h2>
                   </Link>
-                  {authorData.websiteLink && (
-                    <a
-                      href={authorData.websiteLink}
-                      className="text-blue-600 hover:underline text-sm mb-1 block"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={`Visit ${authorData.name}'s website`}
-                    >
-                      {authorData.websiteLink}
-                    </a>
-                  )}
+                 
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
                     {authorData.bio}
                   </p>

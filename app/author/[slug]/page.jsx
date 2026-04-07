@@ -356,7 +356,7 @@ export default async function Page({ params }) {
                         <span>{author.country}</span>
                       </p>
                     )}
-                    {author.websiteLink && (
+                    {/* {author.websiteLink && (
                       <p className="text-sm text-gray-600">
                         <span className="font-semibold">Website:</span>{' '}
                         <a 
@@ -369,7 +369,7 @@ export default async function Page({ params }) {
                           {author.websiteLink}
                         </a>
                       </p>
-                    )}
+                    )} */}
                   </div>
 
                   <div>

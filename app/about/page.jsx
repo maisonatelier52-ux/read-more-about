@@ -405,13 +405,13 @@ export default function About() {
               Have a story tip? Questions about our coverage? We'd love to hear from you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a 
+              {/* <a 
                 href="mailto:editorial@read-more-about.com" 
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-semibold transition-colors"
                 title="Contact Read More About Editorial Team"
               >
                 Contact Editorial
-              </a>
+              </a> */}
               <Link 
                 href="/privacy-policy" 
                 className="bg-transparent border-2 border-white hover:bg-white hover:text-zinc-900 text-white px-8 py-3 font-semibold transition-colors"
