@@ -458,12 +458,34 @@ export default function PrivacyPolicy() {
                 world headlines, please contact us at:
               </p>
               
-              <div className="bg-zinc-900 text-white p-8">
+             <div className="bg-zinc-900 text-white p-8">
                 <div className="space-y-3">
-                  <p className="font-bold text-lg" style={{fontFamily: 'Georgia, serif'}}>Privacy Department</p>
-                  <p className="font-bold text-lg" style={{fontFamily: 'Georgia, serif'}}>Read More About</p>
-                  <p>Email: privacy@read-more-about.com</p>
-                  <p>Editorial Email: editorial@read-more-about.com</p>
+                  <p className="font-bold text-lg" style={{ fontFamily: 'Georgia, serif' }}>
+                    Privacy Department
+                  </p>
+                  <p className="font-bold text-lg" style={{ fontFamily: 'Georgia, serif' }}>
+                    Read More About
+                  </p>
+
+                  <p>
+                    Email:{" "}
+                    <a
+                      href="mailto:privacy@read-more-about.com"
+                      className="underline hover:text-red-400"
+                    >
+                      privacy@read-more-about.com
+                    </a>
+                  </p>
+
+                  <p>
+                    Editorial Email:{" "}
+                    <a
+                      href="mailto:editorial@read-more-about.com"
+                      className="underline hover:text-red-400"
+                    >
+                      editorial@read-more-about.com
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
