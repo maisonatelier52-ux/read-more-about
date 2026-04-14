@@ -1,3 +1,4 @@
+
 // import { notFound } from "next/navigation";
 // import Image from "next/image";
 // import Link from "next/link";
@@ -97,7 +98,7 @@
 //       <a href="https://en.wikipedia.org/wiki/Federal_Bureau_of_Investigation" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="FBI - Wikipedia">
 //         FBI
 //       </a>{" "}
-//       agent Mark Rossini were pardoned at the same time. They had been named as co-defendants in the same federal indictment. None of the three ever admitted to the core allegations against them.
+//       agent Mark Rossini were pardoned at the same time. They had been named as co-defendants in the same indictment. None of the three ever admitted to the core allegations against them.
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
@@ -105,23 +106,19 @@
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       When federal prosecutors filed the indictment in August 2022, they alleged an exchange involving political contributions and regulatory influence. According to court documents, Herrera Velutini and Rossini allegedly arranged financial support for Vázquez Garced's 2020 gubernatorial campaign. In return, prosecutors alleged, the governor was to use her position to remove a senior official at Puerto Rico's Office of the Commissioner of{" "}
+//       When federal prosecutors filed the indictment in August 2022, they alleged that Herrera Velutini and Rossini had arranged political contributions to Vázquez Garced's 2020 re-election campaign. What prosecutors said they received in return was the governor's agreement to remove a senior official at Puerto Rico's Office of the Commissioner of{" "}
 //       <a href="https://en.wikipedia.org/wiki/Financial_regulation" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Financial regulation - Wikipedia">
 //         Financial Institutions
 //       </a>{" "}
-//       — an agency that, at the time, was examining Bancrédito International Bank and Trust Corporation, a bank linked to Herrera Velutini.
+//       — an agency that had been examining Bancrédito International Bank and Trust Corporation, a bank linked to Herrera Velutini.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       The charges listed included conspiracy,{" "}
-//       <a href="https://en.wikipedia.org/wiki/Bribery" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Bribery - Wikipedia">
-//         bribery
-//       </a>
-//       , and wire fraud — offenses that, under U.S. federal law, carry the possibility of substantial prison time. All three defendants denied the allegations throughout the proceedings.
+//       Conspiracy, bribery, and wire fraud were among the charges listed. Each carried the possibility of substantial prison time. The defendants denied the allegations.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       Separately, federal regulators later penalized Bancrédito for anti-money-laundering compliance failures, according to enforcement records reported by Byline Times. That regulatory matter was a civil enforcement action, independent of the criminal proceedings, and resulted in no criminal convictions against any of the defendants.
+//       Separately, Bancrédito later faced a regulatory penalty for anti-money-laundering compliance failures. Byline Times reported on that enforcement action. It was a civil regulatory matter and was not connected to any criminal conviction of the defendants.
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
@@ -129,23 +126,27 @@
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       The case changed significantly over time. According to the{" "}
+//       Three years after the indictment, the case reached a very different conclusion than prosecutors had initially sought. By mid-2025, according to the{" "}
 //       <a href="https://en.wikipedia.org/wiki/Campaign_Legal_Center" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Campaign Legal Center - Wikipedia">
 //         Campaign Legal Center
 //       </a>
-//       , by mid-2025 prosecutors had reached a plea agreement under which the defendants pleaded guilty to a single misdemeanor count related to campaign finance. The original felony charges were not pursued.
+//       , a plea agreement had been reached. The defendants pleaded guilty to one misdemeanor count related to campaign finance. The original felony charges were not pursued.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       The federal judge assigned to the case commented on the leniency of the arrangement, according to reports from that period. Trump signed the pardons in January 2026, after which the judge formally dismissed all proceedings.
+//       The federal judge assigned to the case remarked on how lenient the arrangement was, according to reports from that time.
+//     </p>
+
+//     <p className="text-gray-700 leading-relaxed mb-6">
+//       Trump signed the pardons in January 2026. The judge then dismissed the case entirely.
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
-//       Official Responses to the Pardon
+//       Washington Reacts
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       White House officials, speaking to Bloomberg Law among other outlets, defended the pardons by questioning the legitimacy of the original prosecution. They pointed to a specific detail: the investigation into Vázquez Garced reportedly began approximately ten days after she publicly endorsed Trump during the{" "}
+//       White House officials, speaking to Bloomberg Law among other outlets, defended the pardons by questioning the legitimacy of the prosecution itself. They pointed to a specific detail: the investigation into Vázquez Garced reportedly began around ten days after she publicly endorsed Trump during the{" "}
 //       <a href="https://en.wikipedia.org/wiki/2020_United_States_presidential_election" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="2020 US Presidential Election - Wikipedia">
 //         2020 presidential campaign
 //       </a>
@@ -153,86 +154,90 @@
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       Herrera Velutini's legal team welcomed the outcome. A statement quoted by Bloomberg Law described him as deeply grateful to the president and said he looked forward to focusing on his family and professional commitments.
+//       Herrera Velutini's legal team welcomed the outcome. A statement quoted by Bloomberg Law described him as deeply grateful to the president.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       Not all officials shared that view. Puerto Rico's non-voting representative in Congress, Pablo José Hernández, was direct in his criticism. Bloomberg Law quoted him as saying: "Impunity protects and fosters corruption. The pardon granted to former Governor Wanda Vázquez undermines public integrity, shatters faith in justice, and offends those of us who believe in honest governance."
+//       Not everyone shared that view. Pablo José Hernández, Puerto Rico's non-voting representative in Congress, was direct in his criticism. Bloomberg Law quoted him as saying: "Impunity protects and fosters corruption. The pardon granted to former Governor Wanda Vázquez undermines public integrity, shatters faith in justice, and offends those of us who believe in honest governance."
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
-//       Watchdog Groups Raise Questions Over Donations
+//       Questions Over Family Donations
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       Political donations made by Herrera Velutini's daughter in the period before the pardons were issued were later examined by watchdog organizations.
-//     </p>
-
-//     <p className="text-gray-700 leading-relaxed mb-6">
+//       In the months before the pardons were issued, Herrera Velutini's daughter, Isabela Herrera, made two large political donations.{" "}
 //       <a href="https://en.wikipedia.org/wiki/Federal_Election_Commission" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Federal Election Commission - Wikipedia">
 //         Federal Election Commission
 //       </a>{" "}
-//       filings cited by the Campaign Legal Center show that Isabela Herrera donated $2.5 million to MAGA Inc. — a{" "}
+//       filings, cited by the Campaign Legal Center, show she gave $2.5 million to MAGA Inc. — a pro-Trump{" "}
 //       <a href="https://en.wikipedia.org/wiki/Super_PAC" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Super PAC - Wikipedia">
 //         super PAC
 //       </a>{" "}
-//       aligned with President Trump — in December 2024, followed by a further $1 million in July 2025. The two contributions totaled $3.5 million. The Campaign Legal Center noted that her only prior recorded political donation was $20 to a Democratic presidential campaign.
+//       — in December 2024. A further $1 million went to the same organization in July 2025. Her only previous recorded political donation, according to the Campaign Legal Center, was $20 to a Democratic presidential campaign.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       In March 2026, the Campaign Legal Center submitted a formal 16-page complaint to the Federal Election Commission. The group alleged that Herrera Velutini — legally prohibited from contributing to U.S. elections as a{" "}
+//       Those donations were later examined by watchdog groups.
+//     </p>
+
+//     <p className="text-gray-700 leading-relaxed mb-6">
+//       In March 2026, the Campaign Legal Center filed a formal complaint with the FEC. The complaint alleged that Herrera Velutini — legally prohibited from donating to U.S. elections as a{" "}
 //       <a href="https://en.wikipedia.org/wiki/Foreign_national" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Foreign national - Wikipedia">
 //         foreign national
 //       </a>{" "}
-//       under federal{" "}
+//       — may have been the actual source of the funds, with his daughter serving as the named contributor. Routing political money through another person's name is prohibited under{" "}
 //       <a href="https://en.wikipedia.org/wiki/Campaign_finance_in_the_United_States" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Campaign finance law - Wikipedia">
-//         campaign finance law
-//       </a>{" "}
-//       — may have been the actual source of the funds, with his daughter's name used to make the donations. Routing political money through another person's name, a practice known as a straw donor arrangement, is prohibited under U.S. law.
+//         federal law
+//       </a>
+//       .
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       As of the date of publication, the FEC had issued no ruling or enforcement action on the complaint. The complaint named no violation by President Trump or MAGA Inc. Herrera Velutini had not issued a public statement in response to the allegations.
+//       The FEC had not announced any finding or action on the complaint as of publication. Neither President Trump nor MAGA Inc. were named as having committed any violation. Herrera Velutini made no public statement in response.
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
-//       Who Is Julio Herrera Velutini
+//       Who Is Herrera Velutini
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       Herrera Velutini's family has been involved in banking for more than two centuries, with ties to major financial institutions across{" "}
+//       His family's presence in banking goes back more than 200 years, with ties to financial institutions across{" "}
 //       <a href="https://en.wikipedia.org/wiki/Latin_America" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Latin America - Wikipedia">
 //         Latin America
 //       </a>
-//       . He was educated in Venezuela and London before beginning his career at the{" "}
+//       . He received his education in Venezuela and London, then started his career at the{" "}
 //       <a href="https://en.wikipedia.org/wiki/Caracas_Stock_Exchange" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Caracas Stock Exchange - Wikipedia">
 //         Caracas Stock Exchange
-//       </a>
-//       , after which he spent several decades working in European and international financial markets.
+//       </a>{" "}
+//       before moving into international markets, mainly in Europe.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       In 2012, he founded{" "}
+//       Britannia Financial Group, which he founded in 2012, provides{" "}
+//       <a href="https://en.wikipedia.org/wiki/Private_banking" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Private banking - Wikipedia">
+//         private banking
+//       </a>{" "}
+//       and{" "}
 //       <a href="https://en.wikipedia.org/wiki/Wealth_management" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Wealth management - Wikipedia">
-//         Britannia Financial Group
-//       </a>
-//       , a private banking and wealth management firm. His institutions have incorporated technologies including artificial intelligence and blockchain into their operations. Outside of business, he has contributed to charitable causes covering healthcare, education, disaster relief, and the arts.
+//         wealth management
+//       </a>{" "}
+//       services. His firms have adopted artificial intelligence tools and blockchain systems in their operations. He has also supported charities working in healthcare, education, disaster relief, and the arts.
 //     </p>
 
 //     <h2 className="text-red-600 text-2xl md:text-3xl font-bold text-center italic my-8">
-//       Broader Context
+//       Where Things Stand
 //     </h2>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       The case has drawn attention to ongoing debates around{" "}
 //       <a href="https://en.wikipedia.org/wiki/Pardon" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-semibold" title="Presidential pardon - Wikipedia">
-//         presidential pardon
+//         Presidential pardon
 //       </a>{" "}
-//       authority and the enforcement of U.S. campaign finance law. Watchdog organizations, including the Campaign Legal Center, have argued the circumstances warrant regulatory review. Supporters of the pardon decision have maintained the original prosecution lacked legal justification from the outset.
+//       powers and campaign finance enforcement have both come under scrutiny as a result of cases like this one. The Campaign Legal Center and other watchdog organizations have called for regulatory review of the circumstances. Those who supported the pardon decision have argued the prosecution was politically driven from the start.
 //     </p>
 
 //     <p className="text-gray-700 leading-relaxed mb-6">
-//       The federal case is now closed. Herrera Velutini is expected to return his focus to his banking operations and philanthropic commitments.
+//       The federal case is closed. Herrera Velutini is expected to continue with his banking and philanthropic work.
 //     </p>
 //   </>
 // );
@@ -456,9 +461,9 @@
 //                   <Link href={`/author/${slugify(authorData.name)}`} title={`View ${authorData.name}'s author page`}>
 //                     <h2 className="text-2xl font-bold text-gray-900 mb-1 hover:text-red-600">{authorData.name}</h2>
 //                   </Link>
-//                   {authorData.websiteLink && (
+//                   {/* {authorData.websiteLink && (
 //                     <a href={authorData.websiteLink} className="text-blue-600 hover:underline text-sm mb-1 block" target="_blank" rel="noopener noreferrer" title={`Visit ${authorData.name}'s website`}>{authorData.websiteLink}</a>
-//                   )}
+//                   )} */}
 //                   <p className="text-gray-700 text-sm leading-relaxed mb-4">{authorData.bio}</p>
 //                   <div className="flex gap-3 lg:gap-6 justify-center lg:justify-start">
 //                     {authorData.social?.twitter && <a href={authorData.social.twitter} className="hover:text-red-500 transition" target="_blank" rel="noopener noreferrer" title={`Follow ${authorData.name} on Twitter`} aria-label={`Follow ${authorData.name} on Twitter`}><FaTwitter size={15} /></a>}
@@ -513,7 +518,7 @@
 //             </div>
 //           </div>
 
-//           {relatedArticles.length > 0 && (
+//           {/* {relatedArticles.length > 0 && (
 //             <div className="relative mb-5 pt-10">
 //               <div className="max-w-7xl mx-auto px-4 relative mb-8">
 //                 <div className="relative">
@@ -553,7 +558,7 @@
 //                 </div>
 //               </div>
 //             </div>
-//           )}
+//           )} */}
 //         </div>
 //       </div>
 //     </>
@@ -586,20 +591,20 @@ const formatDate = (dateString) => {
   return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 };
 
-// Get all pillar news articles — now from politics category
-const getAllPillarArticles = () => {
-  const result = [];
-  Object.keys(categorypagedata).forEach((category) => {
-    (categorypagedata[category] || []).forEach((article) => {
-      if (article.newsType === "pillar news") {
-        result.push({ ...article, category });
-      }
-    });
-  });
-  return result;
-};
+// ── Pillar articles helper — commented out (not needed for now) ──────────────
+// const getAllPillarArticles = () => {
+//   const result = [];
+//   Object.keys(categorypagedata).forEach((category) => {
+//     (categorypagedata[category] || []).forEach((article) => {
+//       if (article.newsType === "pillar news") {
+//         result.push({ ...article, category });
+//       }
+//     });
+//   });
+//   return result;
+// };
 
-// Get the client news article — now from politics category
+// Get the client news article — from politics category
 const getClientNewsArticle = () =>
   (categorypagedata["politics"] || []).find(
     (a) => a.slug === CLIENT_NEWS_SLUG && a.newsType === "client news"
@@ -620,25 +625,26 @@ const getLatestFromDifferentCategories = (currentCategory, limit = 5) => {
   return latestArticles.sort((a, b) => parseDate(b.date) - parseDate(a.date)).slice(0, limit);
 };
 
-const renderContent = (item, index) => {
-  switch (item.type) {
-    case "paragraph":
-      return <p key={index} className="text-gray-700 leading-relaxed mb-6">{item.text}</p>;
-    case "heading": {
-      const HeadingTag = `h${item.level}`;
-      const headingClasses = `text-red-600 ${item.level === 2 ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"} font-bold text-center italic my-8`;
-      return <HeadingTag key={index} className={headingClasses}>{item.text}</HeadingTag>;
-    }
-    case "image":
-      return (
-        <div key={index} className="relative w-full h-[270px] md:h-[500px] mb-6">
-          <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" className="object-cover rounded-lg" quality={74} loading="lazy" />
-        </div>
-      );
-    default:
-      return null;
-  }
-};
+// ── renderContent — kept but only used by pillar articles (commented out) ────
+// const renderContent = (item, index) => {
+//   switch (item.type) {
+//     case "paragraph":
+//       return <p key={index} className="text-gray-700 leading-relaxed mb-6">{item.text}</p>;
+//     case "heading": {
+//       const HeadingTag = `h${item.level}`;
+//       const headingClasses = `text-red-600 ${item.level === 2 ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"} font-bold text-center italic my-8`;
+//       return <HeadingTag key={index} className={headingClasses}>{item.text}</HeadingTag>;
+//     }
+//     case "image":
+//       return (
+//         <div key={index} className="relative w-full h-[270px] md:h-[500px] mb-6">
+//           <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" className="object-cover rounded-lg" quality={74} loading="lazy" />
+//         </div>
+//       );
+//     default:
+//       return null;
+//   }
+// };
 
 // ── Static JSX for client news ──────────────────────────────────────────────
 const ClientNewsContent = () => (
@@ -804,17 +810,24 @@ const ClientNewsContent = () => (
   </>
 );
 
+// ── generateStaticParams — pillar slugs commented out ───────────────────────
 export async function generateStaticParams() {
-  const pillarSlugs = getAllPillarArticles().map((a) => ({ slug: a.slug }));
-  return [{ slug: CLIENT_NEWS_SLUG }, ...pillarSlugs];
+  // const pillarSlugs = getAllPillarArticles().map((a) => ({ slug: a.slug }));
+  // return [{ slug: CLIENT_NEWS_SLUG }, ...pillarSlugs];
+  return [{ slug: CLIENT_NEWS_SLUG }];
 }
 
+// ── generateMetadata — pillar meta commented out ─────────────────────────────
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const article =
-    slug === CLIENT_NEWS_SLUG
-      ? getClientNewsArticle()
-      : getAllPillarArticles().find((a) => a.slug === slug);
+
+  // Pillar article metadata — commented out
+  // const article =
+  //   slug === CLIENT_NEWS_SLUG
+  //     ? getClientNewsArticle()
+  //     : getAllPillarArticles().find((a) => a.slug === slug);
+
+  const article = getClientNewsArticle();
 
   if (!article) notFound();
 
@@ -845,16 +858,18 @@ export async function generateMetadata({ params }) {
 
 export default async function JulioHerreraArticlePage({ params }) {
   const { slug } = await params;
-  const isClientNews = slug === CLIENT_NEWS_SLUG;
-  const pillarArticles = getAllPillarArticles();
 
-  const article = isClientNews
-    ? getClientNewsArticle()
-    : pillarArticles.find((a) => a.slug === slug);
+  // Pillar articles array — commented out
+  // const pillarArticles = getAllPillarArticles();
+
+  // Article resolution — pillar lookup commented out
+  // const article = isClientNews
+  //   ? getClientNewsArticle()
+  //   : pillarArticles.find((a) => a.slug === slug);
+  const article = getClientNewsArticle();
 
   if (!article) notFound();
 
-  // Author now comes from politics category
   const category = "politics";
   const authorData = authorsPageData.categories.find(
     (item) => item.category.toLowerCase() === category.toLowerCase()
@@ -862,25 +877,31 @@ export default async function JulioHerreraArticlePage({ params }) {
 
   if (!authorData) notFound();
 
-  const currentPillarIndex = isClientNews ? -1 : pillarArticles.findIndex((a) => a.slug === slug);
-  const prevPost = !isClientNews && currentPillarIndex > 0 ? pillarArticles[currentPillarIndex - 1] : null;
-  const nextPost = !isClientNews && currentPillarIndex < pillarArticles.length - 1 ? pillarArticles[currentPillarIndex + 1] : null;
+  // Pillar prev/next navigation — commented out
+  // const currentPillarIndex = isClientNews ? -1 : pillarArticles.findIndex((a) => a.slug === slug);
+  // const prevPost = !isClientNews && currentPillarIndex > 0 ? pillarArticles[currentPillarIndex - 1] : null;
+  // const nextPost = !isClientNews && currentPillarIndex < pillarArticles.length - 1 ? pillarArticles[currentPillarIndex + 1] : null;
 
-  const relatedArticles = isClientNews
-    ? pillarArticles.slice(0, 4)
-    : pillarArticles.filter((a) => a.slug !== slug).slice(0, 4);
+  // Related articles — pillar version commented out
+  // const relatedArticles = isClientNews
+  //   ? pillarArticles.slice(0, 4)
+  //   : pillarArticles.filter((a) => a.slug !== slug).slice(0, 4);
 
-  const popularArticles = isClientNews
-    ? getLatestFromDifferentCategories(category, 5)
-    : (categorypagedata[category] || [])
-        .filter((a) => a.newsType !== "pillar news" && a.slug !== slug)
-        .sort((a, b) => parseDate(b.date) - parseDate(a.date))
-        .slice(0, 5);
+  const popularArticles = getLatestFromDifferentCategories(category, 5);
+
+  // Popular articles — pillar version commented out
+  // const popularArticles = isClientNews
+  //   ? getLatestFromDifferentCategories(category, 5)
+  //   : (categorypagedata[category] || [])
+  //       .filter((a) => a.newsType !== "pillar news" && a.slug !== slug)
+  //       .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+  //       .slice(0, 5);
 
   const shareUrl = `${SITE_URL}/${PILLAR_BASE}/${slug}`;
   const encodedUrl = encodeURIComponent(shareUrl);
   const shareTitle = encodeURIComponent(article.title);
 
+  // ── JSON-LD — pillar fields still present but pillar route is unreachable ──
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -896,13 +917,16 @@ export default async function JulioHerreraArticlePage({ params }) {
     keywords: article.keywords?.join(", ") || "",
   };
 
+  // ── Breadcrumb JSON-LD — pillar breadcrumb entries commented out ───────────
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: "Politics", item: `${SITE_URL}/politics` },
-      { "@type": "ListItem", position: 3, name: article.title, item: `${SITE_URL}/${PILLAR_BASE}/${slug}` },
+      // Pillar-specific breadcrumb item — commented out
+      // { "@type": "ListItem", position: 3, name: article.title, item: `${SITE_URL}/${PILLAR_BASE}/${slug}` },
+      { "@type": "ListItem", position: 3, name: article.title, item: `${SITE_URL}/${PILLAR_BASE}/${CLIENT_NEWS_SLUG}` },
     ],
   };
 
@@ -932,6 +956,7 @@ export default async function JulioHerreraArticlePage({ params }) {
         </div>
 
         <div className="px-4 lg:px-7">
+          {/* Breadcrumb nav — always shows client news breadcrumb only */}
           <div className="px-4 lg:px-7 mt-6">
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm flex-wrap">
@@ -980,13 +1005,17 @@ export default async function JulioHerreraArticlePage({ params }) {
         <div className="max-w-7xl mx-auto py-8">
           <div className="flex flex-col lg:flex-row gap-8 px-4 lg:px-7">
             <div className="w-full lg:w-3/4 font-serif" itemProp="articleBody">
-              {isClientNews
+
+              {/* Article body — only client news rendered; pillar renderContent commented out */}
+              <ClientNewsContent />
+              {/* Pillar dynamic content — commented out */}
+              {/* {isClientNews
                 ? <ClientNewsContent />
                 : article.content.map((item, index) => renderContent(item, index))
-              }
+              } */}
 
-              {/* Prev / Next — pillar articles only */}
-              {!isClientNews && (
+              {/* Prev / Next navigation — pillar only, commented out */}
+              {/* {!isClientNews && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12 p-6 rounded-lg">
                   <div className="bg-[#eaeaea]/50 p-5">
                     <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Previous article</p>
@@ -1009,7 +1038,7 @@ export default async function JulioHerreraArticlePage({ params }) {
                     )}
                   </div>
                 </div>
-              )}
+              )} */}
 
               <div className="w-full h-px bg-gray-200 my-8" />
 
@@ -1080,6 +1109,7 @@ export default async function JulioHerreraArticlePage({ params }) {
             </div>
           </div>
 
+          {/* Related articles section — commented out (pillar only) */}
           {/* {relatedArticles.length > 0 && (
             <div className="relative mb-5 pt-10">
               <div className="max-w-7xl mx-auto px-4 relative mb-8">
