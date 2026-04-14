@@ -1025,9 +1025,9 @@ export default async function ArticlePage({ params }) {
                   <Link href={`/author/${slugify(authorData.name)}`} title={`View ${authorData.name}'s author page`}>
                     <h2 className="text-2xl font-bold text-gray-900 mb-1 hover:text-red-600">{authorData.name}</h2>
                   </Link>
-                  {authorData.websiteLink && (
+                  {/* {authorData.websiteLink && (
                     <a href={authorData.websiteLink} className="text-blue-600 hover:underline text-sm mb-1 block" target="_blank" rel="noopener noreferrer" title={`Visit ${authorData.name}'s website`}>{authorData.websiteLink}</a>
-                  )}
+                  )} */}
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">{authorData.bio}</p>
                   <div className="flex gap-3 lg:gap-6 justify-center lg:justify-start">
                     {authorData.social?.twitter && <a href={authorData.social.twitter} className="hover:text-red-500 transition" target="_blank" rel="noopener noreferrer" title={`Follow ${authorData.name} on Twitter`} aria-label={`Follow ${authorData.name} on Twitter`}><FaTwitter size={15} /></a>}

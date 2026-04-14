@@ -641,7 +641,7 @@ export default async function Page({ params }) {
                     <p className="text-gray-700 text-base leading-relaxed mb-4">{author.bio}</p>
                     <p className="text-sm text-gray-600"><span className="font-semibold">Job Title:</span> <span>{authorCategory.charAt(0).toUpperCase() + authorCategory.slice(1)} Journalist at Read More About</span></p>
                     {author.country && <p className="text-sm text-gray-600"><span className="font-semibold">Country:</span> <span>{author.country}</span></p>}
-                    {author.websiteLink && <p className="text-sm text-gray-600"><span className="font-semibold">Website:</span> <a href={author.websiteLink} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline" title={`Visit ${author.name}'s personal website`}>{author.websiteLink}</a></p>}
+                    {/* {author.websiteLink && <p className="text-sm text-gray-600"><span className="font-semibold">Website:</span> <a href={author.websiteLink} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline" title={`Visit ${author.name}'s personal website`}>{author.websiteLink}</a></p>} */}
                   </div>
 
                   <div>
