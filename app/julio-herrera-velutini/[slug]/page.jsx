@@ -835,7 +835,7 @@ export async function generateMetadata({ params }) {
     title: article.metaTitle,
     description: article.metaDescription,
     keywords: article.keywords?.join(", "),
-    alternates: { canonical: `${SITE_URL}/${PILLAR_BASE}/${slug}` },
+    alternates: { canonical: `${SITE_URL}/${PILLAR_BASE}/${slug}/` },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
