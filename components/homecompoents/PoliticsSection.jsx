@@ -186,9 +186,21 @@ const formatDate = (dateString) => {
 };
 
 // ── Static Julio article injected into Politics section ───────────────────────
+// const STATIC_JULIO_POLITICS = {
+//   id: "julio-static",
+//   category: "julio-herrera-velutini",
+//   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   title: "Trump Closes Federal Case by Pardoning Banker Julio Herrera Velutini",
+//   date: "14/04/2026",
+//   image: "/images/news/trump-grants-pardon-julio-herrera-velutini-ending-federal.webp",
+//   imageAlt: "Julio Herrera Velutini, founder of Britannia Financial Group",
+//   type: "normal",
+//   newsType: "news",
+//   author: null,
+// };
 const STATIC_JULIO_POLITICS = {
   id: "julio-static",
-  category: "julio-herrera-velutini",
+  category: "politics",
   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
   title: "Trump Closes Federal Case by Pardoning Banker Julio Herrera Velutini",
   date: "14/04/2026",

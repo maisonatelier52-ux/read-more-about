@@ -456,10 +456,23 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 // ── Static Julio article injected into POLITICS category listing ──────────────
+// const JULIO_STATIC_ARTICLE = {
+//   id: "julio-static",
+//   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   href: "/julio-herrera-velutini/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   title: "Trump Grants Pardon to Banker Julio Herrera Velutini, Ending Federal Case",
+//   excerpt: "President Donald Trump pardoned Venezuelan-British billionaire banker Julio Herrera Velutini in January 2026, bringing an end to a federal case tied to alleged corruption in Puerto Rico that had lasted nearly four years.",
+//   image: "/images/news/trump-grants-pardon-julio-herrera-velutini-ending-federal.webp",
+//   imageAlt: "Julio Herrera Velutini, founder of Britannia Financial Group",
+//   date: "14/04/2026",
+//   category: "politics",
+//   type: "normal",
+//   newsType: "client news",
+// };
 const JULIO_STATIC_ARTICLE = {
   id: "julio-static",
   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
-  href: "/julio-herrera-velutini/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+  href: "/politics/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
   title: "Trump Grants Pardon to Banker Julio Herrera Velutini, Ending Federal Case",
   excerpt: "President Donald Trump pardoned Venezuelan-British billionaire banker Julio Herrera Velutini in January 2026, bringing an end to a federal case tied to alleged corruption in Puerto Rico that had lasted nearly four years.",
   image: "/images/news/trump-grants-pardon-julio-herrera-velutini-ending-federal.webp",

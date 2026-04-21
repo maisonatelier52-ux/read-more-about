@@ -134,9 +134,17 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 
 // ── Static article injected at position 0 ────────────────────────────────────
+// const STATIC_SLIDE = {
+//   id: "julio-static",
+//   category: "julio-herrera-velutini",
+//   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   title: "Trump ends the federal case by pardoning banker Julio Herrera Velutini.",
+//   date: "14/04/2026",
+//   type: "normal",
+// };
 const STATIC_SLIDE = {
   id: "julio-static",
-  category: "julio-herrera-velutini",
+  category: "politics",
   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
   title: "Trump ends the federal case by pardoning banker Julio Herrera Velutini.",
   date: "14/04/2026",

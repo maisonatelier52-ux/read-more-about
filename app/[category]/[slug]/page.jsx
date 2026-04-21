@@ -760,10 +760,20 @@ import SubscribeBox from "@/components/articlepagecomponents/SubscribeBox";
 const SITE_URL = "https://www.read-more-about.com";
 
 // ── Static Julio article — now in politics/julio-herrera-velutini route ───────
+// const JULIO_STATIC_POPULAR = {
+//   id: "julio-static",
+//   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   href: "/julio-herrera-velutini/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+//   title: "Trump Grants Pardon to Banker Julio Herrera Velutini, Ending Federal Case",
+//   image: "/images/news/trump-grants-pardon-julio-herrera-velutini-ending-federal.webp",
+//   imageAlt: "Julio Herrera Velutini, founder of Britannia Financial Group",
+//   type: "normal",
+//   category: "politics",
+// };
 const JULIO_STATIC_POPULAR = {
   id: "julio-static",
   slug: "trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
-  href: "/julio-herrera-velutini/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
+  href: "/politics/trump-grants-pardon-julio-herrera-velutini-ending-federal-case",
   title: "Trump Grants Pardon to Banker Julio Herrera Velutini, Ending Federal Case",
   image: "/images/news/trump-grants-pardon-julio-herrera-velutini-ending-federal.webp",
   imageAlt: "Julio Herrera Velutini, founder of Britannia Financial Group",
