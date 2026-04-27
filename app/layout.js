@@ -29,6 +29,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Read More About RSS Feed"
+          href="/rss.xml"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
