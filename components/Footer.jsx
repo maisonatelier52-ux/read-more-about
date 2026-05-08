@@ -9,6 +9,8 @@ import articleData from "../public/data/articles.json";
 import authorData from "../public/data/authors.json";
 import { PiRedditLogoBold } from "react-icons/pi";
 import { FaPinterest } from "react-icons/fa";
+import { BsSubstack } from "react-icons/bs";
+import { SiMedium } from "react-icons/si";
 
 // ✅ SEO FIX: All data computed OUTSIDE the component as static module-level constants.
 // This means footer links are available on first paint — no JS execution required for crawlers.
@@ -105,7 +107,7 @@ export default function Footer() {
                 aria-label="Follow us on Reddit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors rounded-md"
               >
                 <PiRedditLogoBold size={16} />
               </a>
@@ -115,7 +117,7 @@ export default function Footer() {
                 aria-label="Follow us on Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors rounded-md"
               >
                 <FaInstagram size={16} />
               </a>
@@ -125,11 +127,31 @@ export default function Footer() {
                 aria-label="Follow us on X (Twitter)"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors rounded-md"
               >
                 <FaXTwitter size={16} />
               </a>
               <a
+                href="https://medium.com/@admin_14364"
+                title="Follow ReadMoreAbout on Medium"
+                aria-label="Follow us on Medium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors rounded-md"
+              >
+                <SiMedium size={18} />
+              </a>
+              <a
+                href="https://substack.com/@readmoredaily"
+                title="Follow ReadMoreAbout on Substack"
+                aria-label="Follow us on Substack"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors rounded-md"
+              >
+                <BsSubstack size={18} />
+              </a>
+              {/* <a
                 href="https://www.pinterest.com/00s86wkafo06w3x55yx5gzhy4zhrp1/_profile/"
                 title="Follow ReadMoreAbout on Pinterest"
                 aria-label="Follow us on Pinterest"
@@ -138,7 +160,7 @@ export default function Footer() {
                 className="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-red-600 transition-colors"
               >
                 <FaPinterest size={18} />
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -438,9 +438,11 @@
 
 
 import dynamic from 'next/dynamic';
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaReddit } from "react-icons/fa6";
 import articlesData from '../public/data/articles.json';
 import authorsData from '../public/data/authors.json';
+import { BsSubstack } from "react-icons/bs";
+import { SiMedium } from "react-icons/si";
 
 // Dynamic imports for components that can be lazy loaded
 const SliderSection = dynamic(() => import('@/components/homecompoents/SliderSection'));
@@ -825,17 +827,17 @@ export default function Home() {
                 {/* Column 3 */}
                 <div className="flex items-center gap-4 text-red-500">
                   <a 
-                    href="https://www.facebook.com/readmoreabout" 
+                    href="https://www.reddit.com/user/read-more-about/" 
                     className="hover:text-black transition"
-                    aria-label="Follow us on Facebook"
+                    aria-label="Follow us on Reddit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Read More About Facebook account"
+                    title="Read More About Reddit account"
                   >
-                    <FaFacebookF />
+                    <FaReddit />
                   </a>
                   <a 
-                    href="https://www.instagram.com/readmoreabout" 
+                    href="https://www.instagram.com/read_more_about_26/" 
                     className="hover:text-black transition"
                     aria-label="Follow us on Instagram"
                     target="_blank"
@@ -845,7 +847,7 @@ export default function Home() {
                     <FaInstagram />
                   </a>
                   <a 
-                    href="https://www.twitter.com/readmoreabout" 
+                    href="https://x.com/More528Read" 
                     className="hover:text-black transition"
                     aria-label="Follow us on Twitter"
                     target="_blank"
@@ -853,6 +855,26 @@ export default function Home() {
                     title="Read More About Twitter account"
                   >
                     <FaXTwitter />
+                  </a>
+                   <a 
+                    href="https://medium.com/@admin_14364" 
+                    className="hover:text-black transition"
+                    aria-label="Follow us on Medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Read More About Medium account"
+                  >
+                    <SiMedium />
+                  </a>
+                   <a 
+                    href="https://substack.com/@readmoredaily" 
+                    className="hover:text-black transition"
+                    aria-label="Follow us on Substack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Read More About Substack account"
+                  >
+                    <BsSubstack />
                   </a>
                 </div>
               </div>

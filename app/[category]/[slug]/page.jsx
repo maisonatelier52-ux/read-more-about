@@ -8,6 +8,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterestP, FaWhatsap
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
 import SubscribeBox from "@/components/articlepagecomponents/SubscribeBox";
+import { FaXTwitter, FaReddit, FaQuora } from "react-icons/fa6";
+import { SiMedium } from "react-icons/si";
 
 const SITE_URL = "https://www.read-more-about.com";
 
@@ -466,7 +468,7 @@ export default async function ArticlePage({ params }) {
                         title={`Follow ${authorData.name} on Twitter`}
                         aria-label={`Follow ${authorData.name} on Twitter`}
                       >
-                        <FaTwitter size={15} />
+                        <FaXTwitter size={15} />
                       </a>
                     )}
                     {authorData.social?.quora && (
@@ -478,7 +480,7 @@ export default async function ArticlePage({ params }) {
                         title={`Follow ${authorData.name} on Quora`}
                         aria-label={`Follow ${authorData.name} on Quora`}
                       >
-                        <FaInstagram size={15} />
+                        <FaQuora size={18} />
                       </a>
                     )}
                     {authorData.social?.reddit && (
@@ -490,7 +492,7 @@ export default async function ArticlePage({ params }) {
                         title={`Follow ${authorData.name} on Reddit`}
                         aria-label={`Follow ${authorData.name} on Reddit`}
                       >
-                        <FaFacebookF size={15} />
+                        <FaReddit size={15} />
                       </a>
                     )}
                     {authorData.social?.medium && (
@@ -502,7 +504,7 @@ export default async function ArticlePage({ params }) {
                         title={`Follow ${authorData.name} on Medium`}
                         aria-label={`Follow ${authorData.name} on Medium`}
                       >
-                        <FaYoutube size={15} />
+                        <SiMedium size={15} />
                       </a>
                     )}
                   </div>
