@@ -3786,6 +3786,78 @@
           "text": "Check the Amazon listing before you pull the trigger — the $400 discount is on the 128GB Hazel variant specifically, and stock is limited. Prices and availability on Amazon third-party listings can shift fast. If your current phone has decent trade-in value, Google Store is also worth checking — they've been running trade-in promos of their own this month."
         }
       ]
+    },
+    {
+      "id": 10,
+      "slug": "microsoft-edge-copilot-ai-browser-update",
+      "metaTitle": "Microsoft Edge Adds AI Copilot That Can Read and Analyze All Open Tabs",
+      "metaDescription": "Microsoft introduced a major Edge browser update that lets Copilot analyze open tabs, summarize webpages, organize browsing history, and deliver AI-powered productivity tools.",
+      "title": "Microsoft Edge Adds AI Copilot That Can Read and Analyze All Open Tabs",
+      "subtitle": "Edge just got a serious AI upgrade — Copilot can now pull information from every tab you have open, and Microsoft wants it to replace the way you browse entirely",
+      "category": "technology",
+      "image": "/images/news/microsoft-edge-copilot-ai-browser-update-image.webp",
+      "imageAlt": "Microsoft Edge browser uses Copilot AI to analyze and organize multiple open tabs.",
+      "excerpt": "Microsoft's latest Edge update lets Copilot read across all your open tabs at once — comparing products, summarizing pages, and organizing your browsing history — as the company pushes Edge toward becoming a full AI browser.",
+      "newsType": "news",
+      "type": "normal",
+      "date": "14/05/2026",
+      "keywords": ["Microsoft Edge", "Copilot", "AI browser", "Microsoft AI", "Edge update", "AI productivity", "browsing assistant", "Journeys feature", "Edge mobile", "AI tools"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Microsoft just pushed a significant update to Edge, and the headline feature is hard to miss — Copilot can now read across every tab you have open at the same time. That means you can ask it to compare two products you're looking at, pull a key detail from an article buried three tabs back, or get a quick summary without clicking around. Microsoft says users stay in control of which AI features get turned on, and anything you don't want enabled can stay off. The update works on both desktop and mobile."
+        },
+        {
+          "type": "paragraph",
+          "text": "One thing getting quietly phased out is \"Copilot Mode\" — the version that could take actions on your behalf, like booking a restaurant reservation. According to The Verge, those capabilities are being folded into a new experience called \"Browse with Copilot\" instead. Microsoft's framing for all of this is pretty direct: they want Edge to function less like a traditional browser and more like a productivity assistant that happens to have a browser built in."
+        },
+        {
+          "type": "paragraph",
+          "text": "Beyond the multi-tab reading, the update brings smarter tab organization and more context-aware help. The idea is that Copilot isn't just answering one-off questions anymore — it's supposed to reason across what you're actively looking at and give you more useful answers because of it. This builds on AI tools Edge already had, like shopping comparisons and article summaries, but pushes them further."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "New AI Features Across Desktop and Mobile"
+        },
+        {
+          "type": "paragraph",
+          "text": "There's a lot packed into this update beyond the tab-reading feature. A new tool called \"Study and Learn\" can take an article and turn it into a quiz or an interactive study session — something that could be genuinely useful for students or anyone trying to retain what they read. There's also a feature that converts open tabs into an audio summary in a podcast format, which sounds similar to what Google's NotebookLM already does. And if you start typing anywhere on a webpage, an AI writing assistant will now show up to help."
+        },
+        {
+          "type": "paragraph",
+          "text": "The mobile update is where things get a bit more ambitious. Edge users will be able to share their screen with Copilot and ask questions about whatever is visible — so if you're looking at a map, a menu, or a product page, Copilot can weigh in on what it sees. Microsoft says the app will make it obvious when Copilot is watching or listening, with visible indicators to show what it's doing at any moment. Voice and Vision features are both expanding as part of this rollout."
+        },
+        {
+          "type": "paragraph",
+          "text": "The new tab page has also been redesigned to bring search, chat, and browsing together in one place rather than keeping them separate. And a feature called \"Journeys\" is now rolling out more widely — it looks back at your browsing history, groups related activity into categories, and surfaces things you might want to pick up again. Microsoft's pitch is that it makes it easier to continue a research session or shopping task across multiple days and devices."
+        },
+        {
+          "type": "paragraph",
+          "text": "Microsoft also confirmed that Copilot will be able to reference your past browsing and previous conversations — with your permission — to give more relevant answers over time. They're calling it \"long-term memory,\" and the goal is for Copilot to feel more personalized the longer you use it, rather than starting fresh every session."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Edge's Shift to an AI-Centric Browser Experience"
+        },
+        {
+          "type": "paragraph",
+          "text": "None of this is happening in isolation. Microsoft has been steadily pushing Edge toward a more unified look with its other AI products — Copilot, Bing, and the broader Microsoft 365 ecosystem. Visually, that means rounded corners, updated fonts, and a cleaner layout that ties everything together. Functionally, it means Copilot is increasingly central to how the browser works, not just a panel you can open on the side."
+        },
+        {
+          "type": "paragraph",
+          "text": "That shift has come with some friction. Microsoft recently announced it's deprecating the Edge Sidebar — the panel that let people pin apps and tools alongside whatever webpage they were browsing. A lot of users pushed back hard on that call, with complaints showing up across Microsoft forums and social media. The common thread was that the Sidebar was one of the features that made Edge worth using, and removing it in favor of more Copilot integration feels like the wrong trade-off to them."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Journeys feature has also drawn some skepticism. PCWorld noted that some users aren't thrilled about AI-generated browsing summaries replacing a plain history list — the concern being that it becomes harder to find a specific site you visited when the history is organized by topic rather than chronology. It's a reasonable worry, and it reflects a broader tension in how Microsoft is approaching this: more AI involvement means less direct control for users who preferred doing things themselves."
+        },
+        {
+          "type": "paragraph",
+          "text": "Microsoft's response to all of this is to frame Edge as an evolving \"intelligent workspace\" — something designed around how people actually work across research, shopping, and everyday browsing, rather than just displaying webpages. Whether users end up agreeing with that vision is a different question, but the direction Microsoft is heading with Edge is pretty clear at this point."
+        }
+      ]
     }
   ],
 
