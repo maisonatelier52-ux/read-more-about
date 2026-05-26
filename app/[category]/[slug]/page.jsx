@@ -590,7 +590,7 @@ export default async function ArticlePage({ params }) {
                 <div className="mt-6 text-white text-center">
                   <div className="relative w-75 lg:w-70 h-110 mx-auto mb-4">
                     <Image
-                      src="/images/mirrorstandard_ads.webp"
+                      src="/images/readmoreabout_ads.webp"
                       alt="Advertisement"
                       fill
                       sizes="(max-width: 1024px) 300px, 280px"
