@@ -15,7 +15,7 @@ const formatDate = (dateString) => {
 const AdBlock = () => (
   <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg overflow-hidden shadow-lg">
     <Image
-      src="/images/readmoreabout_ads.webp"
+      src="/images/read_more_about_ads.webp"
       alt="Newspaper Theme Advertisement"
       width={1200}
       height={800}

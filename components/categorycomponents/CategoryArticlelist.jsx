@@ -379,7 +379,7 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
               <div className="mt-6 text-white text-center">
                 <div className="relative w-75 lg:w-65 h-110 mx-auto mb-4">
                   <Image
-                    src="/images/readmoreabout_ads.webp"
+                    src="/images/read_more_about_ads.webp"
                     alt="Advertisement"
                     fill
                     sizes="(max-width: 1024px) 300px, 260px"
