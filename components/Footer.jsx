@@ -325,7 +325,6 @@ const STANDARDS_LINKS = [
   { label: "Ownership & Funding", href: "/ownership-and-funding" },
   { label: "Advertising Policy", href: "/advertising-policy" },
   { label: "Right of Reply", href: "/right-of-reply-policy" },
-  { label: "Corrections Policy", href: "/corrections-policy" },
   { label: "Legal", href: "/legal" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
