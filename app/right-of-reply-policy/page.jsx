@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Right of Reply Policy — Read More About",
+  title: "Right of Reply Policy | Read More About",
   description:
-    "Read More About's policy for offering individuals and organizations a fair opportunity to respond to criticism, allegations, or disputed claims before or after publication.",
+    "Learn how Read More About handles reply requests, disputed claims, and response opportunities in news reporting.",
   keywords: [
     "right of reply",
     "read more about reply policy",
@@ -19,8 +19,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/right-of-reply` },
   openGraph: {
-    title: "Right of Reply Policy — Read More About",
-    description: "How Read More About offers fair response opportunities to subjects of critical reporting.",
+    title: "Right of Reply Policy | Read More About",
+    description: "Learn how Read More About handles reply requests, disputed claims, and response opportunities in news reporting.",
     url: `${SITE_URL}/right-of-reply`,
     type: "website",
     siteName: SITE_NAME,
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Right of Reply Policy — Read More About",
-    description: "How Read More About offers fair response opportunities to subjects of critical reporting.",
+    title: "Right of Reply Policy | Read More About",
+    description: "Learn how Read More About handles reply requests, disputed claims, and response opportunities in news reporting.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export default function RightOfReply() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Right of Reply Policy — Read More About",
+    "name": "Right of Reply Policy | Read More About",
     "url": `${SITE_URL}/right-of-reply`,
     "description": "Read More About's policy for offering fair response opportunities to individuals and organizations featured in our reporting.",
     "publisher": {
@@ -69,9 +69,12 @@ export default function RightOfReply() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Right of Reply Policy — Read More About</h1>
-          <p>Read More About provides individuals and organizations a fair opportunity to respond when they are the subject of criticism, allegations, or disputed factual claims in our reporting.</p>
+          <p>
+            Read More About right of reply policy explains how individuals and
+            organizations can respond to criticism, allegations, and disputed claims.
+          </p>
         </div>
 
         {/* Hero */}
@@ -81,7 +84,7 @@ export default function RightOfReply() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Fairness</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Right of Reply Policy
+              Read More About Right of Reply Policy
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -279,19 +282,31 @@ export default function RightOfReply() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Editorial (Pre-Publication)</p>
-                <a href="mailto:editorial@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:editorial@read-more-about.com" 
+                  title="Submit a pre-publication reply request"
+                  className="text-red-600 hover:underline"
+                >
                   editorial@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Corrections (Post-Publication)</p>
-                <a href="mailto:corrections@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:corrections@read-more-about.com" 
+                  title="Submit a post-publication correction or response request"
+                  className="text-red-600 hover:underline"
+                >
                   corrections@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Legal & Formal Notices</p>
-                <a href="mailto:legal@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:legal@read-more-about.com" 
+                  title="Contact Read More About for legal and formal notices"
+                  className="text-red-600 hover:underline"
+                >
                   legal@read-more-about.com
                 </a>
               </div>
