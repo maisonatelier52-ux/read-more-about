@@ -4,9 +4,11 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Editorial Policy | Read More About Newsroom Standards",
+  title: "Editorial Policy | Read More About",
+
   description:
-    "Read More About's editorial policy outlines our standards for accuracy, independence, fairness, and transparency in news reporting. Learn about our journalism ethics and newsroom accountability.",
+    "Editorial policy covering newsroom standards, fact-checking, transparency, and ethical journalism.",
+
   keywords: [
     "editorial policy",
     "read more about editorial standards",
@@ -18,22 +20,46 @@ export const metadata = {
     "newsroom ethics",
     "editorial policy newsroom standards"
   ],
-  alternates: { canonical: `${SITE_URL}/editorial-policy` },
+
+  alternates: {
+    canonical: `${SITE_URL}/editorial-policy`
+  },
+
   openGraph: {
-    title: "Editorial Policy | Read More About Newsroom Standards",
-    description: "Our editorial standards for accuracy, independence, and transparent journalism. Learn about Read More About's newsroom ethics and accountability.",
+    title: "Editorial Policy | Read More About",
+
+    description:
+      "Editorial standards covering accuracy, transparency, independence, and newsroom ethics.",
+
     url: `${SITE_URL}/editorial-policy`,
     type: "website",
     siteName: SITE_NAME,
-    images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Editorial Policy - Read More About Newsroom Standards" }],
+
+    images: [
+      {
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Editorial Policy - Read More About"
+      }
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Editorial Policy | Read More About Newsroom Standards",
-    description: "Our editorial standards for accuracy, independence, and transparent journalism.",
+
+    title: "Editorial Policy | Read More About",
+
+    description:
+      "Editorial standards covering accuracy, transparency, and newsroom ethics.",
+
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
-  robots: { index: true, follow: true },
+
+  robots: {
+    index: true,
+    follow: true
+  },
 };
 
 export default function EditorialPolicy() {
@@ -42,7 +68,7 @@ export default function EditorialPolicy() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Editorial Policy | Read More About Newsroom Standards",
+    "name": "Editorial Policy | Read More About",
     "url": `${SITE_URL}/editorial-policy`,
     "description": "Read More About's editorial policy covering accuracy, independence, transparency, and journalistic ethics.",
     "publisher": {
