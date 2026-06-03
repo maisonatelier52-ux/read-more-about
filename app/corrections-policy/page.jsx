@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Corrections Policy — Read More About",
+  title: "Corrections Policy | Read More About",
   description:
-    "How Read More About handles errors, issues corrections, and maintains transparency with readers about changes to published content.",
+    "Learn how Read More About handles corrections, factual errors, updates, and newsroom transparency.",
   keywords: [
     "corrections policy",
     "read more about corrections",
@@ -19,8 +19,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/corrections-policy` },
   openGraph: {
-    title: "Corrections Policy — Read More About",
-    description: "How we handle errors and corrections in our independent news coverage.",
+    title: "Corrections Policy | Read More About",
+    description: "Learn how Read More About handles corrections, factual errors, updates, and newsroom transparency.",
     url: `${SITE_URL}/corrections-policy`,
     type: "website",
     siteName: SITE_NAME,
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Corrections Policy — Read More About",
-    description: "How we handle errors and corrections in our independent news coverage.",
+    title: "Corrections Policy | Read More About",
+    description: "Learn how Read More About handles corrections, factual errors, updates, and newsroom transparency.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export default function CorrectionsPolicy() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Corrections Policy — Read More About",
+    "name": "Corrections Policy | Read More About",
     "url": `${SITE_URL}/corrections-policy`,
     "description": "Read More About's corrections policy for handling factual errors and maintaining journalistic integrity.",
     "publisher": {
@@ -70,9 +70,12 @@ export default function CorrectionsPolicy() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Corrections Policy — Read More About</h1>
-          <p>How Read More About identifies, corrects, and discloses errors in published news articles.</p>
+          <p>
+            Read More About corrections policy explains how we handle factual errors,
+            corrections, updates, clarifications, and newsroom accountability.
+          </p>
         </div>
 
         {/* Hero */}
@@ -82,7 +85,7 @@ export default function CorrectionsPolicy() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Standards</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Corrections Policy
+              Read More About Corrections Policy
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -200,6 +203,7 @@ export default function CorrectionsPolicy() {
               <span className="text-lg">✉</span>
               <a
                 href="mailto:corrections@read-more-about.com"
+                title="Contact Read More About regarding corrections and factual errors"
                 className="text-zinc-800 font-medium hover:text-red-600 transition-colors text-sm"
               >
                 corrections@read-more-about.com →
