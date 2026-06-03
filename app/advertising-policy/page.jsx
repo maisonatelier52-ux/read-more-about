@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Advertising Policy — Read More About",
+  title: "Advertising Policy | Read More About",
   description:
-    "How Read More About separates commercial content from editorial reporting, labels paid material, and maintains advertising transparency for readers.",
+    "Learn how Read More About labels sponsored content, advertising, affiliate links, and commercial relationships.",
   keywords: [
     "advertising policy",
     "read more about advertising",
@@ -19,8 +19,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/advertising-policy` },
   openGraph: {
-    title: "Advertising Policy — Read More About",
-    description: "How Read More About labels ads, handles sponsored content, and separates commercial material from independent journalism.",
+    title: "Advertising Policy | Read More About",
+    description: "Learn how Read More About labels sponsored content, advertising, affiliate links, and commercial relationships.",
     url: `${SITE_URL}/advertising-policy`,
     type: "website",
     siteName: SITE_NAME,
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advertising Policy — Read More About",
-    description: "How Read More About labels ads and separates commercial material from independent journalism.",
+    title: "Advertising Policy | Read More About",
+    description: "Learn how Read More About labels sponsored content, advertising, affiliate links, and commercial relationships.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export default function AdvertisingPolicy() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Advertising Policy — Read More About",
+    "name": "Advertising Policy | Read More About",
     "url": `${SITE_URL}/advertising-policy`,
     "description": "Read More About's advertising and sponsored content policy for transparency and reader trust.",
     "publisher": {
@@ -69,9 +69,12 @@ export default function AdvertisingPolicy() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Advertising Policy — Read More About</h1>
-          <p>How Read More About separates commercial content from editorial reporting and labels paid material clearly for readers.</p>
+          <p>
+            Read More About advertising policy explains sponsored content,
+            affiliate disclosures, advertising transparency, and editorial independence.
+          </p>
         </div>
 
         {/* Hero */}
@@ -81,7 +84,7 @@ export default function AdvertisingPolicy() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Transparency</p>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Advertising and Sponsored Content Policy
+              Read More About Advertising Policy
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -252,13 +255,21 @@ export default function AdvertisingPolicy() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Advertising and Partnerships</p>
-                <a href="mailto:editorial@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:editorial@read-more-about.com" 
+                  title="Contact Read More About regarding advertising and partnerships"
+                  className="text-red-600 hover:underline"
+                >
                   editorial@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Reader Concerns</p>
-                <a href="mailto:corrections@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:corrections@read-more-about.com" 
+                  title="Report advertising disclosure concerns to Read More About"
+                  className="text-red-600 hover:underline"
+                >
                   corrections@read-more-about.com
                 </a>
               </div>
