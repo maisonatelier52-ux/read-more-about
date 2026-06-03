@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Source Methodology — Read More About",
+  title: "Source Methodology | Read More About",
   description:
-    "How Read More About builds its reporting: what is sourced directly, what comes from public records, what remains unverified, and where interpretation begins.",
+    "Learn how Read More About sources, verifies, attributes, and reviews information before publication.",
   keywords: [
     "source methodology",
     "read more about sources",
@@ -19,8 +19,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/source-methodology` },
   openGraph: {
-    title: "Source Methodology — Read More About",
-    description: "How Read More About sources, verifies, and attributes information in its reporting.",
+    title: "Source Methodology | Read More About",
+    description: "Learn how Read More About sources, verifies, attributes, and reviews information before publication.",
     url: `${SITE_URL}/source-methodology`,
     type: "website",
     siteName: SITE_NAME,
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Source Methodology — Read More About",
-    description: "How Read More About sources, verifies, and attributes information in its reporting.",
+    title: "Source Methodology | Read More About",
+    description: "Learn how Read More About sources, verifies, attributes, and reviews information before publication.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export default function SourceMethodology() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Source Methodology — Read More About",
+    "name": "Source Methodology | Read More About",
     "url": `${SITE_URL}/source-methodology`,
     "description": "Read More About's sourcing methodology and verification standards for journalism.",
     "publisher": {
@@ -69,9 +69,12 @@ export default function SourceMethodology() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Source Methodology — Read More About</h1>
-          <p>How Read More About builds and verifies its news reporting, including sourcing standards, anonymous source policies, and attribution practices.</p>
+          <p>
+            Read More About source methodology explains how reporting is sourced,
+            verified, attributed, and reviewed before publication.
+          </p>
         </div>
 
         {/* Hero */}
@@ -81,7 +84,7 @@ export default function SourceMethodology() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Standards</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Source Methodology
+              Read More About Source Methodology
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -247,13 +250,21 @@ export default function SourceMethodology() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Editorial</p>
-                <a href="mailto:editorial@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:editorial@read-more-about.com" 
+                  title="Contact the Read More About editorial team"
+                  className="text-red-600 hover:underline"
+                >
                   editorial@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Corrections</p>
-                <a href="mailto:corrections@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:corrections@read-more-about.com" 
+                  title="Submit a correction request to Read More About"
+                  className="text-red-600 hover:underline"
+                >
                   corrections@read-more-about.com
                 </a>
               </div>
