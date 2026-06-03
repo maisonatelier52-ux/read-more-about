@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Legal & Terms — Read More About",
+  title: "Legal & Terms | Read More About",
   description:
-    "Read More About's legal policies including copyright, content reuse, complaints process, formal notices, and limitations of liability.",
+    "Legal policies covering copyright, content reuse, complaints, permissions, and formal notices.",
   keywords: [
     "legal policy",
     "read more about legal",
@@ -20,8 +20,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/legal` },
   openGraph: {
-    title: "Legal & Terms — Read More About",
-    description: "Legal information, copyright terms, and formal notice procedures for Read More About.",
+    title: "Legal & Terms | Read More About",
+    description: "Legal policies covering copyright, content reuse, complaints, permissions, and formal notices.",
     url: `${SITE_URL}/legal`,
     type: "website",
     siteName: SITE_NAME,
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Legal & Terms — Read More About",
-    description: "Legal information, copyright terms, and formal notice procedures.",
+    title: "Legal & Terms | Read More About",
+    description: "Legal policies covering copyright, content reuse, complaints, permissions, and formal notices.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -42,7 +42,7 @@ export default function LegalPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Legal & Terms — Read More About",
+    "name": "Legal & Terms | Read More About",
     "url": `${SITE_URL}/legal`,
     "description": "Read More About's legal policies, copyright terms, complaint procedures, and formal notice information.",
     "publisher": {
@@ -70,9 +70,12 @@ export default function LegalPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Legal & Terms — Read More About</h1>
-          <p>Read More About's legal policies covering copyright, content reuse, complaints, formal notices, and limitations of liability.</p>
+          <p>
+            Read More About legal policy covering copyright, content reuse,
+            complaints, permissions, formal notices, and website terms.
+          </p>
         </div>
 
         {/* Hero */}
@@ -82,7 +85,7 @@ export default function LegalPage() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Legal Information</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Legal &amp; Terms
+              Read More About Legal &amp; Terms
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -284,25 +287,41 @@ export default function LegalPage() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">General Legal Contact</p>
-                <a href="mailto:legal@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:legal@read-more-about.com" 
+                  title="Contact Read More About for legal matters and formal notices"
+                  className="text-red-600 hover:underline"
+                >
                   legal@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Editorial & Complaints</p>
-                <a href="mailto:editorial@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:editorial@read-more-about.com" 
+                  title="Contact the Read More About editorial team"
+                  className="text-red-600 hover:underline"
+                >
                   editorial@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Corrections & Factual Concerns</p>
-                <a href="mailto:corrections@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:corrections@read-more-about.com" 
+                  title="Submit corrections or factual concerns"
+                  className="text-red-600 hover:underline"
+                >
                   corrections@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Permissions & Syndication</p>
-                <a href="mailto:legal@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:legal@read-more-about.com" 
+                  title="Request permissions, licensing, or syndication information"
+                  className="text-red-600 hover:underline"
+                >
                   legal@read-more-about.com
                 </a>
               </div>
