@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Editorial Policy — Read More About",
+  title: "Editorial Policy | Read More About Newsroom Standards",
   description:
-    "Read More About's editorial policy outlines our standards for accuracy, independence, fairness, and transparency in news reporting.",
+    "Read More About's editorial policy outlines our standards for accuracy, independence, fairness, and transparency in news reporting. Learn about our journalism ethics and newsroom accountability.",
   keywords: [
     "editorial policy",
     "read more about editorial standards",
@@ -15,20 +15,21 @@ export const metadata = {
     "editorial independence",
     "reporting standards",
     "fact checking policy",
-    "newsroom ethics"
+    "newsroom ethics",
+    "editorial policy newsroom standards"
   ],
   alternates: { canonical: `${SITE_URL}/editorial-policy` },
   openGraph: {
-    title: "Editorial Policy — Read More About",
-    description: "Our editorial standards for accuracy, independence, and transparent journalism.",
+    title: "Editorial Policy | Read More About Newsroom Standards",
+    description: "Our editorial standards for accuracy, independence, and transparent journalism. Learn about Read More About's newsroom ethics and accountability.",
     url: `${SITE_URL}/editorial-policy`,
     type: "website",
     siteName: SITE_NAME,
-    images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Editorial Policy - Read More About" }],
+    images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Editorial Policy - Read More About Newsroom Standards" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Editorial Policy — Read More About",
+    title: "Editorial Policy | Read More About Newsroom Standards",
     description: "Our editorial standards for accuracy, independence, and transparent journalism.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
@@ -41,7 +42,7 @@ export default function EditorialPolicy() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Editorial Policy — Read More About",
+    "name": "Editorial Policy | Read More About Newsroom Standards",
     "url": `${SITE_URL}/editorial-policy`,
     "description": "Read More About's editorial policy covering accuracy, independence, transparency, and journalistic ethics.",
     "publisher": {
@@ -70,19 +71,24 @@ export default function EditorialPolicy() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Editorial Policy — Read More About Independent News</h1>
-          <p>Read More About's editorial policy defines our standards for accuracy, fairness, independence, and accountability in reporting.</p>
+          <p>
+            Read More About editorial policy covering journalism ethics, accuracy, 
+            editorial independence, transparency, fact-checking, and newsroom accountability. 
+            Our newsroom standards ensure fair, independent, and factual reporting across 
+            all coverage areas including politics, business, technology, and world news.
+          </p>
         </div>
 
         {/* Hero */}
         <div className="bg-zinc-900 text-white border-b-4 border-red-600">
           <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
             <div className="inline-block border-l-4 border-red-600 pl-4 mb-6">
-              <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Standards</p>
+              <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Newsroom Standards</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Editorial Policy
+              Read More About Editorial Policy
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -95,8 +101,9 @@ export default function EditorialPolicy() {
           <div className="mb-12 pb-12 border-b border-zinc-200">
             <p className="text-xl leading-relaxed text-zinc-700" style={{ fontFamily: 'Georgia, serif' }}>
               Read More About is an independent digital newsroom committed to factual, transparent, and
-              accountable journalism. This policy sets out how our editorial decisions are made, how our
-              reporting is verified, and how we maintain the trust of our readers.
+              accountable journalism. This editorial policy sets out how our newsroom decisions are made, 
+              how our reporting is verified, and how we maintain the trust of our readers through consistent 
+              ethical standards.
             </p>
           </div>
 
@@ -133,7 +140,13 @@ export default function EditorialPolicy() {
             <p className="text-zinc-700 leading-relaxed mb-6">
               When we make errors, we correct them promptly and transparently. Corrections appear in the
               original article with clear labeling. For our full correction process, see our{' '}
-              <a href="/corrections-policy" className="text-red-600 underline hover:text-red-700">Corrections Policy</a>.
+              <a 
+                href="/corrections-policy" 
+                title="Read our Corrections Policy for error handling"
+                className="text-red-600 underline hover:text-red-700"
+              >
+                Corrections Policy
+              </a>.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               Stories involving legal proceedings, allegations of wrongdoing, financial claims, or matters
@@ -156,7 +169,14 @@ export default function EditorialPolicy() {
             <p className="text-zinc-700 leading-relaxed">
               Individuals and organizations the subject of critical coverage have a reasonable opportunity
               to respond before publication where circumstances permit. Our approach to this is outlined
-              in our <a href="/right-of-reply-policy" className="text-red-600 underline hover:text-red-700">Right of Reply Policy</a>.
+              in our{' '}
+              <a 
+                href="/right-of-reply-policy" 
+                title="Read our Right of Reply Policy for response opportunities"
+                className="text-red-600 underline hover:text-red-700"
+              >
+                Right of Reply Policy
+              </a>.
             </p>
           </section>
 
@@ -199,7 +219,13 @@ export default function EditorialPolicy() {
             </p>
             <p className="text-zinc-700 leading-relaxed">
               For a full explanation of how we handle advertising and commercial content, see our{' '}
-              <a href="/advertising-policy" className="text-red-600 underline hover:text-red-700">Advertising Policy</a>.
+              <a 
+                href="/advertising-policy" 
+                title="Read our Advertising Policy for commercial content disclosure"
+                className="text-red-600 underline hover:text-red-700"
+              >
+                Advertising Policy
+              </a>.
             </p>
           </section>
 
@@ -251,6 +277,7 @@ export default function EditorialPolicy() {
               <span className="text-lg">✉</span>
               <a
                 href="mailto:editorial@read-more-about.com"
+                title="Contact the Read More About editorial team"
                 className="text-zinc-800 font-medium hover:text-red-600 transition-colors text-sm"
               >
                 editorial@read-more-about.com →
