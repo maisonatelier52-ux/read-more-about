@@ -506,6 +506,7 @@ export default function Footer() {
                   <div className="flex items-center gap-2 text-[11px]">
                     <Link
                       href={`/${article.categoryName}`}
+                      title={article.categoryName}
                       className="font-bold uppercase tracking-wider text-black hover:text-red-600 transition-colors duration-200"
                     >
                       {article.category}
