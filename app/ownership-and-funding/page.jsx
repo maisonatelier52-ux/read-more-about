@@ -4,9 +4,9 @@ const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
 export const metadata = {
-  title: "Ownership & Funding — Read More About",
+  title: "Ownership & Funding | Read More About",
   description:
-    "Who controls editorial decisions at Read More About, how the publication is funded, and how we handle conflicts of interest and commercial relationships.",
+    "Learn about Read More About ownership, newsroom funding, editorial independence, and transparency standards.",
   keywords: [
     "ownership and funding",
     "read more about ownership",
@@ -19,8 +19,8 @@ export const metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/ownership-and-funding` },
   openGraph: {
-    title: "Ownership & Funding — Read More About",
-    description: "Transparency about who owns and funds Read More About and how that affects editorial decisions.",
+    title: "Ownership & Funding | Read More About",
+    description: "Learn about Read More About ownership, newsroom funding, editorial independence, and transparency standards.",
     url: `${SITE_URL}/ownership-and-funding`,
     type: "website",
     siteName: SITE_NAME,
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ownership & Funding — Read More About",
-    description: "Transparency about who owns and funds Read More About.",
+    title: "Ownership & Funding | Read More About",
+    description: "Learn about Read More About ownership, newsroom funding, editorial independence, and transparency standards.",
     images: [`${SITE_URL}/images/read-more-about-logo.webp`],
   },
   robots: { index: true, follow: true },
@@ -41,7 +41,7 @@ export default function OwnershipAndFunding() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Ownership & Funding — Read More About",
+    "name": "Ownership & Funding | Read More About",
     "url": `${SITE_URL}/ownership-and-funding`,
     "description": "Transparency disclosure about the ownership, funding, and commercial relationships of Read More About.",
     "publisher": {
@@ -69,9 +69,12 @@ export default function OwnershipAndFunding() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <div className="min-h-screen bg-white">
+        {/* SEO hidden content - no H1 tags here */}
         <div className="sr-only">
-          <h1>Ownership and Funding — Read More About</h1>
-          <p>This page explains who controls editorial decisions at Read More About, how commercial support works, and how the newsroom handles conflicts of interest.</p>
+          <p>
+            Read More About ownership and funding policy explains editorial independence,
+            commercial relationships, sponsorship transparency, and newsroom funding standards.
+          </p>
         </div>
 
         {/* Hero */}
@@ -81,7 +84,7 @@ export default function OwnershipAndFunding() {
               <p className="text-red-600 font-semibold tracking-wider text-sm uppercase">Transparency</p>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-              Ownership &amp; Funding
+              Read More About Ownership &amp; Funding
             </h1>
             <p className="text-zinc-400 text-base">Last Updated: {lastUpdated}</p>
           </div>
@@ -202,7 +205,13 @@ export default function OwnershipAndFunding() {
               Paid content, sponsored features, affiliate relationships, and other commercial material
               are labeled clearly enough that a reader does not have to guess whether they are reading
               journalism or advertising. For details, see our{' '}
-              <a href="/advertising-policy" className="text-red-600 underline hover:text-red-700">Advertising Policy</a>.
+              <a 
+                href="/advertising-policy" 
+                title="Read our Advertising Policy"
+                className="text-red-600 underline hover:text-red-700"
+              >
+                Advertising Policy
+              </a>.
             </p>
           </section>
 
@@ -248,13 +257,21 @@ export default function OwnershipAndFunding() {
             <div className="space-y-3 text-sm">
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Editorial</p>
-                <a href="mailto:editorial@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:editorial@read-more-about.com" 
+                  title="Contact the Read More About editorial team"
+                  className="text-red-600 hover:underline"
+                >
                   editorial@read-more-about.com
                 </a>
               </div>
               <div>
                 <p className="text-zinc-500 uppercase tracking-wider text-xs font-semibold mb-1">Corrections and Transparency</p>
-                <a href="mailto:corrections@read-more-about.com" className="text-red-600 hover:underline">
+                <a 
+                  href="mailto:corrections@read-more-about.com" 
+                  title="Submit corrections or transparency concerns to Read More About"
+                  className="text-red-600 hover:underline"
+                >
                   corrections@read-more-about.com
                 </a>
               </div>
