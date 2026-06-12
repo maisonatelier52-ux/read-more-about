@@ -1,3 +1,4 @@
+// utils/slugify.js
 export const slugify = (text) => {
   return text
     .toString()

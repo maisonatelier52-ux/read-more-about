@@ -1,3 +1,4 @@
+// app/privacy-policy/page.jsx
 import React from 'react';
 
 const SITE_URL = "https://www.read-more-about.com";

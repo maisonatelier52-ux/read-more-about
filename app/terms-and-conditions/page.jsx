@@ -1,3 +1,4 @@
+// app/terms-and-conditions /page.jsx
 import React from 'react';
 
 const SITE_URL = "https://www.read-more-about.com";

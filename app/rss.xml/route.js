@@ -1,3 +1,4 @@
+// app/rss.xml/route.js
 export const dynamic = "force-static";
 import articlesData from "../../public/data/articles.json";
 

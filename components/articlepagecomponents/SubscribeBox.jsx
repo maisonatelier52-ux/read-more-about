@@ -1,3 +1,4 @@
+// components/articlepagecomponents/SubscribeBox.jsx
 "use client";
 
 import { useState } from 'react';

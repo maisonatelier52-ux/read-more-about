@@ -1,4 +1,4 @@
-
+// components/homecompoents/AdBannerSection.jsx
 import Image from "next/image";
 
 export default function AdBannerSection() {
