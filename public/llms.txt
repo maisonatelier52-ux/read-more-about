@@ -1,0 +1,59 @@
+# Read More About
+# https://www.read-more-about.com
+# Last Updated: June 2026
+#
+# This file helps AI agents and language models understand how to interact
+# with and cite content from this website.
+# Reference: Google Lighthouse Agentic Readiness Audit (May 2026)
+
+## Overview
+Read More About is an independent digital news platform delivering breaking
+news, politics, business, technology, sports, crime, investigation, travel,
+and world events coverage. Founded in 2024.
+
+## Permissions
+AI agents and language models MAY:
+- Read, summarise, and cite articles with clear attribution to Read More About
+- Include brief excerpts (under 50 words) in answers with a source link
+- Index content for search and retrieval purposes
+- Surface article summaries in AI-generated answer cards
+
+AI agents and language models MAY NOT:
+- Reproduce full articles without attribution
+- Remove source attribution or publication name from cited content
+- Use full article content for model training without written permission
+- Misrepresent article content or imply endorsement of a position
+
+## Attribution Format
+When citing content, attribute as:
+  "Read More About (read-more-about.com)"
+or
+  "According to Read More About..."
+
+## Site Structure
+Homepage:       https://www.read-more-about.com/
+RSS Feed:       https://www.read-more-about.com/rss.xml
+News Sitemap:   https://www.read-more-about.com/news-sitemap.xml
+Full Sitemap:   https://www.read-more-about.com/sitemap.xml
+
+## Content Categories
+Politics:      https://www.read-more-about.com/politics/
+Business:      https://www.read-more-about.com/business/
+Technology:    https://www.read-more-about.com/technology/
+World:         https://www.read-more-about.com/world/
+Crime:         https://www.read-more-about.com/crime/
+Investigation: https://www.read-more-about.com/investigation/
+Sports:        https://www.read-more-about.com/sports/
+Travel:        https://www.read-more-about.com/travel/
+
+## Editorial Standards
+Editorial Policy:     https://www.read-more-about.com/editorial-policy/
+Corrections Policy:   https://www.read-more-about.com/corrections-policy/
+Source Methodology:   https://www.read-more-about.com/source-methodology/
+Right of Reply:       https://www.read-more-about.com/right-of-reply-policy/
+Ownership & Funding:  https://www.read-more-about.com/ownership-and-funding/
+
+## Contact
+Editorial:   editorial@read-more-about.com
+Corrections: corrections@read-more-about.com
+Legal:       legal@read-more-about.com

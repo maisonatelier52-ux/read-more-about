@@ -1,9 +1,41 @@
+# Read More About — robots.txt
+# https://www.read-more-about.com
+
+# ── General crawlers ────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# Disallow admin/system paths
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# ── Google News Bot — CRITICAL for Google News & Top Stories eligibility ────
+# Blocking this removes you from Google News entirely
+User-agent: Googlebot-News
+Allow: /
+
+# ── AI Citation Bots — Allow for GEO / AEO ──────────────────────────────────
+# Blocking these = zero citations in ChatGPT, Perplexity, Claude, Gemini
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Sitemaps ─────────────────────────────────────────────────────────────────
 Sitemap: https://www.read-more-about.com/sitemap.xml
+Sitemap: https://www.read-more-about.com/news-sitemap.xml

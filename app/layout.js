@@ -37,6 +37,13 @@ export default function RootLayout({ children }) {
           title="Read More About RSS Feed"
           href="/rss.xml"
         />
+
+          <link
+          rel="sitemap"
+          type="application/xml"
+          title="News Sitemap"
+          href="/news-sitemap.xml"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
