@@ -843,7 +843,7 @@ export default function ClientArticle({
             </nav>
 
             {/* Introduction */}
-            <section id="introduction" className="max-w-[760px] scroll-mt-28">
+            <section id="introduction" className="scroll-mt-28">
               {article.introduction.map((para, idx) => (
                 <p
                   key={idx}
@@ -859,7 +859,7 @@ export default function ClientArticle({
             </section>
 
             {/* At A Glance Card */}
-            <section id="at-a-glance" className="my-6 max-w-[760px] scroll-mt-28">
+            <section id="at-a-glance" className="my-6 scroll-mt-28">
               <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-md md:p-8">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="text-sm font-bold uppercase tracking-wide text-black">
@@ -892,7 +892,7 @@ export default function ClientArticle({
 
             {/* Numbered Sections */}
             {article.sections.map((section) => (
-              <section key={section.id} id={section.id} className="mb-8 max-w-[760px] scroll-mt-28">
+              <section key={section.id} id={section.id} className="mb-8 scroll-mt-28">
                 <div className="mb-3 flex items-baseline gap-4">
                   <span className="font-serif text-3xl font-bold leading-none text-red-600">
                     {section.number}
@@ -976,7 +976,7 @@ export default function ClientArticle({
             ))}
 
             {/* FAQ */}
-            <section id="faq" className="mb-8 max-w-[760px] scroll-mt-28">
+            <section id="faq" className="mb-8 scroll-mt-28">
               <div className="mb-4 flex items-baseline gap-4">
                 <span className="font-serif text-3xl font-bold leading-none text-red-600">FAQ</span>
                 <h2 className="font-serif text-2xl font-bold leading-tight text-black md:text-[28px]">
