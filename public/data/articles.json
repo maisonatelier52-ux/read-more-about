@@ -4217,6 +4217,135 @@
           "text": "Microsoft's response to all of this is to frame Edge as an evolving \"intelligent workspace\" — something designed around how people actually work across research, shopping, and everyday browsing, rather than just displaying webpages. Whether users end up agreeing with that vision is a different question, but the direction Microsoft is heading with Edge is pretty clear at this point."
         }
       ]
+    },
+    {
+      "id": 11,
+      "slug": "apple-scrapped-mac-pro-m2-m3-extreme-intel-plans-2026",
+      "metaTitle": "Apple Cancels Extreme Mac Pro Chips and Intel Model Plans",
+      "metaDescription": "Apple has canceled plans for high end \"Extreme\" M2 and M3 Mac Pro chips and reportedly axed an Intel based Mac Pro variant, reshaping its workstation strategy.",
+      "title": "Apple Reportedly Scrapped M2/M3 Extreme Mac Pro and Intel Option Plans",
+      "subtitle": "Apple has dropped long-rumored plans for high-end \"Extreme\" versions of its M series chips, such as M2 Extreme and M3 Extreme variants, that were in development for future Mac Pro models.",
+      "category": "technology",
+      "image": "/images/news/apple-mac-pro-extreme-chips-cancelled-image.webp",
+      "imageAlt": "Apple discontinues M2 Extreme and M3 Extreme Mac Pro plans and drops Intel model.",
+      "excerpt": "Apple has canceled plans for high end \"Extreme\" M2 and M3 Mac Pro chips and reportedly axed an Intel based Mac Pro variant, reshaping its workstation strategy.",
+      "newsType": "news",
+      "type": "normal",
+      "date": "20/07/2026",
+      "keywords": ["Apple", "Mac Pro", "M2 Extreme", "M3 Extreme", "Intel", "silicon roadmap", "workstation PCs", "Apple strategy"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Apple has dropped long-rumored plans for high-end \"Extreme\" versions of its M series chips, such as M2 Extreme and M3 Extreme variants, that were in development for future Mac Pro models. Those chip projects have been shelved, according to industry reports, and Apple has also nixed earlier internal discussions about an Intel based Mac Pro option that had been circulating among some development teams."
+        },
+        {
+          "type": "paragraph",
+          "text": "The moves signal a change in Apple's hardware roadmap as the company rethinks how it will approach professional grade desktops. During the Silicon era, Apple has transitioned its entire Mac lineup away from Intel processors to its own M series chips, but the crown jewel of Apple's desktop offerings — the Mac Pro — has been a little more complex due to performance expectations, expandability and professional workflows."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "M2 Extreme and M3 Extreme Chips Plans Scrapped"
+        },
+        {
+          "type": "paragraph",
+          "text": "Multiple sources reporting on Apple's internal product strategy say the company had been working on next-generation \"Extreme\" silicon — performance-oriented versions of the standard M2 and M3 chips — for use in an updated Mac Pro desktop. These chips were rumored to include more CPU and GPU cores than the standard M2/M3 configurations, and may have used Apple's UltraFusion interconnect technology to combine multiple chip dies for higher performance."
+        },
+        {
+          "type": "paragraph",
+          "text": "But those plans apparently have been scrapped, with Apple instead focusing on consolidating around fewer chip variants that serve both pro and mainstream markets. This is an indication of Apple's changing philosophy regarding Apple Silicon scalability, as it appears that Apple is trying to simplify its chip lineup, rather than create extremely different \"Extreme\" variants only for one product."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Intel-Based Mac Pro Variant Also Removed"
+        },
+        {
+          "type": "paragraph",
+          "text": "Along with the changes to Apple Silicon, there have been reports that Apple has considered an Intel version of the next Mac Pro, which would have been aimed at professional users that rely on legacy Intel optimized software or have particular workflow needs. It is understood that this option never went beyond preliminary internal discussion and has now been completely dropped."
+        },
+        {
+          "type": "paragraph",
+          "text": "Apple's transition away from Intel has been a slow one and the Mac Pro was one of the last remaining products in its lineup that was not fully realized on Apple Silicon – making this shift a big deal for professionals who were looking forward to a range of processor options."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Cost And Complexity Factors Drive Apple's Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Industry analysis suggests that supporting \"Extreme\" variants of the M2/M3 chips — including UltraFusion multi die designs — would have added significant complexity and cost to Apple's hardware roadmap. UltraFusion enables die to die communication at very high bandwidth, and is seen as a key technology for Apple Silicon's expansion into larger, more powerful systems. But it's also a technical and manufacturing challenge that may not fit in with Apple's broader efficiency goals."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reports also say Apple is prioritizing modularity and performance per watt over the raw peak performance that would come from larger, power-hungry chips. That focus could lead the company to fine-tune and optimize existing chip families, rather than fragmenting its product strategy with new \"Extreme\" SKUs."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Effect on the Professional Mac Ecosystem"
+        },
+        {
+          "type": "paragraph",
+          "text": "Apple's choice to ditch the M2 Extreme and M3Such extreme chips could have ripple effects across the Mac Pro ecosystem, and the pool of professionals waiting for more powerful Apple Silicon hardware."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Mac Pro is seen by many creative and technical pros as Apple's flagship workstation line – including those in film, 3D graphics, scientific computing and software development. Expectations were high that Apple would eventually bring the Apple Silicon performance to that segment, with the speculation that more extreme chip variants would be necessary to challenge modular workstations built around discrete CPUs and GPUs."
+        },
+        {
+          "type": "paragraph",
+          "text": "As the latest reports suggest a different trajectory, users who need very large compute workloads may have to look for hybrid workflows or alternative platforms while Apple refines how its more mainstream Apple Silicon chips can be scaled further in a unified architecture."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Apple's Unified Silicon Focus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of supporting a wide array of specialized chips, Apple seems to be determined to double down on its silicon roadmap. The company can cut fragmentation while still driving performance advances across its product family by investing in its core M series architecture and pushing performance through incremental improvements in each generation."
+        },
+        {
+          "type": "paragraph",
+          "text": "That would streamline Apple's engineering and logistics, cut down on complexity in its supply chain and make it easier for developers to optimize software for fewer, but more powerful, chip bases. This also makes sense given Apple's long-standing preference for tight integration of hardware and software across its ecosystem."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Professional Users Reaction to Roadmap Change"
+        },
+        {
+          "type": "paragraph",
+          "text": "Speculation and interest from professionals and industry watchers have swirled around the Mac Pro and its potential high end chips for years. Apple's decision to ditch the \"Extreme\" variants has been met with a mixed reaction. A number of developers and creatives are disappointed that Apple is not necessarily pushing the highest possible performance ceilings on Apple Silicon as aggressively as once expected."
+        },
+        {
+          "type": "paragraph",
+          "text": "Some say that Apple's emphasis on efficient, scalable performance across the whole range from laptops to desktops could actually benefit a broader base of users rather than concentrating power in a handful of ultra-expensive workstation configurations."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What This Means for Apple Hardware Going Forward"
+        },
+        {
+          "type": "paragraph",
+          "text": "The axing of M2 Extreme and M3 Extreme chips and the Intel version is a sign of Apple's evolving approach to workstation class computing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Apple is likely to continue with its core chip strategy, making incremental improvements through architectural advances that enhance performance across its products without increasing chip variants."
+        },
+        {
+          "type": "paragraph",
+          "text": "How this will play out in future Mac Pro releases – timing, configuration options, performance targets – is a big question for professionals who rely on high end hardware to do demanding workloads."
+        },
+        {
+          "type": "paragraph",
+          "text": "As Apple continues to refine its silicon leadership, the company's approach to balancing performance, cost and complexity will determine the direction of its hardware lineup in the years ahead."
+        }
+      ]
     }
   ],
 
