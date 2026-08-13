@@ -8,6 +8,7 @@ import authorsData from '../public/data/authors.json';
 import { BsSubstack } from "react-icons/bs";
 import { SiMedium } from "react-icons/si";
 
+
 // Dynamic imports for components that can be lazy loaded
 const SliderSection = dynamic(() => import('@/components/homecompoents/SliderSection'));
 const ArticleGrid = dynamic(() => import('@/components/homecompoents/ArticleGrid'));
