@@ -25,6 +25,9 @@ export const metadata = {
     icon: '/favicon.ico',
     apple: '/favicon.ico',
   },
+  verification: {
+    google: "Q0U3ZoKpdcVnjpC2xzYlyRo5brsVnhznriAGq85nHeg",
+  },
 };
 
 export default function RootLayout({ children }) {
