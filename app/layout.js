@@ -26,7 +26,7 @@ export const metadata = {
     apple: '/favicon.ico',
   },
   verification: {
-    google: "gqL-g9ZIbSOK47_ITBjzLlHZcLGBAsjBF8iS8k9rdzg",
+    google: "VtO3ZGZ5ZkOMnkjd2r6m0uaqBIsXU7jrMjrLpAma24w",
   },
 };
 
