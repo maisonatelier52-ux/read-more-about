@@ -760,6 +760,7 @@ import SubscribeBox from "@/components/articlepagecomponents/SubscribeBox";
 import { FaXTwitter, FaReddit, FaQuora } from "react-icons/fa6";
 import { SiMedium } from "react-icons/si";
 import ClientArticle from "@/components/articlepagecomponents/Clientarticle";
+import JulioClientArticle from "@/components/articlepagecomponents/JulioClientArticle";
 
 const SITE_URL = "https://www.read-more-about.com";
 
@@ -830,6 +831,15 @@ const CLIENT_ARTICLE_SLUGS = new Set([
 
 function isClientArticle(category, slug) {
   return category === "business" && CLIENT_ARTICLE_SLUGS.has(slug);
+}
+
+// Slugs listed here render through <JulioClientArticle /> (politics category).
+const JULIO_CLIENT_ARTICLE_SLUGS = new Set([
+  "white-house-herrera-velutini-political-prosecution",
+]);
+
+function isJulioClientArticle(category, slug) {
+  return category === "politics" && JULIO_CLIENT_ARTICLE_SLUGS.has(slug);
 }
 
 export async function generateMetadata({ params }) {
@@ -909,6 +919,26 @@ export default async function ArticlePage({ params }) {
         prevPost={prevPost}
         nextPost={nextPost}
         relatedArticles={clientRelatedArticles}
+        popularArticles={popularArticles}
+      />
+    );
+  }
+
+  // ─── JULIO CLIENT NEWS ARTICLE ──────────────────────────────────
+  if (isJulioClientArticle(category, slug)) {
+    const julioRelatedArticles = categoryPosts
+      .filter((item) => item.slug !== slug && item.newsType === "news")
+      .slice(0, 4)
+      .map((item) => ({ ...item, category }));
+
+    return (
+      <JulioClientArticle
+        article={article}
+        authorInfo={authorData}
+        category={category}
+        prevPost={prevPost}
+        nextPost={nextPost}
+        relatedArticles={julioRelatedArticles}
         popularArticles={popularArticles}
       />
     );
