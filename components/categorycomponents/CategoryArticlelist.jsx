@@ -26,7 +26,7 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
                 const articleHref = article.href ?? `/${category}/${article.slug}`
 
                 return (
-                  <Link key={article.id} href={articleHref} title={article.title}>
+                  <Link key={`${article.category}-${article.id}`} href={articleHref} title={article.title}>
                     <div className="flex gap-6 group cursor-pointer flex-col md:flex-row mb-6">
 
                       {/* Image Column */}

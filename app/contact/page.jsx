@@ -20,11 +20,11 @@ export const metadata = {
     "reader feedback",
     "contact news platform"
   ],
-  alternates: { canonical: `${SITE_URL}/contact` },
+  alternates: { canonical: `${SITE_URL}/contact/` },
   openGraph: {
     title: "Contact Read More About Newsroom | Editorial, Tips & Corrections",
     description: "Contact the Read More About newsroom for editorial questions, news tips, corrections, media inquiries, and reader feedback.",
-    url: `${SITE_URL}/contact`,
+    url: `${SITE_URL}/contact/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Contact Read More About Newsroom" }],
@@ -66,7 +66,7 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Read More About Newsroom",
-    "url": `${SITE_URL}/contact`,
+    "url": `${SITE_URL}/contact/`,
     "description": "Contact the Read More About newsroom for editorial inquiries, news tips, corrections, and press requests.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -86,7 +86,7 @@ export default function ContactPage() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${SITE_URL}/contact` },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${SITE_URL}/contact/` },
     ],
   };
 
@@ -245,7 +245,7 @@ export default function ContactPage() {
           </h2>
           <div className="w-10 h-0.5 bg-red-600 mx-auto mb-6" />
           <p className="text-zinc-700 leading-relaxed text-center max-w-2xl mx-auto">
-            Read More About values every contact from our readers. Whether you're reaching out 
+            Read More About values every contact from our readers. Whether you&apos;re reaching out 
             with a news tip, correction, press inquiry, or just want to share feedback about 
             our coverage, our editorial team reviews all messages carefully. We strive to 
             respond to all substantive communications within 2-3 business days.

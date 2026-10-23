@@ -19,11 +19,11 @@ export const metadata = {
     "website terms",
     "limitation of liability"
   ],
-  alternates: { canonical: `${SITE_URL}/legal` },
+  alternates: { canonical: `${SITE_URL}/legal/` },
   openGraph: {
     title: "Legal & Terms | Read More About",
     description: "Legal policies covering copyright, content reuse, complaints, permissions, and formal notices.",
-    url: `${SITE_URL}/legal`,
+    url: `${SITE_URL}/legal/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Legal Policy - Read More About" }],
@@ -44,7 +44,7 @@ export default function LegalPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Legal & Terms | Read More About",
-    "url": `${SITE_URL}/legal`,
+    "url": `${SITE_URL}/legal/`,
     "description": "Read More About's legal policies, copyright terms, complaint procedures, and formal notice information.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -61,7 +61,7 @@ export default function LegalPage() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Legal", "item": `${SITE_URL}/legal` },
+      { "@type": "ListItem", "position": 2, "name": "Legal", "item": `${SITE_URL}/legal/` },
     ],
   };
 
@@ -98,7 +98,7 @@ export default function LegalPage() {
           {/* Intro */}
           <div className="mb-12 pb-12 border-b border-zinc-200">
             <p className="text-xl leading-relaxed text-zinc-700" style={{ fontFamily: 'Georgia, serif' }}>
-              This page provides an overview of legal and compliance topics relevant to Read More About's
+              This page provides an overview of legal and compliance topics relevant to Read More About&apos;s
               publishing, reader use of site content, complaints, permissions, and formal requests.
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function LegalPage() {
               Read More About publishes journalism, analysis, and explanatory material for general
               informational purposes. Our articles are edited to professional newsroom standards,
               but they should not be treated as legal, financial, tax, medical, or other professional
-              advice tailored to an individual reader's situation.
+              advice tailored to an individual reader&apos;s situation.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               Where a story touches on legal, regulatory, or financial matters, we aim to use precise
@@ -274,7 +274,7 @@ export default function LegalPage() {
             <p className="text-zinc-700 leading-relaxed mb-4">
               Read More About may update this legal policy from time to time to reflect changes in our
               practices, legal requirements, or operational circumstances. When we make material changes,
-              we will update the "Last Updated" date at the top of this page.
+              we will update the &ldquo;Last Updated&rdquo; date at the top of this page.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               We encourage readers to review this page periodically. Continued use of the site after

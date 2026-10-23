@@ -91,16 +91,16 @@ export async function generateMetadata({ params }) {
       "news analysis",
       "expert coverage"
     ],
-    authors: [{ name: "Read More About Editorial Team" }],
+    authors: [{ name: "Editorial Desk", url: `${SITE_URL}/author/editorial-desk/` }],
     creator: SITE_NAME,
     publisher: SITE_NAME,
     alternates: {
-      canonical: `${SITE_URL}/${categoryKey}`,
+      canonical: `${SITE_URL}/${categoryKey}/`,
     },
     openGraph: {
       title: `${formattedCategory} — Breaking News & Expert Analysis`,
       description: description,
-      url: `${SITE_URL}/${categoryKey}`,
+      url: `${SITE_URL}/${categoryKey}/`,
       siteName: SITE_NAME,
       type: "website",
       locale: "en_US",
@@ -213,7 +213,7 @@ export default async function Page({ params }) {
     "@type": "CollectionPage",
     "name": `${formattedCategory} News`,
     "description": categoryDescription,
-    "url": `${SITE_URL}/${categoryKey}`,
+    "url": `${SITE_URL}/${categoryKey}/`,
     "mainEntity": {
       "@type": "ItemList",
       "itemListOrder": "https://schema.org/ItemListOrderDescending",
@@ -221,7 +221,7 @@ export default async function Page({ params }) {
       "itemListElement": sortedArticles.slice(0, 10).map((article, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "url": `${SITE_URL}/${categoryKey}/${article.slug}`,
+        "url": `${SITE_URL}/${categoryKey}/${article.slug}/`,
         "item": {
           "@type": "NewsArticle",
           "headline": article.title,
@@ -229,8 +229,9 @@ export default async function Page({ params }) {
           "datePublished": parseDate(article.date).toISOString(),
           "dateModified": parseDate(article.date).toISOString(),
           "author": authorInfo ? {
-            "@type": "Person",
+            "@type": "Organization",
             "name": authorInfo.name,
+            "url": `${SITE_URL}/author/editorial-desk/`,
           } : {
             "@type": "Organization",
             "name": SITE_NAME
@@ -247,7 +248,7 @@ export default async function Page({ params }) {
           "image": article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}/images/read-more-about-logo.webp`,
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `${SITE_URL}/${categoryKey}/${article.slug}`,
+            "@id": `${SITE_URL}/${categoryKey}/${article.slug}/`,
           },
         },
       })),
@@ -277,7 +278,7 @@ export default async function Page({ params }) {
         "@type": "ListItem",
         "position": 2,
         "name": `${formattedCategory} News`,
-        "item": `${SITE_URL}/${categoryKey}`,
+        "item": `${SITE_URL}/${categoryKey}/`,
       },
     ],
   };
@@ -287,7 +288,7 @@ export default async function Page({ params }) {
     "@type": "WebPage",
     "name": `${formattedCategory} — Breaking News & Expert Analysis`,
     "description": categoryDescription,
-    "url": `${SITE_URL}/${categoryKey}`,
+    "url": `${SITE_URL}/${categoryKey}/`,
     "isPartOf": {
       "@type": "WebSite",
       "url": SITE_URL,
@@ -324,7 +325,7 @@ export default async function Page({ params }) {
         <section className="sr-only">
           <h1>{formattedCategory} — Breaking News, Expert Analysis & Latest Updates</h1>
           <p>
-            Welcome to Read More About's {formattedCategory.toLowerCase()} section, your trusted source 
+            Welcome to Read More About&apos;s {formattedCategory.toLowerCase()} section, your trusted source 
             for breaking {formattedCategory.toLowerCase()} news, in-depth analysis, and expert commentary. 
             Our team of experienced journalists delivers comprehensive coverage of the latest developments, 
             trends, and insights in {formattedCategory.toLowerCase()}. Stay informed with daily updates, 

@@ -50,6 +50,12 @@ function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const closeSearch = () => {
+    setSearchOpen(false);
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -59,13 +65,16 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    const now = new Date();
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    setCurrentDate({
-      day: days[now.getDay()],
-      date: `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`,
+    const frame = window.requestAnimationFrame(() => {
+      const now = new Date();
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      setCurrentDate({
+        day: days[now.getDay()],
+        date: `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`,
+      });
     });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   // ── Focus input when search opens ────────────────────────────────────────
@@ -90,7 +99,8 @@ function Header() {
 
   // ── Close search on route change ─────────────────────────────────────────
   useEffect(() => {
-    closeSearch();
+    const frame = window.requestAnimationFrame(closeSearch);
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   // ── Live search filter ────────────────────────────────────────────────────
@@ -115,12 +125,6 @@ function Header() {
 
   const handleSearchKeyDown = (e) => {
     if (e.key === 'Escape') closeSearch();
-  };
-
-  const closeSearch = () => {
-    setSearchOpen(false);
-    setSearchQuery('');
-    setSearchResults([]);
   };
 
   // ✅ Route client news / pillar news to /julio-herrera-velutini/[slug]
@@ -223,8 +227,10 @@ function Header() {
                       placeholder="Search articles..."
                       className="flex-1 text-sm outline-none bg-transparent text-black placeholder-gray-400"
                       aria-label="Search articles"
+                      role="combobox"
                       aria-autocomplete="list"
                       aria-expanded={searchResults.length > 0}
+                      aria-controls="desktop-search-results"
                     />
                     <button
                       type="button"
@@ -240,6 +246,7 @@ function Header() {
                   {searchResults.length > 0 && (
                     <div
                       className="absolute top-full left-0 mt-2 w-[420px] bg-white rounded-lg shadow-2xl border border-gray-100 overflow-hidden z-50"
+                      id="desktop-search-results"
                       role="listbox"
                       aria-label="Search results"
                     >
@@ -250,6 +257,7 @@ function Header() {
                           onClick={() => handleArticleClick(article.category, article.slug, article.newsType)}
                           className="w-full text-left px-4 py-3 hover:bg-red-50 transition-colors border-b border-gray-50 last:border-0 group"
                           role="option"
+                          aria-selected="false"
                         >
                           <div className="flex items-start gap-3">
                             {/* Category pill */}
@@ -274,7 +282,7 @@ function Header() {
                   {/* No results state */}
                   {searchQuery.trim().length >= 2 && searchResults.length === 0 && (
                     <div className="absolute top-full left-0 mt-2 w-[420px] bg-white rounded-lg shadow-2xl border border-gray-100 px-4 py-6 z-50 text-center">
-                      <p className="text-sm text-gray-500">No articles found for <span className="font-semibold text-gray-700">"{searchQuery}"</span></p>
+                      <p className="text-sm text-gray-500">No articles found for <span className="font-semibold text-gray-700">&ldquo;{searchQuery}&rdquo;</span></p>
                     </div>
                   )}
                 </div>
@@ -406,7 +414,7 @@ function Header() {
             {searchQuery.trim().length >= 2 && searchResults.length === 0 && (
               <div className="px-4 py-10 text-center">
                 <p className="text-sm text-gray-500">
-                  No articles found for <span className="font-semibold text-gray-700">"{searchQuery}"</span>
+                  No articles found for <span className="font-semibold text-gray-700">&ldquo;{searchQuery}&rdquo;</span>
                 </p>
               </div>
             )}

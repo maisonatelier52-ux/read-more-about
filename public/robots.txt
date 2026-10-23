@@ -5,8 +5,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
 
 # ── Google News Bot — CRITICAL for Google News & Top Stories eligibility ────
 # Blocking this removes you from Google News entirely
@@ -38,4 +36,3 @@ Allow: /
 
 # ── Sitemaps ─────────────────────────────────────────────────────────────────
 Sitemap: https://www.read-more-about.com/sitemap.xml
-Sitemap: https://www.read-more-about.com/news-sitemap.xml

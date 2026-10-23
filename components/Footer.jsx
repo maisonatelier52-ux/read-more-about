@@ -10,15 +10,12 @@ import { BsSubstack } from "react-icons/bs";
 import { SiMedium } from "react-icons/si";
 import { HiArrowUp } from "react-icons/hi";
 import articleData from "../public/data/articles.json";
-import authorData from "../public/data/authors.json";
 
 // ── Static module-level constants (SEO: no JS needed for crawlers) ──────────
 
 const FOOTER_CATEGORIES = Object.keys(articleData).filter(
   (cat) => Array.isArray(articleData[cat]) && articleData[cat].length > 0
 );
-
-const FOOTER_AUTHORS = authorData.categories.map((cat) => cat.author);
 
 const LATEST_ARTICLES = (() => {
   const all = Object.entries(articleData).flatMap(([cat, articles]) =>
@@ -120,7 +117,7 @@ export default function Footer() {
 
       {/* ── Main Grid ── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           {/* Col 1 — About Us */}
           <div className="lg:col-span-1">
@@ -246,26 +243,6 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Col 5 — Our Authors */}
-          <div className="lg:col-span-1">
-            <h3 className="font-serif text-[20px] font-bold mb-4">Our Authors</h3>
-            <nav aria-label="Author profiles">
-              <ul className="space-y-2">
-                {FOOTER_AUTHORS.map((author) => (
-                  <li key={author.id}>
-                    <Link
-                      href={`/author/${author.name.toLowerCase().replace(/\s+/g, "-")}`}
-                      title={`${author.name} — Articles and Profile`}
-                      className="text-[13px] text-neutral-700 hover:text-black hover:translate-x-1 inline-block transition-all duration-200"
-                    >
-                      {author.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
           </div>
 
         </div>

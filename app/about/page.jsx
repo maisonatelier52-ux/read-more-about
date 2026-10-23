@@ -20,13 +20,13 @@ export const metadata = {
     "journalism ethics"
   ],
   alternates: {
-    canonical: `${SITE_URL}/about`,
+    canonical: `${SITE_URL}/about/`,
   },
   openGraph: {
     title: "About Read More About — Independent News Platform",
     description:
       "Discover Read More About: independent news delivering factual reporting on politics, business, sports & world events. Trusted journalism.",
-    url: `${SITE_URL}/about`,
+    url: `${SITE_URL}/about/`,
     type: "website",
     siteName: SITE_NAME,
     images: [
@@ -59,7 +59,7 @@ export default function About() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Read More About",
-    "url": `${SITE_URL}/about`,
+    "url": `${SITE_URL}/about/`,
     "description": "Learn about Read More About - an independent digital news platform delivering factual, unbiased news coverage.",
     "mainEntity": {
       "@type": "NewsMediaOrganization",
@@ -81,16 +81,16 @@ export default function About() {
         "contactType": "Editorial",
         "email": "editorial@read-more-about.com"
       },
-      "ethicsPolicy": `${SITE_URL}/about`,
-      "publishingPrinciples": `${SITE_URL}/about`,
+      "ethicsPolicy": `${SITE_URL}/about/`,
+      "publishingPrinciples": `${SITE_URL}/about/`,
     },
   };
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${SITE_URL}/about#webpage`,
-    "url": `${SITE_URL}/about`,
+    "@id": `${SITE_URL}/about/#webpage`,
+    "url": `${SITE_URL}/about/`,
     "name": "About Read More About",
     "description": metadata.description,
     "isPartOf": {
@@ -122,7 +122,7 @@ export default function About() {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": `${SITE_URL}/about`
+        "item": `${SITE_URL}/about/`
       }
     ]
   };
@@ -285,7 +285,7 @@ export default function About() {
                 passionate journalists has grown into a comprehensive news organization serving readers globally.
               </p>
               <p className="text-zinc-700 leading-relaxed mb-6">
-                Throughout our journey, we've remained dedicated to our core principles: delivering news that matters, 
+                Throughout our journey, we&apos;ve remained dedicated to our core principles: delivering news that matters, 
                 investigating stories that need telling, and giving voice to communities that deserve to be heard. 
                 Our newsroom operates around the clock, bringing you breaking news, in-depth analysis, and compelling 
                 storytelling across politics, business, sports, technology, crime, investigation, travel, and world events.
@@ -402,7 +402,7 @@ export default function About() {
               Get in Touch
             </h3>
             <p className="text-zinc-300 mb-8 max-w-2xl mx-auto">
-              Have a story tip? Questions about our coverage? We'd love to hear from you.
+              Have a story tip? Questions about our coverage? We&apos;d love to hear from you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {/* <a 

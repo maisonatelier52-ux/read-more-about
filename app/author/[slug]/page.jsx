@@ -11,17 +11,11 @@ import { FaXTwitter, FaReddit, FaQuora } from "react-icons/fa6";
 import { SiMedium } from "react-icons/si";
 
 export async function generateStaticParams() {
-  const params = [];
-
-  authorsData.categories.forEach((item) => {
-    if (item.author?.name) {
-      params.push({
-        slug: slugify(item.author.name),
-      });
-    }
-  });
-
-  return params;
+  return [
+    {
+      slug: slugify(authorsData.categories[0].author.name),
+    },
+  ];
 }
 
 
@@ -77,22 +71,23 @@ export async function generateMetadata({ params }) {
   }
   
   const author = authorData.author
-  const authorCategory = authorData.category
-  const categoryArticlesData = CategoryArticles[authorCategory] || []
-  const articleCount = categoryArticlesData.length
+  const articleCount = Object.values(CategoryArticles).reduce(
+    (total, articles) => total + articles.length,
+    0
+  )
   const imageUrl = `${SITE_URL}${author.profileImage}`
   
   return {
-    title: `${author.name} — Journalist at Read More About | ${articleCount} Articles`,
-    description: `Explore ${articleCount} insightful articles by ${author.name}, covering ${authorCategory} news and analysis. Read expert journalism and investigative reports on Read More About.`,
-    keywords: `${author.name}, ${authorCategory} journalist, news writer, ${authorCategory} articles, investigative journalism`,
+    title: `${author.name} — Read More About | ${articleCount} Articles`,
+    description: `Explore ${articleCount} news articles published by the ${author.name} at Read More About.`,
+    keywords: `${author.name}, Read More About, news articles, editorial team`,
     alternates: {
-      canonical: `${SITE_URL}/author/${slug}`,
+      canonical: `${SITE_URL}/author/${slug}/`,
     },
     openGraph: {
-      title: `${author.name} — ${authorCategory} Journalist at Read More About`,
+      title: `${author.name} — Read More About`,
       description: `${author.bio} Read ${articleCount} articles by ${author.name}.`,
-      url: `${SITE_URL}/author/${slug}`,
+      url: `${SITE_URL}/author/${slug}/`,
       type: 'profile',
       siteName: 'Read More About',
       images: [
@@ -110,10 +105,9 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${author.name} — Journalist at Read More About`,
+      title: `${author.name} — Read More About`,
       description: `${author.bio}`,
       images: [imageUrl],
-      creator: author.social?.twitter ? '@' + author.social.twitter.split('/').pop() : undefined,
     },
   }
 }
@@ -135,8 +129,15 @@ export default async function Page({ params }) {
   }
   
   const author = authorData.author
-  const authorCategory = authorData.category
-  const categoryArticlesData = CategoryArticles[authorCategory] || []
+  const authorCategory = 'Editorial'
+  const categoryArticlesData = Object.entries(CategoryArticles).flatMap(
+    ([category, articles]) =>
+      articles.map((article) => ({
+        ...article,
+        category,
+        href: `/${category}/${article.slug}`,
+      }))
+  )
   
   const sortedArticles = [...categoryArticlesData].sort(
     (a, b) => parseDate(b.date) - parseDate(a.date)
@@ -147,36 +148,24 @@ export default async function Page({ params }) {
     .slice(0, 3)
   
   const listArticles = sortedArticles
-  const latestFromOtherCategories = getLatestFromDifferentCategories(authorCategory, 5)
+  const latestFromOtherCategories = getLatestFromDifferentCategories('', 5)
   const popularArticle = latestFromOtherCategories[0] || null
   const sidebarPosts = latestFromOtherCategories.slice(1, 5)
 
-  // ─── JSON-LD: Person Schema ───────────────────────────────────────────────
+  // ─── JSON-LD: Editorial organization ─────────────────────────────────────
   const personJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${SITE_URL}/author/${slug}#person`,
+    "@type": "Organization",
+    "@id": `${SITE_URL}/author/${slug}/#organization`,
     "name": author.name,
-    "url": `${SITE_URL}/author/${slug}`,
+    "url": `${SITE_URL}/author/${slug}/`,
     "image": `${SITE_URL}${author.profileImage}`,
     "description": author.bio,
-    "jobTitle": `${authorCategory.charAt(0).toUpperCase() + authorCategory.slice(1)} Journalist`,
-    "worksFor": {
+    "parentOrganization": {
       "@type": "NewsMediaOrganization",
       "name": "Read More About",
-      "url": SITE_URL,
+      "url": `${SITE_URL}/`,
     },
-    "sameAs": [
-      author.social?.twitter,
-      author.social?.reddit,
-      author.social?.quora,
-      author.social?.medium,
-      author.websiteLink
-    ].filter(Boolean),
-    "nationality": {
-      "@type": "Country",
-      "name": author.country
-    }
   }
 
   // ─── JSON-LD: BreadcrumbList ──────────────────────────────────────────────
@@ -184,7 +173,7 @@ export default async function Page({ params }) {
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": `${SITE_URL}/author/${slug}#breadcrumb`,
+    "@id": `${SITE_URL}/author/${slug}/#breadcrumb`,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -196,7 +185,7 @@ export default async function Page({ params }) {
         "@type": "ListItem",
         "position": 2,
         "name": author.name,
-        "item": `${SITE_URL}/author/${slug}`,
+        "item": `${SITE_URL}/author/${slug}/`,
       },
     ],
   }
@@ -207,13 +196,13 @@ export default async function Page({ params }) {
   const profilePageJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "@id": `${SITE_URL}/author/${slug}#profile`,
-    "url": `${SITE_URL}/author/${slug}`,
+    "@id": `${SITE_URL}/author/${slug}/#profile`,
+    "url": `${SITE_URL}/author/${slug}/`,
     "mainEntity": {
-      "@id": `${SITE_URL}/author/${slug}#person`
+      "@id": `${SITE_URL}/author/${slug}/#organization`
     },
     "breadcrumb": {
-      "@id": `${SITE_URL}/author/${slug}#breadcrumb`
+      "@id": `${SITE_URL}/author/${slug}/#breadcrumb`
     }
   }
 
@@ -262,7 +251,7 @@ export default async function Page({ params }) {
                     */}
                     <Image
                       src={author.profileImage}
-                      alt={`${author.name} - ${authorCategory} journalist at Read More About`}
+                      alt={`${author.name} at Read More About`}
                       fill
                       sizes="(max-width: 768px) 100vw, 30vw"
                       className="object-cover"
@@ -348,7 +337,7 @@ export default async function Page({ params }) {
                     <p className="text-sm text-gray-600">
                       <span className="font-semibold">Job Title:</span>{' '}
                       <span>
-                        {authorCategory.charAt(0).toUpperCase() + authorCategory.slice(1)} Journalist at Read More About
+                        Editorial Desk at Read More About
                       </span>
                     </p>
                     {author.country && (
@@ -386,8 +375,8 @@ export default async function Page({ params }) {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                           {exclusiveArticles.map((article) => (
                             <Link 
-                              key={article.id} 
-                              href={`/${authorCategory}/${article.slug}`}
+                              key={`${article.category}-${article.id}`}
+                              href={`/${article.category}/${article.slug}`}
                               title={`Read: ${article.title}`}
                             >
                               <div className="group cursor-pointer">
@@ -400,7 +389,7 @@ export default async function Page({ params }) {
                                       {article.title.slice(0, 50)}...
                                     </div>
                                     <p className="text-xs text-red-600 font-semibold uppercase">
-                                      {authorCategory}
+                                      {article.category}
                                     </p>
                                   </div>
 
@@ -435,7 +424,7 @@ export default async function Page({ params }) {
           popularArticle={popularArticle}
           sidebarPost={sidebarPosts}
           authorInfo={author}
-          category={authorCategory}
+          category="news"
         />
       </div>
     </>

@@ -19,13 +19,13 @@ export const metadata = {
     "world news data protection"
   ],
   alternates: {
-    canonical: `${SITE_URL}/privacy-policy`,
+    canonical: `${SITE_URL}/privacy-policy/`,
   },
   openGraph: {
     title: "Privacy Policy — Read More About News",
     description:
       "Learn how Read More About protects your privacy and manages information including cookies, analytics, and data usage on our breaking news platform.",
-    url: `${SITE_URL}/privacy-policy`,
+    url: `${SITE_URL}/privacy-policy/`,
     type: "website",
     siteName: SITE_NAME,
     images: [
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Privacy Policy — Read More About",
-            "url": `${SITE_URL}/privacy-policy`,
+            "url": `${SITE_URL}/privacy-policy/`,
             "description": "Privacy Policy for Read More About - Independent breaking news and world headlines platform",
             "publisher": {
               "@type": "NewsMediaOrganization",
@@ -99,7 +99,7 @@ export default function PrivacyPolicy() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Privacy Policy",
-                "item": `${SITE_URL}/privacy-policy`
+                "item": `${SITE_URL}/privacy-policy/`
               }
             ]
           }),
@@ -266,7 +266,7 @@ export default function PrivacyPolicy() {
                   <h3 className="font-bold text-zinc-900 mb-2">By Law or to Protect Rights</h3>
                   <p className="text-zinc-700 leading-relaxed">
                     If we believe the release of information is necessary to comply with legal process, enforce our 
-                    policies, or protect ours or others' rights, property, or safety in relation to our breaking news services.
+                    policies, or protect ours or others&apos; rights, property, or safety in relation to our breaking news services.
                   </p>
                 </div>
                 
@@ -375,7 +375,7 @@ export default function PrivacyPolicy() {
           <section className="mb-12 pb-12 border-b border-zinc-200">
             <h2 className="text-3xl font-bold mb-6 flex items-center" style={{fontFamily: 'Georgia, serif'}}>
               <span className="bg-red-600 text-white px-3 py-1 mr-4 text-lg">6</span>
-              Children's Privacy
+              Children&apos;s Privacy
             </h2>
             
             <div className="ml-14">
@@ -437,7 +437,7 @@ export default function PrivacyPolicy() {
               <p className="text-zinc-700 leading-relaxed mb-4">
                 Read More About may update this privacy policy from time to time to reflect changes to our practices or for 
                 other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new privacy 
-                policy on this page and updating the "Last Updated" date.
+                policy on this page and updating the &ldquo;Last Updated&rdquo; date.
               </p>
               <p className="text-zinc-700 leading-relaxed">
                 You are advised to review this privacy policy periodically for any changes. Changes to this privacy policy 

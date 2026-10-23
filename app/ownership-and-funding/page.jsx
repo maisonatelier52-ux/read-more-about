@@ -1,5 +1,6 @@
 // app/ownership-and-funding/page.jsx
 import React from 'react';
+import Link from 'next/link';
 
 const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
@@ -18,11 +19,11 @@ export const metadata = {
     "media ownership disclosure",
     "journalism funding"
   ],
-  alternates: { canonical: `${SITE_URL}/ownership-and-funding` },
+  alternates: { canonical: `${SITE_URL}/ownership-and-funding/` },
   openGraph: {
     title: "Ownership & Funding | Read More About",
     description: "Learn about Read More About ownership, newsroom funding, editorial independence, and transparency standards.",
-    url: `${SITE_URL}/ownership-and-funding`,
+    url: `${SITE_URL}/ownership-and-funding/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Ownership & Funding - Read More About" }],
@@ -43,7 +44,7 @@ export default function OwnershipAndFunding() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Ownership & Funding | Read More About",
-    "url": `${SITE_URL}/ownership-and-funding`,
+    "url": `${SITE_URL}/ownership-and-funding/`,
     "description": "Transparency disclosure about the ownership, funding, and commercial relationships of Read More About.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -60,7 +61,7 @@ export default function OwnershipAndFunding() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Ownership & Funding", "item": `${SITE_URL}/ownership-and-funding` },
+      { "@type": "ListItem", "position": 2, "name": "Ownership & Funding", "item": `${SITE_URL}/ownership-and-funding/` },
     ],
   };
 
@@ -135,7 +136,7 @@ export default function OwnershipAndFunding() {
             <p className="text-zinc-700 leading-relaxed">
               A commercial relationship with Read More About does not create a right to favorable
               coverage, prior review of a reported article, or suppression of accurate reporting. If a
-              proposed arrangement would blur those lines, the newsroom's standard is to reject the
+              proposed arrangement would blur those lines, the newsroom&apos;s standard is to reject the
               arrangement or remove the affected journalist from the assignment.
             </p>
           </section>
@@ -155,7 +156,7 @@ export default function OwnershipAndFunding() {
             <p className="text-zinc-700 leading-relaxed">
               If Read More About enters into a material funding relationship, ownership change, or
               strategic arrangement that a reasonable reader would consider relevant to editorial
-              independence, the newsroom's expectation is that the relationship is disclosed on this page,
+              independence, the newsroom&apos;s expectation is that the relationship is disclosed on this page,
               in affected coverage, or both.
             </p>
           </section>
@@ -175,7 +176,7 @@ export default function OwnershipAndFunding() {
             <p className="text-zinc-700 leading-relaxed mb-6">
               Read More About does not treat conflicts as a private housekeeping issue when reader trust
               is materially affected. If a relationship could alter how a reasonable reader interprets
-              coverage, the newsroom's standard is disclosure, recusal, or both.
+              coverage, the newsroom&apos;s standard is disclosure, recusal, or both.
             </p>
             <div className="space-y-3">
               {[
@@ -199,20 +200,20 @@ export default function OwnershipAndFunding() {
             <div className="w-10 h-0.5 bg-red-600 mb-6" />
             <p className="text-zinc-700 leading-relaxed mb-4">
               Read More About keeps a clear boundary between revenue activity and journalism. Advertising
-              or sponsorship does not guarantee coverage, shape a reporter's conclusions, or entitle a
+              or sponsorship does not guarantee coverage, shape a reporter&apos;s conclusions, or entitle a
               commercial party to veto criticism.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               Paid content, sponsored features, affiliate relationships, and other commercial material
               are labeled clearly enough that a reader does not have to guess whether they are reading
               journalism or advertising. For details, see our{' '}
-              <a 
-                href="/advertising-policy" 
+              <Link 
+                href="/advertising-policy/" 
                 title="Read our Advertising Policy"
                 className="text-red-600 underline hover:text-red-700"
               >
                 Advertising Policy
-              </a>.
+              </Link>.
             </p>
           </section>
 
@@ -225,7 +226,7 @@ export default function OwnershipAndFunding() {
             <p className="text-zinc-700 leading-relaxed mb-4">
               Read More About does not present political, governmental, or advocacy messaging as
               independent reporting. If an external actor seeks to influence coverage through money,
-              access, or pressure, the newsroom's standard is to preserve editorial control rather than
+              access, or pressure, the newsroom&apos;s standard is to preserve editorial control rather than
               trade independence for convenience.
             </p>
             <p className="text-zinc-700 leading-relaxed">

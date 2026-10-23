@@ -18,11 +18,11 @@ export const metadata = {
     "editorial corrections",
     "update policy"
   ],
-  alternates: { canonical: `${SITE_URL}/corrections-policy` },
+  alternates: { canonical: `${SITE_URL}/corrections-policy/` },
   openGraph: {
     title: "Corrections Policy | Read More About",
     description: "Learn how Read More About handles corrections, factual errors, updates, and newsroom transparency.",
-    url: `${SITE_URL}/corrections-policy`,
+    url: `${SITE_URL}/corrections-policy/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Corrections Policy - Read More About" }],
@@ -43,14 +43,14 @@ export default function CorrectionsPolicy() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Corrections Policy | Read More About",
-    "url": `${SITE_URL}/corrections-policy`,
+    "url": `${SITE_URL}/corrections-policy/`,
     "description": "Read More About's corrections policy for handling factual errors and maintaining journalistic integrity.",
     "publisher": {
       "@type": "NewsMediaOrganization",
       "name": SITE_NAME,
       "url": SITE_URL,
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/images/read-more-about-logo.webp` },
-      "correctionsPolicy": `${SITE_URL}/corrections-policy`,
+      "correctionsPolicy": `${SITE_URL}/corrections-policy/`,
     },
     "dateModified": "2026-06-01",
     "inLanguage": "en-US",
@@ -61,7 +61,7 @@ export default function CorrectionsPolicy() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Corrections Policy", "item": `${SITE_URL}/corrections-policy` },
+      { "@type": "ListItem", "position": 2, "name": "Corrections Policy", "item": `${SITE_URL}/corrections-policy/` },
     ],
   };
 
@@ -159,7 +159,7 @@ export default function CorrectionsPolicy() {
             </p>
             <p className="text-zinc-700 leading-relaxed">
               Depending on the nature of the mistake, Read More About may use a correction note,
-              clarification note, update note, or editor's note. Each serves a distinct purpose and is
+              clarification note, update note, or editor&apos;s note. Each serves a distinct purpose and is
               chosen based on what a reader most needs to understand what changed.
             </p>
           </section>

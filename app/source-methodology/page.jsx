@@ -18,11 +18,11 @@ export const metadata = {
     "fact checking process",
     "newsroom transparency"
   ],
-  alternates: { canonical: `${SITE_URL}/source-methodology` },
+  alternates: { canonical: `${SITE_URL}/source-methodology/` },
   openGraph: {
     title: "Source Methodology | Read More About",
     description: "Learn how Read More About sources, verifies, attributes, and reviews information before publication.",
-    url: `${SITE_URL}/source-methodology`,
+    url: `${SITE_URL}/source-methodology/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Source Methodology - Read More About" }],
@@ -43,7 +43,7 @@ export default function SourceMethodology() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Source Methodology | Read More About",
-    "url": `${SITE_URL}/source-methodology`,
+    "url": `${SITE_URL}/source-methodology/`,
     "description": "Read More About's sourcing methodology and verification standards for journalism.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -60,7 +60,7 @@ export default function SourceMethodology() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Source Methodology", "item": `${SITE_URL}/source-methodology` },
+      { "@type": "ListItem", "position": 2, "name": "Source Methodology", "item": `${SITE_URL}/source-methodology/` },
     ],
   };
 
@@ -134,7 +134,7 @@ export default function SourceMethodology() {
               speculation, or unattributed claims.
             </p>
             <p className="text-zinc-700 leading-relaxed mb-6">
-              A source's prominence does not substitute for verification. Claims from public officials,
+              A source&apos;s prominence does not substitute for verification. Claims from public officials,
               corporate representatives, and notable commentators are still subject to independent
               checking, context, and qualification where warranted.
             </p>
@@ -161,13 +161,13 @@ export default function SourceMethodology() {
             <p className="text-zinc-700 leading-relaxed mb-4">
               Anonymity is not a default. Anonymous or background sourcing may be used when the
               information is in the public interest and cannot be responsibly put on the record. Before
-              granting anonymity, the newsroom should understand the source's identity and evaluate
+              granting anonymity, the newsroom should understand the source&apos;s identity and evaluate
               their motive, access, and reliability.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               When anonymity is granted, the article should give readers as much truthful context as
               possible about why the source is being protected without exposing them. Vague references
-              to "sources" are avoided in favor of description that helps readers assess the source's
+              to &ldquo;sources&rdquo; are avoided in favor of description that helps readers assess the source&apos;s
               position and potential bias.
             </p>
           </section>
@@ -184,7 +184,7 @@ export default function SourceMethodology() {
               broader context.
             </p>
             <p className="text-zinc-700 leading-relaxed">
-              A document's existence does not prove the broadest possible claim. Our standard is to
+              A document&apos;s existence does not prove the broadest possible claim. Our standard is to
               describe what a record shows, what it does not show, and where interpretation begins.
             </p>
           </section>

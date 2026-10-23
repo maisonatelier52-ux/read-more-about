@@ -33,7 +33,6 @@ or
 ## Site Structure
 Homepage:       https://www.read-more-about.com/
 RSS Feed:       https://www.read-more-about.com/rss.xml
-News Sitemap:   https://www.read-more-about.com/news-sitemap.xml
 Full Sitemap:   https://www.read-more-about.com/sitemap.xml
 
 ## Content Categories

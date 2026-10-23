@@ -850,17 +850,21 @@ export async function generateMetadata({ params }) {
     notFound();
   }
 
+  const articleUrl = `${SITE_URL}/${category}/${slug}/`;
+  const authorUrl = `${SITE_URL}/author/editorial-desk/`;
+
   return {
     title: article.metaTitle,
     description: article.metaDescription,
     keywords: article.keywords?.join(', '),
+    authors: [{ name: "Editorial Desk", url: authorUrl }],
     alternates: {
-      canonical: `${SITE_URL}/${category}/${slug}`,
+      canonical: articleUrl,
     },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
-      url: `${SITE_URL}/${category}/${slug}`,
+      url: articleUrl,
       siteName: "Read More About",
       images: [
         {
@@ -903,6 +907,77 @@ export default async function ArticlePage({ params }) {
   // Get latest 5 articles from different categories for the Popular sidebar section
   const popularArticles = getLatestFromDifferentCategories(category, 5);
 
+  if (!authorData) notFound();
+
+  // Shared structured data is emitted for every article layout, including the
+  // two dedicated long-form templates.
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.excerpt,
+    image: [`${SITE_URL}${article.image}`],
+    datePublished: new Date(article.date.split('/').reverse().join('-')).toISOString(),
+    dateModified: new Date(article.date.split('/').reverse().join('-')).toISOString(),
+    author: {
+      "@type": "Organization",
+      name: authorData.name,
+      url: `${SITE_URL}/author/${slugify(authorData.name)}/`,
+    },
+    publisher: {
+      "@type": "NewsMediaOrganization",
+      name: "Read More About",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/read-more-about-logo.webp`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/${category}/${slug}/`,
+    },
+    articleSection: category,
+    keywords: article.keywords?.join(', ') || "",
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: category.charAt(0).toUpperCase() + category.slice(1),
+        item: `${SITE_URL}/${category}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${SITE_URL}/${category}/${slug}/`,
+      },
+    ],
+  };
+
+  const structuredData = (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+    </>
+  );
+
   // ─── CLIENT / PILLAR NEWS ARTICLE ───────────────────────────────
   // Renders a dedicated executive-profile layout instead of the
   // standard NewsArticle template used below.
@@ -912,15 +987,18 @@ export default async function ArticlePage({ params }) {
       .slice(0, 4);
 
     return (
-      <ClientArticle
-        article={article}
-        authorInfo={authorData}
-        category={category}
-        prevPost={prevPost}
-        nextPost={nextPost}
-        relatedArticles={clientRelatedArticles}
-        popularArticles={popularArticles}
-      />
+      <>
+        {structuredData}
+        <ClientArticle
+          article={article}
+          authorInfo={authorData}
+          category={category}
+          prevPost={prevPost}
+          nextPost={nextPost}
+          relatedArticles={clientRelatedArticles}
+          popularArticles={popularArticles}
+        />
+      </>
     );
   }
 
@@ -932,84 +1010,29 @@ export default async function ArticlePage({ params }) {
       .map((item) => ({ ...item, category }));
 
     return (
-      <JulioClientArticle
-        article={article}
-        authorInfo={authorData}
-        category={category}
-        prevPost={prevPost}
-        nextPost={nextPost}
-        relatedArticles={julioRelatedArticles}
-        popularArticles={popularArticles}
-      />
+      <>
+        {structuredData}
+        <JulioClientArticle
+          article={article}
+          authorInfo={authorData}
+          category={category}
+          prevPost={prevPost}
+          nextPost={nextPost}
+          relatedArticles={julioRelatedArticles}
+          popularArticles={popularArticles}
+        />
+      </>
     );
   }
-
-  if (!authorData) notFound();
 
   // Get 4 related articles (excluding current one)
   const relatedArticles = categoryPosts
     .filter((item) => item.slug !== slug)
     .slice(0, 4);
 
-  const shareUrl = `${SITE_URL}/${category}/${slug}`;
+  const shareUrl = `${SITE_URL}/${category}/${slug}/`;
   const encodedUrl = encodeURIComponent(shareUrl);
   const shareTitle = encodeURIComponent(article.title);
-
-  // JSON-LD: NewsArticle
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    headline: article.title,
-    description: article.excerpt,
-    image: [article.image],
-    datePublished: new Date(article.date.split('/').reverse().join('-')).toISOString(),
-    dateModified: new Date(article.date.split('/').reverse().join('-')).toISOString(),
-    author: {
-      "@type": "Person",
-      name: authorData.name,
-      url: `${SITE_URL}/author/${slugify(authorData.name)}`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Read More About",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/images/read-more-about-logo.webp`,
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/${category}/${slug}`,
-    },
-    articleSection: category,
-    keywords: article.keywords?.join(', ') || "",
-  };
-
-  // JSON-LD: BreadcrumbList
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: SITE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: category.charAt(0).toUpperCase() + category.slice(1),
-        item: `${SITE_URL}/${category}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: article.title,
-        item: `${SITE_URL}/${category}/${slug}`,
-      },
-    ],
-  };
 
   // Render content based on type
   const renderContent = (item, index) => {
@@ -1087,9 +1110,9 @@ export default async function ArticlePage({ params }) {
         <meta itemProp="articleSection" content={category} />
         <meta itemProp="keywords" content={article.keywords?.join(', ')} />
 
-        <div itemProp="author" itemScope itemType="https://schema.org/Person" style={{display: 'none'}}>
+        <div itemProp="author" itemScope itemType="https://schema.org/Organization" style={{display: 'none'}}>
           <meta itemProp="name" content={authorData.name} />
-          <meta itemProp="url" content={`${SITE_URL}/author/${slugify(authorData.name)}`} />
+          <meta itemProp="url" content={`${SITE_URL}/author/${slugify(authorData.name)}/`} />
         </div>
 
         <div itemProp="publisher" itemScope itemType="https://schema.org/Organization" style={{display: 'none'}}>
@@ -1164,10 +1187,10 @@ export default async function ArticlePage({ params }) {
             <div className="flex items-center justify-center gap-3 text-black text-sm md:text-base mb-6">
               <span className="font-semibold">
                 By: <Link
-                  href={`/author/${slugify(authorData.name)}`}
+                  href={`/author/${slugify(authorData.name)}/`}
                   title={`View ${authorData.name}'s author page`}
                 >
-                  <span className='hover:text-red-500 cursor-pointer' itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <span className='hover:text-red-500 cursor-pointer' itemProp="author" itemScope itemType="https://schema.org/Organization">
                     <span itemProp="name">{authorData.name}</span>
                   </span>
                 </Link>
@@ -1245,7 +1268,7 @@ export default async function ArticlePage({ params }) {
 
                 <div className="flex-1 text-center lg:text-left">
                   <Link
-                    href={`/author/${slugify(authorData.name)}`}
+                    href={`/author/${slugify(authorData.name)}/`}
                     title={`View ${authorData.name}'s author page`}
                   >
                     <h2 className="text-2xl font-bold text-gray-900 mb-1 hover:text-red-600">
@@ -1493,7 +1516,7 @@ export default async function ArticlePage({ params }) {
                         </div>
 
                         <Link
-                          href={`/author/${slugify(authorData.name)}`}
+                          href={`/author/${slugify(authorData.name)}/`}
                           title={`View ${authorData.name}'s author page`}
                         >
                           <span className="font-medium hover:text-red-600 cursor-pointer">

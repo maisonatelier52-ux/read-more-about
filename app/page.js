@@ -47,7 +47,7 @@ export const metadata = {
     "news magazine",
     "journalism"
   ],
-  authors: [{ name: "Read More About Editorial Team" }],
+  authors: [{ name: "Editorial Desk", url: `${SITE_URL}/author/editorial-desk/` }],
   creator: "Read More About",
   publisher: "Read More About",
   alternates: {
@@ -337,7 +337,7 @@ export default function Home() {
           "itemListElement": latestArticles.map((article, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "url": `${SITE_URL}/${article.category}/${article.slug}`,
+            "url": `${SITE_URL}/${article.category}/${article.slug}/`,
             "name": article.title
           }))
         }

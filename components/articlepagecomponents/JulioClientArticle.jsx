@@ -794,7 +794,7 @@ export default function JulioClientArticle({
                       <span>
                         By{" "}
                         <Link
-                          href={`/author/${slugify(authorInfo?.name || "")}`}
+                          href={`/author/${slugify(authorInfo?.name || "")}/`}
                           title={`View ${authorInfo?.name}'s author page`}
                           className="font-semibold text-red-600 hover:underline"
                         >
@@ -1052,7 +1052,7 @@ export default function JulioClientArticle({
                 </div>
 
                 <div className="flex-1 text-center lg:text-left">
-                  <Link href={`/author/${slugify(authorInfo.name)}`} title={`View ${authorInfo.name}'s author page`}>
+                  <Link href={`/author/${slugify(authorInfo.name)}/`} title={`View ${authorInfo.name}'s author page`}>
                     <h2 className="mb-1 text-2xl font-bold text-gray-900 hover:text-red-600">
                       {authorInfo.name}
                     </h2>

@@ -18,11 +18,11 @@ export const metadata = {
     "commercial relationships news",
     "editorial advertising separation"
   ],
-  alternates: { canonical: `${SITE_URL}/advertising-policy` },
+  alternates: { canonical: `${SITE_URL}/advertising-policy/` },
   openGraph: {
     title: "Advertising Policy | Read More About",
     description: "Learn how Read More About labels sponsored content, advertising, affiliate links, and commercial relationships.",
-    url: `${SITE_URL}/advertising-policy`,
+    url: `${SITE_URL}/advertising-policy/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Advertising Policy - Read More About" }],
@@ -43,7 +43,7 @@ export default function AdvertisingPolicy() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Advertising Policy | Read More About",
-    "url": `${SITE_URL}/advertising-policy`,
+    "url": `${SITE_URL}/advertising-policy/`,
     "description": "Read More About's advertising and sponsored content policy for transparency and reader trust.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -60,7 +60,7 @@ export default function AdvertisingPolicy() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Advertising Policy", "item": `${SITE_URL}/advertising-policy` },
+      { "@type": "ListItem", "position": 2, "name": "Advertising Policy", "item": `${SITE_URL}/advertising-policy/` },
     ],
   };
 
@@ -245,7 +245,7 @@ export default function AdvertisingPolicy() {
               not clear enough.
             </p>
             <p className="text-zinc-700 leading-relaxed">
-              When a disclosure issue is substantiated, the newsroom's expectation is that the label,
+              When a disclosure issue is substantiated, the newsroom&apos;s expectation is that the label,
               placement, or page treatment is corrected promptly.
             </p>
           </section>

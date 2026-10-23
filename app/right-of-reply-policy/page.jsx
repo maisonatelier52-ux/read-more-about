@@ -18,11 +18,11 @@ export const metadata = {
     "editorial accountability",
     "reply policy news"
   ],
-  alternates: { canonical: `${SITE_URL}/right-of-reply` },
+  alternates: { canonical: `${SITE_URL}/right-of-reply-policy/` },
   openGraph: {
     title: "Right of Reply Policy | Read More About",
     description: "Learn how Read More About handles reply requests, disputed claims, and response opportunities in news reporting.",
-    url: `${SITE_URL}/right-of-reply`,
+    url: `${SITE_URL}/right-of-reply-policy/`,
     type: "website",
     siteName: SITE_NAME,
     images: [{ url: `${SITE_URL}/images/read-more-about-logo.webp`, width: 1200, height: 630, alt: "Right of Reply Policy - Read More About" }],
@@ -43,7 +43,7 @@ export default function RightOfReply() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Right of Reply Policy | Read More About",
-    "url": `${SITE_URL}/right-of-reply`,
+    "url": `${SITE_URL}/right-of-reply-policy/`,
     "description": "Read More About's policy for offering fair response opportunities to individuals and organizations featured in our reporting.",
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -60,7 +60,7 @@ export default function RightOfReply() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Right of Reply", "item": `${SITE_URL}/right-of-reply` },
+      { "@type": "ListItem", "position": 2, "name": "Right of Reply", "item": `${SITE_URL}/right-of-reply-policy/` },
     ],
   };
 
@@ -245,7 +245,7 @@ export default function RightOfReply() {
             <p className="text-zinc-700 leading-relaxed mb-4">
               Where a story concerns active legal proceedings, regulatory investigations, allegations of
               serious misconduct, or reputationally sensitive claims, Read More About handles outreach
-              with particular care. We document the response process in the newsroom's working record,
+              with particular care. We document the response process in the newsroom&apos;s working record,
               including attempts made, responses received, and editorial decisions that followed.
             </p>
             <p className="text-zinc-700 leading-relaxed">

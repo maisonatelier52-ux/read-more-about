@@ -1,5 +1,6 @@
 // app/editorial-policy/page.jsx
 import React from 'react';
+import Link from 'next/link';
 
 const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
@@ -23,7 +24,7 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: `${SITE_URL}/editorial-policy`
+    canonical: `${SITE_URL}/editorial-policy/`
   },
 
   openGraph: {
@@ -32,7 +33,7 @@ export const metadata = {
     description:
       "Editorial standards covering accuracy, transparency, independence, and newsroom ethics.",
 
-    url: `${SITE_URL}/editorial-policy`,
+    url: `${SITE_URL}/editorial-policy/`,
     type: "website",
     siteName: SITE_NAME,
 
@@ -70,14 +71,14 @@ export default function EditorialPolicy() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Editorial Policy | Read More About",
-    "url": `${SITE_URL}/editorial-policy`,
+    "url": `${SITE_URL}/editorial-policy/`,
     "description": "Read More About's editorial policy covering accuracy, independence, transparency, and journalistic ethics.",
     "publisher": {
       "@type": "NewsMediaOrganization",
       "name": SITE_NAME,
       "url": SITE_URL,
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/images/read-more-about-logo.webp` },
-      "ethicsPolicy": `${SITE_URL}/editorial-policy`,
+      "ethicsPolicy": `${SITE_URL}/editorial-policy/`,
     },
     "dateModified": "2026-06-01",
     "inLanguage": "en-US",
@@ -88,7 +89,7 @@ export default function EditorialPolicy() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Editorial Policy", "item": `${SITE_URL}/editorial-policy` },
+      { "@type": "ListItem", "position": 2, "name": "Editorial Policy", "item": `${SITE_URL}/editorial-policy/` },
     ],
   };
 
@@ -167,13 +168,13 @@ export default function EditorialPolicy() {
             <p className="text-zinc-700 leading-relaxed mb-6">
               When we make errors, we correct them promptly and transparently. Corrections appear in the
               original article with clear labeling. For our full correction process, see our{' '}
-              <a 
-                href="/corrections-policy" 
+              <Link 
+                href="/corrections-policy/" 
                 title="Read our Corrections Policy for error handling"
                 className="text-red-600 underline hover:text-red-700"
               >
                 Corrections Policy
-              </a>.
+              </Link>.
             </p>
             <p className="text-zinc-700 leading-relaxed">
               Stories involving legal proceedings, allegations of wrongdoing, financial claims, or matters
@@ -197,13 +198,13 @@ export default function EditorialPolicy() {
               Individuals and organizations the subject of critical coverage have a reasonable opportunity
               to respond before publication where circumstances permit. Our approach to this is outlined
               in our{' '}
-              <a 
-                href="/right-of-reply-policy" 
+              <Link 
+                href="/right-of-reply-policy/" 
                 title="Read our Right of Reply Policy for response opportunities"
                 className="text-red-600 underline hover:text-red-700"
               >
                 Right of Reply Policy
-              </a>.
+              </Link>.
             </p>
           </section>
 
@@ -246,13 +247,13 @@ export default function EditorialPolicy() {
             </p>
             <p className="text-zinc-700 leading-relaxed">
               For a full explanation of how we handle advertising and commercial content, see our{' '}
-              <a 
-                href="/advertising-policy" 
+              <Link 
+                href="/advertising-policy/" 
                 title="Read our Advertising Policy for commercial content disclosure"
                 className="text-red-600 underline hover:text-red-700"
               >
                 Advertising Policy
-              </a>.
+              </Link>.
             </p>
           </section>
 
@@ -315,7 +316,7 @@ export default function EditorialPolicy() {
           {/* Closing statement */}
           <div className="bg-zinc-900 text-white p-8 text-center">
             <p className="text-lg italic leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-              "Our commitment is to independent, fact-based journalism — accountable to readers and guided by evidence."
+              &ldquo;Our commitment is to independent, fact-based journalism — accountable to readers and guided by evidence.&rdquo;
             </p>
           </div>
 

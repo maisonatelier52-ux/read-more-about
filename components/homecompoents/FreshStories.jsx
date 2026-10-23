@@ -83,7 +83,7 @@ export default function FreshStories({
             {/* Heading */}
             <h2 className="text-3xl font-bold mb-2 font-serif">Fresh stories</h2>
             <p className="text-xs font-semibold uppercase mb-6 tracking-wide">
-              TODAY: BROWSE OUR EDITOR'S
+              TODAY: BROWSE OUR EDITOR&apos;S
               <br />
               HAND PICKED ARTICLES!
             </p>

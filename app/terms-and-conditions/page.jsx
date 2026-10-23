@@ -19,13 +19,13 @@ export const metadata = {
     "news platform rules"
   ],
   alternates: {
-    canonical: `${SITE_URL}/terms-and-conditions`,
+    canonical: `${SITE_URL}/terms-and-conditions/`,
   },
   openGraph: {
     title: "Terms & Conditions — Read More About News",
     description:
       "Review the terms and conditions governing use of the Read More About breaking news website and world headlines services.",
-    url: `${SITE_URL}/terms-and-conditions`,
+    url: `${SITE_URL}/terms-and-conditions/`,
     type: "website",
     siteName: SITE_NAME,
     images: [
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Terms & Conditions — Read More About",
-            "url": `${SITE_URL}/terms-and-conditions`,
+            "url": `${SITE_URL}/terms-and-conditions/`,
             "description": "Terms and Conditions for Read More About - Independent breaking news and world headlines platform",
             "publisher": {
               "@type": "NewsMediaOrganization",
@@ -99,7 +99,7 @@ export default function TermsAndConditions() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Terms & Conditions",
-                "item": `${SITE_URL}/terms-and-conditions`
+                "item": `${SITE_URL}/terms-and-conditions/`
               }
             ]
           }),
@@ -354,7 +354,7 @@ export default function TermsAndConditions() {
             <div className="ml-14 space-y-6">
               <div className="bg-zinc-900 text-white p-8">
                 <p className="leading-relaxed mb-4">
-                  This breaking news website is provided "as is" and "as available" without any representations or warranties, 
+                  This breaking news website is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without any representations or warranties, 
                   express or implied. Read More About makes no representations or warranties in relation to this world headlines 
                   website or the information and materials provided on this news website.
                 </p>
@@ -401,7 +401,7 @@ export default function TermsAndConditions() {
 
               <div className="bg-zinc-50 border-l-4 border-zinc-900 p-6">
                 <p className="text-sm text-zinc-600 leading-relaxed">
-                  <strong className="text-zinc-900">Maximum Liability:</strong> In any event, Read More About's total 
+                  <strong className="text-zinc-900">Maximum Liability:</strong> In any event, Read More About&apos;s total 
                   liability to you for all damages, losses, and causes of action shall not exceed the amount you have paid 
                   us in the past twelve (12) months, or one hundred dollars ($100), whichever is greater.
                 </p>
@@ -420,7 +420,7 @@ export default function TermsAndConditions() {
               <p className="text-zinc-700 leading-relaxed">
                 You agree to defend, indemnify, and hold harmless Read More About, its officers, directors, employees, and 
                 agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees 
-                (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use 
+                (including reasonable attorneys&apos; fees) arising out of or relating to your violation of these Terms or your use 
                 of the breaking news website.
               </p>
             </div>

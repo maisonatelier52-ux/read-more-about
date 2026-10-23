@@ -33,7 +33,7 @@ export async function GET() {
   const allArticles = Object.entries(articlesData)
     .flatMap(([category, posts]) =>
       posts.map((post) => ({
-        url: `${SITE_URL}/${category}/${post.slug}`,
+        url: `${SITE_URL}/${category}/${post.slug}/`,
         title: post.title || "",
         description: post.excerpt || post.metaDescription || "",
         date: parseDate(post.date),
@@ -71,7 +71,7 @@ export async function GET() {
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title><![CDATA[${SITE_NAME}]]></title>
-    <link>${SITE_URL}</link>
+    <link>${SITE_URL}/</link>
     <description><![CDATA[${SITE_DESCRIPTION}]]></description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
@@ -79,7 +79,7 @@ export async function GET() {
     <image>
       <url>${SITE_URL}/images/read-more-about-logo.webp</url>
       <title><![CDATA[${SITE_NAME}]]></title>
-      <link>${SITE_URL}</link>
+      <link>${SITE_URL}/</link>
     </image>
     ${rssItems}
   </channel>
