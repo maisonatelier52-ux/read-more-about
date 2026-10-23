@@ -1,17 +1,56 @@
 // components/categorycomponents/CategoryArticlelist.jsx
 "use client";
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+
+const ARTICLES_PER_PAGE = 7
+
+// Builds [1, '...', 4, 5, 6, '...', 12] style page lists
+const getPageNumbers = (current, total) => {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1)
+  }
+
+  const pages = [1]
+  const start = Math.max(2, current - 1)
+  const end = Math.min(total - 1, current + 1)
+
+  if (start > 2) pages.push('...')
+  for (let i = start; i <= end; i++) pages.push(i)
+  if (end < total - 1) pages.push('...')
+  pages.push(total)
+
+  return pages
+}
 
 function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, authorInfo, category }) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const listTopRef = useRef(null)
+
   const formatDate = (dateString) => {
     const [day, month, year] = dateString.split('/')
     const date = new Date(year, month - 1, day)
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   }
 
-  const displayArticles = listArticles.slice(0, 7)
+  const totalPages = Math.max(1, Math.ceil(listArticles.length / ARTICLES_PER_PAGE))
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE
+  const displayArticles = listArticles.slice(startIndex, startIndex + ARTICLES_PER_PAGE)
+  const pageNumbers = getPageNumbers(currentPage, totalPages)
+
+  const goToPage = (page) => {
+    if (page < 1 || page > totalPages || page === currentPage) return
+    setCurrentPage(page)
+    // Scroll back to the top of the article list
+    requestAnimationFrame(() => {
+      listTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
+
+  const pageBtnBase =
+    "h-8 min-w-8 px-2 flex items-center justify-center rounded-full text-xs font-semibold transition-all duration-200"
 
   return (
     <>
@@ -19,14 +58,14 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
         <div className="flex flex-col lg:flex-row gap-8">
 
           {/* Left Column - 75% width */}
-          <div className="lg:w-3/4">
+          <div className="lg:w-3/4 scroll-mt-6" ref={listTopRef}>
             <div className="space-y-6">
               {displayArticles.map((article, index) => {
                 // Static articles carry their own href; dynamic ones use the standard route
                 const articleHref = article.href ?? `/${category}/${article.slug}`
 
                 return (
-                  <Link key={`${article.category}-${article.id}`} href={articleHref} title={article.title}>
+                  <Link key={article.id} href={articleHref} title={article.title}>
                     <div className="flex gap-6 group cursor-pointer flex-col md:flex-row mb-6">
 
                       {/* Image Column */}
@@ -92,6 +131,80 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
                 )
               })}
             </div>
+
+            {/* ── Pagination (same page, no reload) ── */}
+            {totalPages > 1 && (
+              <nav
+                aria-label="Pagination"
+                className="mt-10 pt-6 border-t border-gray-200 flex flex-col items-center gap-3"
+              >
+                <div className="flex flex-wrap items-center justify-center gap-1.5">
+                  {/* Previous */}
+                  <button
+                    type="button"
+                    onClick={() => goToPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    aria-label="Previous page"
+                    className={`${pageBtnBase} gap-0.5 pl-2 pr-3 border ${
+                      currentPage === 1
+                        ? "bg-gray-100 border-gray-100 text-gray-400 cursor-not-allowed"
+                        : "bg-white border-gray-300 text-black hover:bg-black hover:border-black hover:text-white cursor-pointer"
+                    }`}
+                  >
+                    <HiChevronLeft size={14} />
+                    <span className="hidden sm:inline">Prev</span>
+                  </button>
+
+                  {/* Page numbers */}
+                  {pageNumbers.map((page, i) =>
+                    page === '...' ? (
+                      <span
+                        key={`dots-${i}`}
+                        className="h-8 min-w-5 flex items-center justify-center text-xs text-gray-400"
+                      >
+                        •••
+                      </span>
+                    ) : (
+                      <button
+                        key={page}
+                        type="button"
+                        onClick={() => goToPage(page)}
+                        aria-label={`Go to page ${page}`}
+                        aria-current={page === currentPage ? "page" : undefined}
+                        className={`${pageBtnBase} cursor-pointer ${
+                          page === currentPage
+                            ? "bg-red-600 text-white shadow-md shadow-red-600/30"
+                            : "bg-gray-100 text-gray-800 hover:bg-black hover:text-white"
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    )
+                  )}
+
+                  {/* Next */}
+                  <button
+                    type="button"
+                    onClick={() => goToPage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    aria-label="Next page"
+                    className={`${pageBtnBase} gap-0.5 pl-3 pr-2 border ${
+                      currentPage === totalPages
+                        ? "bg-gray-100 border-gray-100 text-gray-400 cursor-not-allowed"
+                        : "bg-white border-gray-300 text-black hover:bg-black hover:border-black hover:text-white cursor-pointer"
+                    }`}
+                  >
+                    <span className="hidden sm:inline">Next</span>
+                    <HiChevronRight size={14} />
+                  </button>
+                </div>
+
+                {/* Page indicator */}
+                <p className="text-[10px] uppercase tracking-widest text-gray-500">
+                  Page {currentPage} of {totalPages}
+                </p>
+              </nav>
+            )}
           </div>
 
           {/* Right Column - 25% width - Sticky */}
@@ -183,4 +296,3 @@ function CategoryArticlelist({ listArticles, popularArticle, sidebarPost, author
 }
 
 export default CategoryArticlelist
-
