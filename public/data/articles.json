@@ -5349,6 +5349,106 @@
                     "text": "Palma 3 and other products are proof that E-Ink technology is evolving from reading devices to something more. The Boox launch is a new class of hybrid devices made for people who want a quieter and more focused experience with their digital technology."
                 }
             ]
+        },
+        {
+            "id": 13,
+            "slug": "php-critical-vulnerabilities-websites-offline-ai-security-2026",
+            "metaTitle": "Two Critical PHP Flaws Force Websites Offline as AI Reshapes Web Security",
+            "metaDescription": "Two critical PHP vulnerabilities prompted FBI and PHP Foundation warnings, forcing some government sites offline and showing how AI is changing the security race.",
+            "title": "Two Critical PHP Flaws Force Websites Offline as AI Reshapes the Security Race",
+            "subtitle": "PHP Foundation and FBI urge immediate patching as AI helps both defenders and attackers",
+            "category": "technology",
+            "image": "/images/news/php-critical-vulnerabilities-ai-security-image.webp",
+            "imageAlt": "Two critical PHP vulnerabilities force websites offline as AI changes web security.",
+            "excerpt": "A pair of serious PHP vulnerabilities has sent governments and businesses scrambling to patch their systems, with some sites taken offline while fixes were prepared.",
+            "newsType": "news",
+            "type": "normal",
+            "date": "23/10/2026",
+            "keywords": [
+                "PHP vulnerability",
+                "PHP Foundation",
+                "FBI cyber warning",
+                "WordPress",
+                "Drupal",
+                "AI security",
+                "cybersecurity",
+                "technology"
+            ],
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "A pair of serious weaknesses in PHP, the scripting language behind a huge share of the web, has sent governments and businesses scrambling to patch their systems. Some sites were pulled offline entirely while fixes were prepared, according to reporting by the Associated Press."
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "What the PHP Foundation and FBI Announced"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The PHP Foundation, which supports the language's development, issued security advisories on Wednesday. The FBI's cyber division issued a warning of its own. The message to administrators was blunt: install the patches for two critical vulnerabilities now, or take affected sites down until you can."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The foundation said attackers could exploit the flaws to get into a site without logging in. For a site running vulnerable PHP code, that means a stranger could potentially gain remote control of the server. James Sullivan of the Royal United Services Institute in London told AP that such access could let an intruder steal information, tamper with it, or use the compromised machine to attack other targets."
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Why the Exposure Is So Large"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "PHP is open source and free, and AP reports it runs roughly 70% of websites worldwide. Much of the software people use to build sites sits on top of it. That includes WordPress and Drupal, both popular with government agencies, and MediaWiki, the platform behind Wikipedia."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "That dependency explains the speed of the response. Sites in the United Kingdom, Finland and Japan were among those reported to have gone offline, and some public services were disrupted. Some may stay down for a while, because different products need different patches. Organizations that depend on a vendor may be waiting for an update to arrive, and responsible teams test a fix before deploying it. A rushed patch can break a site as surely as an attack can."
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "A Known Problem That Stalled for Years"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The foundation said the weaknesses were known as early as 2024. Its security team explored several fixes, but each had drawbacks. Because nobody could show a practical way for attackers to exploit the bugs, work slowed and eventually stopped."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The foundation took responsibility. It described the delay as a structural failure, tied to how its security team made decisions and to a shortage of resources. Some outside experts believe the flaws may have been discoverable even before 2024."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The episode is a reminder that much of the internet's core software is maintained by small, often under-resourced teams. Vulnerabilities rated as theoretical can sit unresolved for years."
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "How AI Changed the Security Race"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "People first found the flaws, AP reports, but AI tools helped work out how they could actually be exploited and helped test and validate the fixes. OpenAI said in a blog post that it led a coalition of researchers and security firms working on PHP vulnerabilities over the past two months. Separately, researchers at the cloud security company Wiz said they had used AI to uncover the same problems on their own."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "That cuts both ways. Defenders can now analyze code and test fixes faster. Attackers can use the same tools to find weak points and exploit them at scale. Charl van der Walt of Orange Cyberdefense told AP that defending is harder, since finding a flaw is only the start: the replacement has to be patched, robust, tested and approved."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Van der Walt expects the current disruption to be only the beginning, with more outages likely as malicious actors scan the internet for unpatched systems. Sullivan took a more hopeful view, pointing to the case as an example of AI helping surface critical flaws and the security community coming together to fix them."
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "What Website Owners Should Do Now"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you run a PHP-based site, including a WordPress or Drupal install, check your hosting provider and software vendors for the new security updates. Apply them after testing, and watch your server logs for unusual activity. If you can't patch yet, follow the official guidance and consider taking the site offline."
+                }
+            ]
         }
     ],
     "world": [

@@ -10,6 +10,12 @@ import { notFound } from 'next/navigation'
 const SITE_URL = "https://www.read-more-about.com";
 const SITE_NAME = "Read More About";
 
+// Articles pinned to position 0 of the list (CategoryArticlelist) for a given category.
+// Key = category, value = article slug. New articles will NOT push these down.
+const PINNED_CATEGORY_ARTICLES = {
+  politics: "white-house-herrera-velutini-political-prosecution",
+};
+
 // Helper function to parse date string (DD/MM/YYYY) to Date object
 const parseDate = (dateStr) => {
   const [day, month, year] = dateStr.split('/')
@@ -146,11 +152,23 @@ export default async function Page({ params }) {
     (a, b) => parseDate(b.date) - parseDate(a.date)
   )
   
+  // Pinned article for this category (if any) is removed from the normal order,
+  // so it can never show twice (e.g. as the featured hero AND in the list)
+  const pinnedSlug = PINNED_CATEGORY_ARTICLES[categoryKey]
+  const pinnedArticle = pinnedSlug
+    ? sortedArticles.find((article) => article.slug === pinnedSlug)
+    : null
+  const regularArticles = pinnedArticle
+    ? sortedArticles.filter((article) => article.slug !== pinnedSlug)
+    : sortedArticles
+
   // Get the latest article for featured display
-  const latestArticle = sortedArticles[0]
+  const latestArticle = regularArticles[0]
   
-  // Get remaining articles for the list (excluding the first one)
-  const listArticles = sortedArticles.slice(1)
+  // Remaining articles for the list: pinned article always first (position 0), then the rest by date
+  const listArticles = pinnedArticle
+    ? [pinnedArticle, ...regularArticles.slice(1)]
+    : regularArticles.slice(1)
   
   // Get author data for this category
   const authorInfo = authorsData.categories.find(
