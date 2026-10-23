@@ -2,7 +2,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output:'export',
+  serverExternalPackages: ['nodemailer', 'node-cron', 'mongodb'],
   trailingSlash: true,
   images: {
     unoptimized: true,

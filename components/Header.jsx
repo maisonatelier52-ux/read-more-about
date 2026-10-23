@@ -9,6 +9,7 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import CategoryData from '../public/data/articles.json'
+import AuthModal from './AuthModal';
 
 // ✅ SEO FIX: Extract nav items OUTSIDE the component as a static constant.
 const categories = Object.keys(CategoryData).map(
@@ -34,7 +35,13 @@ function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [currentDate, setCurrentDate] = useState({ day: '', date: '' });
+  const [currentDate, setCurrentDate] = useState({ date: '', time: '' });
+  const [user, setUser] = useState(null);
+  const [authMode, setAuthMode] = useState(null); // null | 'login' | 'signup'
+  const [reopenSubscribe, setReopenSubscribe] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [subscribing, setSubscribing] = useState(false);
+  const [subscribeError, setSubscribeError] = useState('');
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -65,16 +72,37 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
+    const update = () => {
       const now = new Date();
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       setCurrentDate({
-        day: days[now.getDay()],
-        date: `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`,
+        date: now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+        time: now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
       });
-    });
-    return () => window.cancelAnimationFrame(frame);
+    };
+    const frame = window.requestAnimationFrame(update);
+    const timer = setInterval(update, 30000);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      clearInterval(timer);
+    };
+  }, []);
+
+  // ── Load logged-in user (session cookie) ─────────────────────────────────
+  useEffect(() => {
+    let active = true;
+    fetch('/api/auth/me/')
+      .then((res) => res.json())
+      .then((data) => {
+        if (!active) return;
+        if (data.authenticated && data.user) {
+          setUser(data.user);
+          setIsSubscribed(!!data.user.isSubscribed);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
   }, []);
 
   // ── Focus input when search opens ────────────────────────────────────────
@@ -165,12 +193,80 @@ function Header() {
     setShowSuccess(false);
   };
 
-  const handleSubscribe = () => {
-    if (isEmailValid) setShowSuccess(true);
+  const handleSubscribe = async () => {
+    if (!isEmailValid || !user || subscribing) return;
+    setSubscribing(true);
+    setSubscribeError('');
+    try {
+      const res = await fetch('/api/subscribe/', { method: 'POST' });
+      const data = await res.json().catch(() => ({}));
+      if (res.status === 401) {
+        setUser(null);
+        setSubscribeError('Your session expired. Please log in again.');
+        return;
+      }
+      if (!res.ok) {
+        setSubscribeError(data.message || 'Something went wrong. Please try again.');
+        return;
+      }
+      setIsSubscribed(true);
+      setShowSuccess(true);
+    } catch {
+      setSubscribeError('Network error. Please try again.');
+    } finally {
+      setSubscribing(false);
+    }
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setEmail('');
+    setIsEmailValid(false);
+    setShowSuccess(false);
+    setSubscribeError('');
+  };
+
+  // Open subscribe modal — email is filled automatically from the logged-in account
+  const openSubscribeModal = () => {
+    setSubscribeError('');
+    if (user) {
+      setEmail(user.email);
+      setIsEmailValid(validateEmail(user.email));
+      setShowSuccess(isSubscribed);
+    }
+    setShowModal(true);
+  };
+
+  const openAuthFromSubscribe = (mode) => {
+    handleCloseModal();
+    setReopenSubscribe(true);
+    setAuthMode(mode);
+  };
+
+  const closeAuthModal = () => {
+    setAuthMode(null);
+    setReopenSubscribe(false);
+  };
+
+  const handleAuthSuccess = (loggedInUser) => {
+    setUser(loggedInUser);
+    setIsSubscribed(!!loggedInUser.isSubscribed);
+    setAuthMode(null);
+    if (reopenSubscribe) {
+      setReopenSubscribe(false);
+      setEmail(loggedInUser.email);
+      setIsEmailValid(validateEmail(loggedInUser.email));
+      setShowSuccess(!!loggedInUser.isSubscribed);
+      setShowModal(true);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout/', { method: 'POST' });
+    } catch {}
+    setUser(null);
+    setIsSubscribed(false);
     setEmail('');
     setIsEmailValid(false);
     setShowSuccess(false);
@@ -185,6 +281,50 @@ function Header() {
       <header
         className={`shadow-lg bg-white transition-all duration-300 ${isScrolled ? 'lg:hidden' : ''} sticky lg:relative top-0 z-40`}
       >
+        {/* TOP BAR — date/time + login | sign up */}
+        <div className="border-b border-gray-300">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:py-3">
+            <p className="text-xs sm:text-sm lg:text-base font-medium text-gray-800">
+              {currentDate.date}
+              <span className="hidden sm:inline">{currentDate.time && ` | ${currentDate.time}`}</span>
+            </p>
+
+            {user ? (
+              <div className="flex items-center gap-3 text-xs sm:text-sm lg:text-base">
+                <span className="max-w-[10rem] sm:max-w-xs truncate font-semibold text-gray-800">
+                  Hi, {user.username}
+                </span>
+                <span className="h-4 w-px bg-gray-300" aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="font-bold text-red-600 hover:text-red-700 transition cursor-pointer"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3 text-xs sm:text-sm lg:text-base">
+                <button
+                  type="button"
+                  onClick={() => setAuthMode('login')}
+                  className="font-medium text-gray-700 hover:text-red-600 transition cursor-pointer"
+                >
+                  Login
+                </button>
+                <span className="h-4 w-px bg-gray-300" aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={() => setAuthMode('signup')}
+                  className="font-bold text-red-600 hover:text-red-700 transition cursor-pointer"
+                >
+                  Sign Up
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="mx-auto flex h-16 lg:h-30 max-w-7xl items-center justify-between px-4">
 
           {/* LEFT */}
@@ -317,14 +457,9 @@ function Header() {
             </button>
 
             <div className="hidden lg:flex items-center gap-6">
-              <div className="flex flex-col items-end">
-                <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">{currentDate.day}</span>
-                <span className="text-sm font-bold text-black">{currentDate.date}</span>
-              </div>
-
               <button
                 type="button"
-                onClick={() => setShowModal(true)}
+                onClick={openSubscribeModal}
                 className="rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white hover:bg-red-700 transition cursor-pointer"
                 aria-haspopup="dialog"
                 aria-label="Open newsletter subscription modal"
@@ -527,41 +662,73 @@ function Header() {
                 ))}
               </div>
 
-              <div className="mb-5">
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  placeholder="your.email@example.com"
-                  autoComplete="email"
-                  className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-red-600 transition text-gray-900"
-                  aria-describedby={showSuccess ? 'email-success' : undefined}
-                  aria-invalid={email.length > 0 && !isEmailValid}
-                />
-                {showSuccess && (
-                  <div id="email-success" className="flex items-center gap-2 mt-2" role="status">
-                    <IoCheckmarkCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-green-600 font-medium text-sm">Email submitted successfully!</span>
+              {user ? (
+                <>
+                  <div className="mb-5">
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={email}
+                      onChange={handleEmailChange}
+                      placeholder="your.email@example.com"
+                      autoComplete="email"
+                      readOnly
+                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-red-600 transition text-gray-900"
+                      aria-describedby={showSuccess ? 'email-success' : undefined}
+                      aria-invalid={email.length > 0 && !isEmailValid}
+                    />
+                    {showSuccess && (
+                      <div id="email-success" className="flex items-center gap-2 mt-2" role="status">
+                        <IoCheckmarkCircle className="h-5 w-5 text-green-500" />
+                        <span className="text-green-600 font-medium text-sm">Email submitted successfully!</span>
+                      </div>
+                    )}
+                    {subscribeError && (
+                      <p role="alert" className="mt-2 text-sm font-medium text-red-600">
+                        {subscribeError}
+                      </p>
+                    )}
                   </div>
-                )}
-              </div>
 
-              <button
-                type="button"
-                onClick={handleSubscribe}
-                disabled={!isEmailValid}
-                className={`w-full py-2.5 rounded-lg font-semibold text-white transition ${
-                  isEmailValid ? 'bg-red-600 hover:bg-red-700 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'
-                }`}
-                aria-disabled={!isEmailValid}
-              >
-                SUBSCRIBE NOW
-              </button>
+                  <button
+                    type="button"
+                    onClick={handleSubscribe}
+                    disabled={!isEmailValid || subscribing || isSubscribed}
+                    className={`w-full py-2.5 rounded-lg font-semibold text-white transition ${
+                      isEmailValid && !subscribing && !isSubscribed ? 'bg-red-600 hover:bg-red-700 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'
+                    }`}
+                    aria-disabled={!isEmailValid || subscribing || isSubscribed}
+                  >
+                    {subscribing ? 'PLEASE WAIT...' : 'SUBSCRIBE NOW'}
+                  </button>
+                </>
+              ) : (
+                <div className="mb-2 text-center">
+                  <p className="text-sm font-semibold text-gray-700 mb-3">
+                    Please log in or sign up to subscribe.
+                  </p>
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => openAuthFromSubscribe('login')}
+                      className="flex-1 py-2.5 rounded-lg font-semibold text-red-600 border-2 border-red-600 hover:bg-red-50 transition cursor-pointer"
+                    >
+                      LOGIN
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => openAuthFromSubscribe('signup')}
+                      className="flex-1 py-2.5 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition cursor-pointer"
+                    >
+                      SIGN UP
+                    </button>
+                  </div>
+                </div>
+              )}
 
               <p className="text-center text-xs text-gray-500 mt-4">
                 By subscribing, you agree to our Terms of Service and Privacy Policy.
@@ -571,6 +738,16 @@ function Header() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* LOGIN / SIGN UP MODAL */}
+      {authMode && (
+        <AuthModal
+          mode={authMode}
+          onModeChange={setAuthMode}
+          onClose={closeAuthModal}
+          onSuccess={handleAuthSuccess}
+        />
       )}
 
       {/* MOBILE SLIDE MENU */}
